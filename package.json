@@ -2,7 +2,7 @@
   "name": "ChildLabor",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://app1e1over.github.io/ChildLabor",
+  "homepage": "https://app1e1over.github.io/ChildLabor/",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /ChildLabor/"
