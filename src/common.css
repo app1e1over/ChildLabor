@@ -3,7 +3,7 @@
   --main-rgb-color: rgb(5, 5, 5);
   --secondary-color: #f8f8f8;
   --secondary-rgb-color: rgb(248, 248, 248);
-  --active-color: #9bb57;
+  --active-color:#9bb537;
 
   --accent-color: #eea10c;
   --additional-color: #cecdcd;
@@ -11,6 +11,8 @@
   --box-shadow: 7px 5px 15px 0px var(--rare-color);
   --transition-duration: 250ms;
   --transition-time-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --firts-font: 'Inter Medium'
 }
 body{
     overflow-x: hidden;
