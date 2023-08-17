@@ -1,3 +1,13 @@
+@import url("./partials/Header/Header.css");
+@import url("./partials/Categories/Categories.css");
+@import url("./partials/Favorites/Favorites.css");
+@import url("./partials/FavoritesFilter/FavoritesFilter.css");
+@import url("./partials/HeroCard/HeroCard.css");
+@import url("./partials/ModalWindow/ModalWindow.css");
+@import url("./partials/Pagination/Pagination.css");
+@import url("./partials/PopularRecipes/PopularRecipe.css");
+@import url("./partials/RecepieCards/RecepieCards.css");
+@import url("./partials/Selects/Selects.css");
 :root {
   --main-color: #050505;
   --main-rgb-color: rgb(5, 5, 5);
@@ -18,6 +28,7 @@ body{
     overflow-x: hidden;
     overflow-y: scroll;
 }
+
 @media screen and (min-width:374px) {
     /* mobile */
     .container{
@@ -45,4 +56,5 @@ body{
         padding-bottom: 100px;
     }
   }
+
 
