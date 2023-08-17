@@ -4,10 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
+    <link rel="stylesheet" href="common.css"></link>
   </head>
   <body>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <!-- <include src="./partials/Part1.html"></include>
     <include src="./partials/Part2.html"></include> -->
+    <div class="container">
+      <include src="./partials/!kOSTYL-NE_TROGAI/Header/Header.html"></include>
+      <include src="./partials/!kOSTYL-NE_TROGAI/HeroCard/HeroCard.html"></include>
+
+      <div style="display: flex;">
+        <div style="display: flex; flex-direction: column;">
+          <include src="./partials/!kOSTYL-NE_TROGAI/Categories/Categories.html"></include>
+          <include src="./partials/!kOSTYL-NE_TROGAI/PopularRecipes/PopularRecipe.html"></include>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <include src="./partials/!kOSTYL-NE_TROGAI/Selects/Selects.html"></include>
+          <include src="./partials/!kOSTYL-NE_TROGAI/RecepieCards/RecepieCards.html"></include>
+        </div>
+      </div>
+      <include src="./partials/!kOSTYL-NE_TROGAI/Pagination/Pagination.html"></include>
+    </div>
   </body>
 </html>
