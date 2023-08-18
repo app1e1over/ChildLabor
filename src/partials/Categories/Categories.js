@@ -1,4 +1,9 @@
- const categoriesContainer = document.getElementById('categories');
+
+import { Update } from './RecepieCards/RecepieCards.js';
+
+
+
+const categoriesContainer = document.getElementById('categories');
     fetch('https://tasty-treats-backend.p.goit.global/api/categories')
         .then(response => response.json())
         .then(data => {
@@ -7,7 +12,7 @@
                 const button = document.createElement('option');
                 button.value = category.name;
                 button.textContent = category.name;
-                button.classList.add('category-button');
+                button.classList.add('category-option');
                 // Додавання обробника подій для кнопки
                 button.addEventListener('click', () => {
                     // Виконання дій при натисканні на кнопку
@@ -23,11 +28,19 @@
 
 
        const butCateg = document.querySelector('.my-button');
+       const clAllCateg = butCateg.addEventListener('click', onStart);
+            
 
-            const clAllCateg = butCateg.addEventListener('click', onStart);
-            const blokCat = blokCategories.addEventListener('click', onSelectBreed);
+            const blokCat = categoriesContainer.addEventListener('change', () => {
+                Update();
+                //очистити фільтри
+            document.getElementById("time").value = "";
+            document.getElementById("area").value = "";
+            document.getElementById("ingridients").value = "";
+            document.getElementById("search").value = "";
 
-function onStart() {
+                });
+
+/*function onStart() {
     Update();
-
-            };
+            };*/
