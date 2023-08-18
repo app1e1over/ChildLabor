@@ -30,13 +30,9 @@ const categoriesContainer = document.getElementById('categories');
             const blokCat = categoriesContainer.addEventListener('change', () => {
                 Update();
                 //очистити фільтри
-            document.getElementById("time").value = "";
-            document.getElementById("area").value = "";
-            document.getElementById("ingridients").value = "";
-            document.getElementById("search").value = "";
 
-                });
+            });
+                
 
-/*function onStart() {
-    Update();
-            };*/
+
+

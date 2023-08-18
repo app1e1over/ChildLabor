@@ -6,8 +6,9 @@
 
     #categories {
         width: 326px;
-        /*height: 198px;*/
+        height: 198px;
         border: none;
+        border-radius: 10px;
         background: transparent;
         overflow-y: scroll;
         /*white-space: nowrap;*/
@@ -16,6 +17,7 @@
         flex-direction: column;
         gap: 18px;
     }
+
 
     .my-button {
         width: 178px;
