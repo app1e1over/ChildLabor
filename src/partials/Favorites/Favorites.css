@@ -1,0 +1,20 @@
+.is-hidden {
+    display: none;
+}
+
+.recepie-card {
+    width: 250px;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.is-favorite {
+    background-color: red;
+}
+
+.favorites-list {
+    background-color: aquamarine;
+}
