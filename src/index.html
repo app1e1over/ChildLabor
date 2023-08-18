@@ -14,12 +14,12 @@
       <include src="./partials/Header/Header.html"></include>
       <include src="./partials/HeroCard/HeroCard.html"></include>
 
-      <div style="display: flex;">
-        <div style="display: flex; flex-direction: column;">
+      <div class="index-recepie-container">
+        <div class="index-recepie-side-container">
           <include src="./partials/Categories/Categories.html"></include>
           <include src="./partials/PopularRecipes/PopularRecipe.html"></include>
         </div>
-        <div style="display: flex; flex-direction: column;   margin-left: 64px;">
+        <div class="index-recepie-side-container" style="margin-left: 64px;">
           <include src="./partials/Selects/Selects.html"></include>
           <include src="./partials/RecepieCards/RecepieCards.html"></include>
         </div>
@@ -28,7 +28,9 @@
       <include src="./partials/ModalWindow/ModalWindow.html"></include>
       <include src="./partials/CreateOrderModal/CreateOrderModal.html"></include>
     </div>
+
     <script src="./index.js" type="module"></script>
+    <script src="./partials/Categories/Categories.js" type="modal"></script>
     <script src="./partials/CreateOrderModal/CreateOrderModal.js" type="module"></script>
     <script src="./partials/Favorites/Favorites.js" type="module"></script>
     <script src="./partials/FavoritesFilter/FavoritesFilter.js" type="module"></script>

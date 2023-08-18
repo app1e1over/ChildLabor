@@ -7,6 +7,7 @@
   max-width: 250px;
   height: 287px;
   border-radius: 30px;
+  position: relative;
 }
 .recepy-card-bg {
   max-width: inherit;
@@ -24,20 +25,35 @@
   text-transform: uppercase;
 }
 .recepy-card-text {
+position: absolute;
   color: var(--secondary-color);
-  margin-top: -150px;
+  max-width: inherit;
+  bottom: 0;
   padding-left: 16px;
   padding-right: 16px;
 }
 .recepy-card-description {
     height: 32px;
 
+    max-width: inherit  ;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow:ellipsis;
     white-space: nowrap;
     font-family: 'Inter';
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: 16px;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2   ; /* start showing ellipsis when 3rd line is reached */
+    white-space: pre-wrap;
 } 
+.recepy-card-rating{
+
+}
+.recepy-card-like-btn{
+    
+}

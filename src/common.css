@@ -92,7 +92,7 @@ body{
   @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Inter';
-    font-style: medium;
+    font-style: normal;
     font-weight: 400;
     src: url('./fonts/Inter-Regular.eot'); /* IE9 Compat Modes */
     src: url('./fonts/Inter-Regular.eot?#iefix')
@@ -149,3 +149,11 @@ body{
         format('truetype')
   }
   
+
+  .index-recepie-container{
+    display: flex;
+  }
+  .index-recepie-side-container{
+    display: flex; 
+    flex-direction: column;
+  }
