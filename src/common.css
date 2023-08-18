@@ -149,3 +149,11 @@ body{
         format('truetype')
   }
   
+
+  .index-recepie-container{
+    display: flex;
+  }
+  .index-recepie-side-container{
+    display: flex; 
+    flex-direction: column;
+  }
