@@ -27,7 +27,7 @@
             const clAllCateg = butCateg.addEventListener('click', onStart);
             const blokCat = blokCategories.addEventListener('click', onSelectBreed);
 
-            function onStart() {
-                
+function onStart() {
+    Update();
 
             };
