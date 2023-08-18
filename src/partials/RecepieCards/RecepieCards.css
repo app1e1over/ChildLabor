@@ -1,0 +1,8 @@
+.recepie-container{
+    display: flex;
+    gap: 20px;
+
+}
+.recepie-container div{
+    border: 1px solid black;
+}
