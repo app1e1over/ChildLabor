@@ -1,8 +1,4 @@
 
-import { Update } from './RecepieCards/RecepieCards.js';
-
-
-
 const categoriesContainer = document.getElementById('categories');
     fetch('https://tasty-treats-backend.p.goit.global/api/categories')
         .then(response => response.json())

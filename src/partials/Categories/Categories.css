@@ -9,7 +9,6 @@
         /*height: 198px;*/
         border: none;
         background: transparent;
-        /*background-color: blue;*/
         overflow-y: scroll;
         /*white-space: nowrap;*/
         scrollbar-width: thin;
@@ -19,7 +18,7 @@
     }
 
     .my-button {
-        width: 174px;
+        width: 178px;
         height: 50px;
         background-color: hsla(0, 0%, 0%, 0);
         color: rgba(0, 0, 0, 0.2);
