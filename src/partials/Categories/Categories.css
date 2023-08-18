@@ -1,0 +1,82 @@
+
+@media screen and (min-width: 375px) {
+    .container {
+        width: 365px;
+    }
+
+    #categories {
+        width: 326px;
+        /*height: 198px;*/
+        border: none;
+        background: transparent;
+        /*background-color: blue;*/
+        overflow-y: scroll;
+        /*white-space: nowrap;*/
+        scrollbar-width: thin;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .my-button {
+        width: 174px;
+        height: 50px;
+        background-color: hsla(0, 0%, 0%, 0);
+        color: rgba(0, 0, 0, 0.2);
+        font-family: "Inter";
+        font-weight: 500;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.21;
+        padding: 14px 29px;
+        border: 1px solid rgba(5, 5, 5, 0.2);
+        border-radius: 15px;
+        cursor: pointer;
+    }
+                .my-button:hover,
+                .my-button:focus {
+                    background-color: #9BB537;
+                    color: #F8F8F8;
+                }
+
+    .cont {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .category-option {
+        background-color: hsla(0, 0%, 0%, 0);
+        padding: 10px;
+        border: none;
+        text-align: left;
+        font-family: "Inter";
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.28;
+        cursor: pointer;
+        color: rgba(5, 5, 5, 0.3);
+    }
+
+    #catCont {
+        width: 500px;
+        height: 500px;
+        background-color: blue;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 734px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .container {
+        width: 1210 px;
+
+    }
+}
