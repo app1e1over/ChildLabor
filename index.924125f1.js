@@ -1,2 +1,0 @@
-const e=document.querySelector(".mobile-menu-close-btn"),n=document.querySelector("#mobile-menu");function t(i){n.classList.contains("is-open")||(n.classList.add("is-open"),burgerMenuButton.removeEventListener("click",t),e.addEventListener("click",c))}function c(){n.classList.contains("is-open")&&(n.classList.remove("is-open"),e.removeEventListener("click",c),burgerMenuButton.addEventListener("click",t))}burgerMenuButton.addEventListener("click",t),e.addEventListener("click",c);
-//# sourceMappingURL=index.924125f1.js.map
