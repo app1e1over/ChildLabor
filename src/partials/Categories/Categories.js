@@ -24,14 +24,15 @@ const categoriesContainer = document.getElementById('categories');
 
 
        const butCateg = document.querySelector('.my-button');
-       const clAllCateg = butCateg.addEventListener('click', onStart);
+  
             
 
             const blokCat = categoriesContainer.addEventListener('change', () => {
                 Update();
-                //очистити фільтри
-
             });
+
+           
+
                 
 
 

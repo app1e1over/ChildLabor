@@ -8,26 +8,57 @@
         width: 326px;
         height: 198px;
         border: none;
-        border-radius: 10px;
+        outline: none;
         background: transparent;
-        overflow-y: scroll;
+        overflow-y: auto;
         /*white-space: nowrap;*/
         scrollbar-width: thin;
         display: flex;
         flex-direction: column;
-        gap: 18px;
-    }
+        transition: .4s linear .2s;
 
+    }
+         #categories::-webkit-scrollbar{
+            width: 10px;
+            background-color: transparent;
+         }
+
+        #categories::-webkit-scrollbar-thumb {
+            width: 10px;
+            background-color: rgba(5, 5, 5, 0.3);
+        }
+
+
+        .category-option {
+            width: 100%;
+            background-color: hsla(0, 0%, 0%, 0);
+            padding-top: 9px;
+            padding-bottom: 9px;
+            border: none;
+            text-align: left;
+            font-family: "Inter";
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.28;
+            cursor: pointer;
+            color: rgba(5, 5, 5, 0.3);
+            transition: .3s case-in-out;
+        }
+
+        .category-option:hover,
+        .category-option:focus {
+            background-color: #9BB537;
+            color: #F8F8F8;
+            outline: none;
+        }
 
     .my-button {
         width: 178px;
         height: 50px;
         background-color: hsla(0, 0%, 0%, 0);
-        color: rgba(0, 0, 0, 0.2);
+        color: rgba(5, 5, 5, 0.2);
         font-family: "Inter";
         font-weight: 500;
-        margin-left: auto;
-        margin-right: auto;
         text-align: center;
         font-size: 18px;
         line-height: 1.21;
@@ -46,19 +77,6 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-    }
-
-    .category-option {
-        background-color: hsla(0, 0%, 0%, 0);
-        padding: 10px;
-        border: none;
-        text-align: left;
-        font-family: "Inter";
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 1.28;
-        cursor: pointer;
-        color: rgba(5, 5, 5, 0.3);
     }
 
     #catCont {
