@@ -24,7 +24,7 @@ async function fetchPopularRecipes() {
       `;
     });
 
-    popularRecipesList.innerHTML = markup;
+    popularRecipesList.insertAdjacentHTML('beforeend', markup);
   } catch (error) {
     console.error('Произошла ошибка:', error);
   }
