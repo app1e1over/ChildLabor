@@ -1,0 +1,2 @@
+!function(){var e=document.querySelector(".mobile-menu-close-btn"),n=document.querySelector("#mobile-menu");function t(c){n.classList.contains("is-open")||(n.classList.add("is-open"),burgerMenuButton.removeEventListener("click",t),e.addEventListener("click",i))}function i(){n.classList.contains("is-open")&&(n.classList.remove("is-open"),e.removeEventListener("click",i),burgerMenuButton.addEventListener("click",t))}burgerMenuButton.addEventListener("click",t),e.addEventListener("click",i)}();
+//# sourceMappingURL=index.6e395988.js.map
