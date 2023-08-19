@@ -1,10 +1,12 @@
 import axios from "axios";
+//import img from "./Favorites-img"
 
 const FAV_KEY = 'Favorites';
 const favoritesList = document.querySelector('.favorites-list');
 const favoritesPlug = document.querySelector('.favorites-plug');
 const favTestElem = document.querySelector('.test-cards');
 const heartButtonElem = document.querySelector('.heart-button');
+
 
 //ПОТІМ ВИДАЛИТИ - запит на сервер по всіх рецептах
 //і заповнення тестової розмітки, щоб побачити кнопку сердечко
@@ -13,14 +15,14 @@ const getData = () => axios.get(`https://tasty-treats-backend.p.goit.global/api/
 getData().then(
     ({ data }) => {
         console.log(data);
-        renderRecepieCard(data);
-        allRecepiesArray = data.results;
+        renderRecipeCard(data);
+        allRecipesArray = data.results;
 }
 ).catch(console.warn);
 
 
 //ПОТІМ ВИДАЛИТИ - імітація - рендер розмітки всіх карток 
-function renderRecepieCard(data) {
+function renderRecipeCard(data) {
     const cardsArr = data.results;
 
     const markup = cardsArr.map(card => DrowCard(card)).join('');
@@ -36,9 +38,9 @@ function renderRecepieCard(data) {
 function DrowCard(card) {
 
     return `
-<div class="recepie-card" id=${card._id}>
+<div class="recipe-card" id=${card._id}>
     <img src="${card.preview}" alt="${card.tags}" loading="lazy" />
-    <div class="recepie-info">
+    <div class="recipe-info">
     <h3>${card.title}</h3>
     <p>${card.description}</p>
     </div>
@@ -54,8 +56,8 @@ function DrowCard(card) {
 // function addToFavorites() {
 //     heartButtonElem.classList.add('is-favorite');
 
-//     const selectadRecepie = heartButtonElem.parentNode;
-//     console.log(selectadRecepie);
+//     const selectadRecipe = heartButtonElem.parentNode;
+//     console.log(selectadRecipe);
 // }
 
 //ПОТІМ ВИДАЛИТИ - метод removeFromFavorites, який видаляє з обраних:
@@ -64,7 +66,7 @@ function DrowCard(card) {
 // 3. викликає UpdateFavorites
 
 // СЛУХАЧ ДЛЯ СЕРДЕЧОК
-// let favoritesArray = [];
+let favoritesArray = [] || JSON.parse(localStorage.getItem(FAV_KEY));
 //localStorage.setItem(FAV_KEY, JSON.stringify(favoritesArray));
 
 document.addEventListener('click', (event) => {
@@ -78,16 +80,15 @@ if (event.target.classList.contains("heart-button")) { // якщо є клас..
     getData().then(
     ({ data }) => {
         console.log(data.results);
-        const favRecepie = data.results.find(result => result._id === favId);
-        console.log(favRecepie);
-        favoritesArray.push(favRecepie);
+        const favRecipe = data.results.find(result => result._id === favId);
+        console.log(favRecipe);
+        favoritesArray.push(favRecipe);
         console.log(favoritesArray);
         localStorage.setItem(FAV_KEY, JSON.stringify(favoritesArray));
     }
     ).catch(console.warn);
     
     } 
-
 })
 
 //localStorage.removeItem(FAV_KEY);
@@ -98,9 +99,12 @@ if (event.target.classList.contains("heart-button")) { // якщо є клас..
 // 1.1. якщо ЛС пустий: рендер заглушки, ретьорн
 // 2. filter, для кожного рецепта виклик DrowCard
 // 3. innerHTML = renderedCards
+
+
 const selectedCategory = 'Beef';
 
-function UpdateFavorites() {
+// ВИКЛИКАЄТЬСЯ ПРИ СТАРТІ
+export function UpdateFavorites() {
     let favoritesArr = JSON.parse(localStorage.getItem(FAV_KEY));
     console.log(favoritesArr);
 
@@ -110,14 +114,14 @@ function UpdateFavorites() {
     }
 
     const filteredFavorites = favoritesArr.filter(
-        recepie => recepie.category === selectedCategory
+        recipe => recipe.category === selectedCategory
     );
     console.log(filteredFavorites);
 
     renderFavorites(filteredFavorites);
 }
 
-//ПОТІМ ВИДАЛИТИ - рендер розмітки всіх улюблених рецептів 
+//рендер розмітки всіх улюблених рецептів 
 function renderFavorites(data) {
     const markup = data.map(card => DrowCard(card)).join('');
     favoritesList.innerHTML = markup;
