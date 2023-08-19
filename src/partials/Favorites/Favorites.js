@@ -101,7 +101,10 @@ if (event.target.classList.contains("heart-button")) { // якщо є клас..
 // 3. innerHTML = renderedCards
 
 
-const selectedCategory = 'Beef';
+// const selectedCategory = 'Beef';
+
+
+// const selectedCategory = document.querySelector('.active').id
 
 // ВИКЛИКАЄТЬСЯ ПРИ СТАРТІ
 export function UpdateFavorites() {
