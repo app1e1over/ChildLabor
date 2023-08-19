@@ -14,7 +14,6 @@ export function Update() {
     });
 }
 function DrawCard(recepy) {
-  console.log(recepy);
   let cont = document.createElement('div');
   cont.classList.add('recepy-card-container');
 
