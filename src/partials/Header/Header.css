@@ -1,0 +1,11 @@
+.nav-link {
+  color: var(--main-color);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.nav-link .current {
+  color: var(--active-color);
+}
