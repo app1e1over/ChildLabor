@@ -16,6 +16,8 @@
         display: flex;
         flex-direction: column;
         transition: .4s linear .2s;
+        gap: 18px;
+
 
     }
          #categories::-webkit-scrollbar{
@@ -24,8 +26,10 @@
          }
 
         #categories::-webkit-scrollbar-thumb {
-            width: 10px;
-            background-color: rgba(5, 5, 5, 0.3);
+            width: 8px;
+            height: 116px;
+            border-radius: 12px;
+            background-color: rgba(5, 5, 5, 0.18);
         }
 
 
@@ -52,8 +56,9 @@
             outline: none;
         }
 
+
     .my-button {
-        width: 178px;
+        width: 176px;
         height: 50px;
         background-color: hsla(0, 0%, 0%, 0);
         color: rgba(5, 5, 5, 0.2);
@@ -62,7 +67,7 @@
         text-align: center;
         font-size: 18px;
         line-height: 1.21;
-        padding: 14px 29px;
+        padding: 14px 28px 14px 28px;
         border: 1px solid rgba(5, 5, 5, 0.2);
         border-radius: 15px;
         cursor: pointer;
@@ -79,11 +84,6 @@
         gap: 10px;
     }
 
-    #catCont {
-        width: 500px;
-        height: 500px;
-        background-color: blue;
-    }
 
 }
 
@@ -91,11 +91,33 @@
     .container {
         width: 734px;
     }
+        #categories {
+            width: 176px;
+            height: 416px;
+        }
+                .category-option {
+                    font-size: 16px;
+                    line-height: 1.25;
+                    cursor: pointer;
+                }
+        #categories::-webkit-scrollbar-thumb {
+            width: 8px;
+            height: 201px;
+        }
+
 }
 
 @media screen and (min-width: 1280px) {
     .container {
         width: 1210 px;
-
     }
+    #categories {
+        width: 235px;
+        height: 416px;
+    }
+    .my-button {
+        width: 174px;
+        padding: 14px 27px;
+    }
+
 }
