@@ -6,14 +6,9 @@ const categoriesContainer = document.getElementById('categories');
             // Створення кнопок для кожної категорії
             data.forEach(category => {
                 const button = document.createElement('option');
-                button.value = category.name;
+                button.value = categoriesContainer.value;
                 button.textContent = category.name;
                 button.classList.add('category-option');
-                // Додавання обробника подій для кнопки
-                button.addEventListener('click', () => {
-                    // Виконання дій при натисканні на кнопку
-                    console.log('Ви натиснули на категорію:', category.name);
-                });
                 // Додавання кнопки до контейнера
                 categoriesContainer.appendChild(button);
             });
@@ -23,13 +18,21 @@ const categoriesContainer = document.getElementById('categories');
         });
 
 
-       const butCateg = document.querySelector('.my-button');
+const butCateg = document.querySelector('.my-button');
+       
+
+butCateg.addEventListener("click", function () {
+categoriesContainer.value = ""; // присвоюємо пусту строку значенню селекту
+});
   
             
 
-            const blokCat = categoriesContainer.addEventListener('change', () => {
-                Update();
-            });
+const blokCat = categoriesContainer.addEventListener('change', () => {
+    Update();
+    console.log('Ви натиснули на категорію:', category.name);
+});
+
+
 
            
 
