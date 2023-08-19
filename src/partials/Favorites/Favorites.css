@@ -2,10 +2,6 @@
     display: none;
 }
 
-/* .section-favorites {
-
-} */
-
 .recipe-card {
     width: 250px;
 }
@@ -15,12 +11,16 @@ img {
     width: 100%;
 }
 
-.is-favorite {
-    background-color: red;
-}
-
 .favorites-list {
     background-color: aquamarine;
+}
+
+.favorites-img {
+    height: 240px;
+    /* background-image: url('https://static.ogorodniki.com/ogorod/fb/l_08369aff-d2f9-4f81-9154-d9f2a6267cfb.jpg');  */
+    background-image: url('./Favorites-img/favorites-jpg-1x-1080px.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 /* МЕДІА */
