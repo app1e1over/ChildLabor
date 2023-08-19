@@ -8,12 +8,16 @@ const heartButtonElem = document.querySelector('.heart-button');
 
 //ПОТІМ ВИДАЛИТИ - запит на сервер по всіх рецептах
 //і заповнення тестової розмітки, щоб побачити кнопку сердечко
+
 const getData = () => axios.get(`https://tasty-treats-backend.p.goit.global/api/recipes`);
 getData().then(
     ({ data }) => {
         console.log(data);
-    renderRecepieCard(data)}
+        renderRecepieCard(data);
+        allRecepiesArray = data.results;
+}
 ).catch(console.warn);
+
 
 //ПОТІМ ВИДАЛИТИ - імітація - рендер розмітки всіх карток 
 function renderRecepieCard(data) {
@@ -23,7 +27,7 @@ function renderRecepieCard(data) {
 
     favTestElem.innerHTML = markup;
 
-    localStorage.setItem(FAV_KEY, JSON.stringify(cardsArr));
+    //localStorage.setItem(FAV_KEY, JSON.stringify(cardsArr));
 }
 
 
@@ -32,13 +36,13 @@ function renderRecepieCard(data) {
 function DrowCard(card) {
 
     return `
-<div class="recepie-card">
+<div class="recepie-card" id=${card._id}>
     <img src="${card.preview}" alt="${card.tags}" loading="lazy" />
     <div class="recepie-info">
-    <button type="button" class="heart-button" id="${card.id}">press heart</button>
     <h3>${card.title}</h3>
     <p>${card.description}</p>
     </div>
+    <button type="button" class="heart-button" id="${card._id}">press heart</button>
 </div>
     `
 }
@@ -59,17 +63,34 @@ function DrowCard(card) {
 // 2. міняє колір сердечка;
 // 3. викликає UpdateFavorites
 
-// ПОТІМ ВИДАЛИТИ - слухач для сердечок
-// document.querySelector('body').addEventListener('click', (event) => {
-//     if (event.target.nodeName !== "BUTTON") {
-//     return;
-//   }
-//     if (!heartButtonElem.classList.contains('is-favorite')) {
-//         addToFavorites()
-//     } else {
-//         console.warn();
-//     }
-// })
+// СЛУХАЧ ДЛЯ СЕРДЕЧОК
+// let favoritesArray = [];
+//localStorage.setItem(FAV_KEY, JSON.stringify(favoritesArray));
+
+document.addEventListener('click', (event) => {
+    console.log(event.target);
+if (event.target.classList.contains("heart-button")) { // якщо є клас...
+    console.log('you win');
+    console.log(event.target.parentNode);
+    console.log(event.target.id);
+    const favId = event.target.id;
+
+    getData().then(
+    ({ data }) => {
+        console.log(data.results);
+        const favRecepie = data.results.find(result => result._id === favId);
+        console.log(favRecepie);
+        favoritesArray.push(favRecepie);
+        console.log(favoritesArray);
+        localStorage.setItem(FAV_KEY, JSON.stringify(favoritesArray));
+    }
+    ).catch(console.warn);
+    
+    } 
+
+})
+
+//localStorage.removeItem(FAV_KEY);
 
 
 // функція UpdateFavorites():
