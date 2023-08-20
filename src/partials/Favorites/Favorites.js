@@ -100,14 +100,10 @@ if (event.target.classList.contains("heart-button")) { // якщо є клас..
 // 2. filter, для кожного рецепта виклик DrowCard
 // 3. innerHTML = renderedCards
 
-
-// const selectedCategory = 'Beef';
-
-
-// const selectedCategory = document.querySelector('.active').id
-
 // ВИКЛИКАЄТЬСЯ ПРИ СТАРТІ
 export function UpdateFavorites() {
+    favoritesPlug.classList.add('is-hidden');
+
     let favoritesArr = JSON.parse(localStorage.getItem(FAV_KEY));
     console.log(favoritesArr);
 
@@ -116,12 +112,17 @@ export function UpdateFavorites() {
         return;
     }
 
+    const selectedCategory = document.querySelector('.active').dataset.id;
+
+    if (selectedCategory === "All") {
+        renderFavorites(favoritesArr);
+    } else {
     const filteredFavorites = favoritesArr.filter(
         recipe => recipe.category === selectedCategory
     );
     console.log(filteredFavorites);
-
     renderFavorites(filteredFavorites);
+    }
 }
 
 //рендер розмітки всіх улюблених рецептів 
