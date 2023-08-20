@@ -8,7 +8,6 @@
 @import url("./partials/PopularRecipes/PopularRecipe.css");
 @import url("./partials/RecepieCards/RecepieCards.css");
 @import url("./partials/Selects/Selects.css");
-@import url("./partials/Preloader/Preloader.css");
 
 @import url("./partials/CreateOrderModal/CreateOrderModal.css");
 :root {
@@ -130,7 +129,7 @@ body{
       /* Modern Browsers */ url('./fonts/Inter-Italic.ttf')
         format('truetype')
   }
-
+  
   @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Poppins';
@@ -145,7 +144,7 @@ body{
       /* Modern Browsers */ url('./fonts/PoppinsTVG-SemiBold.ttf')
         format('truetype')
   }
-
+  
   @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'DM Sans';
@@ -160,12 +159,12 @@ body{
       /* Modern Browsers */ url('./fonts/DMSans-Medium.ttf')
         format('truetype')
   }
-
+  
 
   .index-recepie-container{
     display: flex;
   }
   .index-recepie-side-container{
-    display: flex;
+    display: flex; 
     flex-direction: column;
   }

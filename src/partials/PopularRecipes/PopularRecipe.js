@@ -1,11 +1,9 @@
 import axios from 'axios';
-import {showPreloader, hidePreloader} from '../Preloader/Preloader';
 
 const popularRecipesList = document.querySelector('.popular-recipes-container');
 const popularRecipesApiUrl = 'https://tasty-treats-backend.p.goit.global/api/recipes/popular';
 
 async function fetchPopularRecipes() {
-  showPreloader()
   try {
     const response = await axios.get(popularRecipesApiUrl);
     const recipes = response.data;
@@ -29,8 +27,6 @@ async function fetchPopularRecipes() {
     popularRecipesList.insertAdjacentHTML('beforeend', markup);
   } catch (error) {
     console.error('Произошла ошибка:', error);
-  } finally {
-    hidePreloader()
   }
 }
 
