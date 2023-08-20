@@ -8,30 +8,66 @@
         width: 326px;
         height: 198px;
         border: none;
-        border-radius: 10px;
+        outline: none;
         background: transparent;
-        overflow-y: scroll;
+        overflow-y: auto;
         /*white-space: nowrap;*/
         scrollbar-width: thin;
         display: flex;
         flex-direction: column;
+        transition: .4s linear .2s;
         gap: 18px;
+
+
     }
+         #categories::-webkit-scrollbar{
+            width: 10px;
+            background-color: transparent;
+         }
+
+        #categories::-webkit-scrollbar-thumb {
+            width: 8px;
+            height: 116px;
+            border-radius: 12px;
+            background-color: rgba(5, 5, 5, 0.18);
+        }
+
+
+        .category-option {
+            width: 100%;
+            background-color: hsla(0, 0%, 0%, 0);
+            padding-top: 9px;
+            padding-bottom: 9px;
+            border: none;
+            text-align: left;
+            font-family: "Inter";
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.28;
+            cursor: pointer;
+            color: rgba(5, 5, 5, 0.3);
+            transition: .3s case-in-out;
+        }
+
+        .category-option:hover,
+        .category-option:focus {
+            background-color: #9BB537;
+            color: #F8F8F8;
+            outline: none;
+        }
 
 
     .my-button {
-        width: 178px;
+        width: 176px;
         height: 50px;
         background-color: hsla(0, 0%, 0%, 0);
-        color: rgba(0, 0, 0, 0.2);
+        color: rgba(5, 5, 5, 0.2);
         font-family: "Inter";
         font-weight: 500;
-        margin-left: auto;
-        margin-right: auto;
         text-align: center;
         font-size: 18px;
         line-height: 1.21;
-        padding: 14px 29px;
+        padding: 14px 28px 14px 28px;
         border: 1px solid rgba(5, 5, 5, 0.2);
         border-radius: 15px;
         cursor: pointer;
@@ -48,24 +84,6 @@
         gap: 10px;
     }
 
-    .category-option {
-        background-color: hsla(0, 0%, 0%, 0);
-        padding: 10px;
-        border: none;
-        text-align: left;
-        font-family: "Inter";
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 1.28;
-        cursor: pointer;
-        color: rgba(5, 5, 5, 0.3);
-    }
-
-    #catCont {
-        width: 500px;
-        height: 500px;
-        background-color: blue;
-    }
 
 }
 
@@ -73,11 +91,33 @@
     .container {
         width: 734px;
     }
+        #categories {
+            width: 176px;
+            height: 416px;
+        }
+                .category-option {
+                    font-size: 16px;
+                    line-height: 1.25;
+                    cursor: pointer;
+                }
+        #categories::-webkit-scrollbar-thumb {
+            width: 8px;
+            height: 201px;
+        }
+
 }
 
 @media screen and (min-width: 1280px) {
     .container {
         width: 1210 px;
-
     }
+    #categories {
+        width: 235px;
+        height: 416px;
+    }
+    .my-button {
+        width: 174px;
+        padding: 14px 27px;
+    }
+
 }

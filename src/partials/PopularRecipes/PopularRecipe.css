@@ -22,7 +22,7 @@
     margin-bottom: 24px;
 }
 
-.popular-recipes-list:nth-child(n + 3) {
+.popular-recipes-list:nth-child(n + 4) {
     display: none;
 }
 
@@ -72,6 +72,10 @@
 
 .popular-recipes-container {
     width: 176px;
+}
+
+.popular-recipes-title {
+    margin-bottom: 32px;
 }
 
 .popular-recipes-list:nth-child(n + 3) {
