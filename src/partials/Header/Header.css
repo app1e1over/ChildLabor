@@ -32,7 +32,7 @@
 .bascket-icon:focus {
   stroke: var(--active-color);
 }
-.toggle-btn {
+/* .toggle-btn {
   height: 20px;
   width: 46px;
   border-radius: 18px;
@@ -51,11 +51,11 @@
   border-radius: 50%;
   left: 2px;
   top: 2px;
-}
+} */
 
 .header-icon-wrapper {
   display: flex;
-  gap: 14px;
+  
 }
 .header-logo {
   font-family: Inter;
@@ -219,7 +219,7 @@
     color: var(--active-color);
     text-decoration: underline;
   }
-  .header-wrapper {
+  .header-icon-wrapper {
     gap: 18px;
   }
   .burger-menu-wrupper {
@@ -246,7 +246,7 @@
     padding-top: 40px;
     padding-bottom: 40px;
   }
-  .header-wrapper {
+  .header-icon-wrapper {
     gap: 24px;
   }
   .header-logo {

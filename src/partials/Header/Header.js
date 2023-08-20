@@ -18,29 +18,41 @@ function handlerOnCloseMenuButton() {
     burgerMenuButton.addEventListener('click', handlerOnBurgerButtonClick);
   }
 }
-const toggleElement = document.querySelector('.js-toggle');
-const html = document.querySelector('html');
 
 function startHeader() {
   burgerMenuButton.addEventListener('click', handlerOnBurgerButtonClick);
   closeMenuButton.addEventListener('click', handlerOnCloseMenuButton);
   toggleElement.addEventListener('click', handlerChangeTheme);
-  let savedTheme = localStorage.getItem('theme') || null;
+  let savedTheme = localStorage.getItem('theme') || 'light';
   if (savedTheme === 'dark') {
-    html.classList.add('theme', 'dark');
+    body.classList.add('theme', 'dark');
+    iconLightTheme.classList.add('visually-hidden');
+    iconDarkTheme.classList.remove('visually-hidden');
   } else {
-    html.classList.toggle('dark');
+    body.classList.remove('dark');
     localStorage.setItem('theme', 'light');
+    iconLightTheme.classList.remove('visually-hidden');
+    iconDarkTheme.classList.add('visually-hidden');
   }
 }
 
+// Зміна теми
+const toggleElement = document.querySelector('.js-toggle');
+const body = document.querySelector('body');
+const iconLightTheme = document.querySelector('.toggle-icon-light-theme');
+const iconDarkTheme = document.querySelector('.toggle-icon-dark-theme');
+
 function handlerChangeTheme(event) {
-  if (html.classList.contains('dark')) {
-    html.classList.toggle('dark');
+  if (body.classList.contains('dark')) {
+    body.classList.toggle('dark');
     localStorage.setItem('theme', 'light');
+    iconLightTheme.classList.remove('visually-hidden');
+    iconDarkTheme.classList.add('visually-hidden');
   } else {
-    html.classList.add('dark');
+    body.classList.add('dark');
     localStorage.setItem('theme', 'dark');
+    iconLightTheme.classList.add('visually-hidden');
+    iconDarkTheme.classList.remove('visually-hidden');
   }
 }
 export { startHeader };
