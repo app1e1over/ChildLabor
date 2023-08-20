@@ -1,33 +1,21 @@
-<div class="backdrop" data-modal>
-  <div class="order-conteiner"></div>
-  <!-- <div class="modal"> -->
+<div class="backdrop order-conteiner data-modal ">
+
     <h1 class="title">ORDER NOW</h1>
     <button type="button" data-modal-close class="modal-close-btn">
-      <!-- <svg class="modal-close-icon" width="24" height="24">
-        <use href="./img/icons.svg#icon-mobile-x"></use>
-      </svg> -->
+      <svg class="modal-close-icon" width="24" height="24">
+        <use href="//src/image/sprite..svg#icon-close-input-default"></use>
+      </svg>
     </button>
-    <div class="modal-left">
-      <!-- <img
-        srcset="./img/catalog.png/w1.png 1x, ./img/catalog.png/w1@x2.png 2x"
-        src="./img/catalog.png/w1.png"
-        alt="Clock"
-        width="276"
-        height="325"
-      /> -->
-      <p class="modal-left-text"></p>
-      <!-- <p class="modal-left-price">€395</p> -->
-    </div>
-    <div class="modal-right">
-      <form class="modal-form">
+      <!-- <div class="modal-right"> -->
+      <form class="modal-form ">
         <label class="modal-form-field">
-          <span class="modal-form-field-desk">Full name</span>
+          <span class="modal-form-field-desk">Name</span>
           <span class="modal-form-input-wrapper">
             <input
               type="text"
               name="user_name"
               class="modal-form-input"
-              placeholder="Enter your full name"
+              placeholder=""
               required
               minlength="2"
               pattern="[a-zA-Zа-яА-ЯіІїЇї]+"
@@ -35,11 +23,26 @@
           </span>
         </label>
         <label class="modal-form-field">
+          <span class="modal-form-field-desk">Phone number</span>
+          <span class="modal-form-input-wrapper">
+            <input
+              type="phone"
+              name="phone"
+              class="modal-form-input"
+              placeholder=""
+              required
+              pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
+              title="xxx-xxx-xxx-xxxx"
+            />
+          </span>
+        </label>
+
+        <label class="modal-form-field">
           <span class="modal-form-field-desk">Email</span>
           <span class="modal-form-input-wrapper">
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder=""
               name="user_email"
               class="modal-form-input"
               required
@@ -47,35 +50,17 @@
             />
           </span>
         </label>
+
         <label class="modal-form-field">
-          <span class="modal-form-field-desk">Card number</span>
-          <span class="modal-form-input-wrapper">
-            <input
-              type="text"
-              name="user_card"
-              class="modal-form-input"
-              placeholder="Enter card"
-              required
-              pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
-              title="xxxx-xxxx-xxxx-xxxx"
-            />
-          </span>
-        </label>
-        <label class="modal-form-field">
-          <span class="modal-form-input-desk">Comments</span>
+          <span class="modal-form-input-desk">Comment</span>
           <textarea
             name="user_message"
             class="modal-form-message"
-            placeholder="Enter your text"
+            placeholder=""
           ></textarea>
         </label>
-        <button type="submit" class="modal-form-btn">submit</button>
-        <p class="privacy-text">
-          By clicking on “Submit” button, you agree to our
-          <a class="privacy-link" href="">Privacy Policy</a>, and allow Promodo
-          to use this information for marketing purposes.
-        </p>
-      </form>
+        <button type="submit" class="modal-form-btn">Send</button>
+             </form>
     </div>
-  </div>
+   </div>
 </div>
