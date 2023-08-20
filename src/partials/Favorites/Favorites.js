@@ -9,7 +9,7 @@ const heartButtonElem = document.querySelector('.heart-button');
 
 
 //ПОТІМ ВИДАЛИТИ - запит на сервер по всіх рецептах
-//і заповнення тестової розмітки, щоб побачити кнопку сердечко
+//і заповнення тестової розмітки
 
 const getData = () => axios.get(`https://tasty-treats-backend.p.goit.global/api/recipes`);
 getData().then(
@@ -28,13 +28,10 @@ function renderRecipeCard(data) {
     const markup = cardsArr.map(card => DrowCard(card)).join('');
 
     favTestElem.innerHTML = markup;
-
-    //localStorage.setItem(FAV_KEY, JSON.stringify(cardsArr));
 }
 
 
-
-//ПОТІМ ВИДАЛИТИ - рендер розмітки одної картки
+//ПОТІМ ЗАМІНИТИ НА ІМПОРТОВАНУ ФУНКЦІЮ - рендер розмітки одної картки
 function DrowCard(card) {
 
     return `
@@ -48,51 +45,6 @@ function DrowCard(card) {
 </div>
     `
 }
-
-//ПОТІМ ВИДАЛИТИ - метод addToFavorites, який додає в обрані:
-// 1. додає рецепт в ЛС (пушить в масив);
-// 2. міняє колір сердечка;
-// 3. не викликає UpdateFavorites, а DrowCard, <> insertAdjasentHTML(beforeend, newCard)
-// function addToFavorites() {
-//     heartButtonElem.classList.add('is-favorite');
-
-//     const selectadRecipe = heartButtonElem.parentNode;
-//     console.log(selectadRecipe);
-// }
-
-//ПОТІМ ВИДАЛИТИ - метод removeFromFavorites, який видаляє з обраних:
-// 1. видаляє рецепт з ЛС;
-// 2. міняє колір сердечка;
-// 3. викликає UpdateFavorites
-
-// СЛУХАЧ ДЛЯ СЕРДЕЧОК
-let favoritesArray = [] || JSON.parse(localStorage.getItem(FAV_KEY));
-//localStorage.setItem(FAV_KEY, JSON.stringify(favoritesArray));
-
-document.addEventListener('click', (event) => {
-    console.log(event.target);
-if (event.target.classList.contains("heart-button")) { // якщо є клас...
-    console.log('you win');
-    console.log(event.target.parentNode);
-    console.log(event.target.id);
-    const favId = event.target.id;
-
-    getData().then(
-    ({ data }) => {
-        console.log(data.results);
-        const favRecipe = data.results.find(result => result._id === favId);
-        console.log(favRecipe);
-        favoritesArray.push(favRecipe);
-        console.log(favoritesArray);
-        localStorage.setItem(FAV_KEY, JSON.stringify(favoritesArray));
-    }
-    ).catch(console.warn);
-    
-    } 
-})
-
-//localStorage.removeItem(FAV_KEY);
-
 
 // функція UpdateFavorites():
 // 1. бере інф з ЛС, де зберіг. [ { }-ів ] з рецептами за кл. сл. 'Favorites'
