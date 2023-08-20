@@ -6,6 +6,7 @@ const favoritesList = document.querySelector('.favorites-list');
 const favoritesPlug = document.querySelector('.favorites-plug');
 const favTestElem = document.querySelector('.test-cards');
 const heartButtonElem = document.querySelector('.heart-button');
+const favImgElem = document.querySelector('.fav-picture-thumb');
 
 
 //ПОТІМ ВИДАЛИТИ - запит на сервер по всіх рецептах
@@ -46,6 +47,13 @@ function DrowCard(card) {
     `
 }
 
+// ПРОСТО ВИСИТЬ В КОДІ І ЧЕКАЄ ПУСТИЙ ЛОКАЛ СТОРЕДЖ
+export function hadleAllFavoritesDeleted() {
+    if (!favoritesArr.length) {
+        UpdateFavorites();
+    }
+}
+
 // функція UpdateFavorites():
 // бере інф з ЛС, де зберіг. [ { }-ів ] з рецептами за кл. сл. 'Favorites'
 // 1. якщо ЛС пустий: рендер заглушки, ретьорн
@@ -56,16 +64,27 @@ function DrowCard(card) {
 // ВИКЛИКАЄТЬСЯ ПРИ СТАРТІ
 export function UpdateFavorites() {
     favoritesPlug.classList.add('is-hidden');
+    favImgElem.classList.remove('is-hidden');
 
     let favoritesArr = JSON.parse(localStorage.getItem(FAV_KEY));
     console.log(favoritesArr);
 
-    if (!favoritesArr.length) {
+    if (favoritesArr.length) {
         favoritesPlug.classList.remove('is-hidden');
+        if (window.matchMedia("(max-width: 767px)").matches) {
+            favImgElem.classList.add('is-hidden');
+        }
         return;
     }
 
-    const selectedCategory = document.querySelector('.active').dataset.id;
+    renderFavorites(favoritesArr);
+}
+
+// ця не викликається при старті, її імпортне собі Віталій
+export function showByCategory() {
+    favoritesList.innerHTML = '';
+    //const selectedCategory = document.querySelector('.active').dataset.id;
+    const selectedCategory = "Dessert";
 
     if (selectedCategory === "All") {
         renderFavorites(favoritesArr);
