@@ -55,7 +55,6 @@
 
 .header-icon-wrapper {
   display: flex;
-  
 }
 .header-logo {
   font-family: Inter;
@@ -91,7 +90,7 @@
     align-items: center;
     gap: 14px;
   }
-  .nav {
+  .nav-menu {
     display: none;
   }
   .burger-menu {
@@ -177,7 +176,7 @@
 
 /*---------------------------Tablet-------------------------*/
 @media screen and (min-width: 768px) {
-  .nav {
+  .nav-menu {
     display: flex;
   }
   .header-toggle {
