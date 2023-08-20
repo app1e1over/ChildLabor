@@ -1,0 +1,239 @@
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 335px;
+    height: 576px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    /* position: fixed;
+    z-index: 2000; */
+    /* height: 1171px; */
+  }
+
+  .modal-content {
+    background-color: white;
+    border-radius: 10px;
+    
+  }
+
+  .button-row {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+  }
+  .modal-close-button {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    fill: rgba(5, 5, 5, 0.50); /* Видалити заливку */
+    stroke: rgba(5, 5, 5, 0.50); /* Колір контуру */
+  }
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 2.88;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 4;
+  }
+
+.video {
+    border-radius: 8px;
+    background: linear-gradient(0deg, rgba(5, 5, 5, 0.40) 0%, rgba(5, 5, 5, 0.40) 100%), lightgray 50% / cover no-repeat;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.modal-title {
+    color: #050505;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 133.333% */
+    text-transform: uppercase;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+.rating {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-left: 20px;
+    margin-top: 14px;
+}
+.rating-number {
+    color: rgba(5, 5, 5, 0.50);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; /* 128.571% */
+}
+.cooking-time {
+    color: rgba(5, 5, 5, 0.50);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px; /* 128.571% */
+}
+.ingredients-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-left: 20px;
+    padding-left: 0;
+}
+.ingredients-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-left: 20px;
+    padding-left: 0;
+    margin-right: 20px;
+}
+
+.ingredient-list-item {
+    color: #050505;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Додано */
+    padding-bottom: 8px; /* Додайте відступ від нижнього краю */
+}
+
+.list-second-item {
+    color: rgba(5, 5, 5, 0.50);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    flex-shrink: 0;
+}
+.ingredient-list-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Розташовано внизу */
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(5, 5, 5, 0.10); /* Сірий колір полоски */
+}
+.hashtags {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.hashtag {
+    border-radius: 35px;
+    border: 1px solid rgba(5, 5, 5, 0.20);
+    padding-left: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 16px;
+    color: #050505;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 14px; /* 116.667% */
+}
+.modal-text {
+    padding-top: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: rgba(5, 5, 5, 0.80);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 128.571% */
+}
+.add-to-favorite-button {
+    margin-left: 20px;
+    margin-top: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 15px;
+    background: #9BB537;
+    color: #F8F8F8;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 40px;
+    cursor: pointer;
+    border: 1px solid #9BB537;
+}
+.add-to-favorite-button:hover,
+.add-to-favorite-button:focus {
+    color: #050505;
+}
+.give-rating-button {
+    border-radius: 15px;
+    border: 1px solid #9BB537;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: #050505;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.give-rating-button:hover,
+.give-rating-button:focus {
+    border-radius: 15px;
+    background: #9BB537;
+    color: #F8F8F8;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+/* .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000; 
+    pointer-events: none; 
+  }
+  body.modal-open {
+    overflow: hidden;
+  } */
