@@ -2,42 +2,50 @@
     display: none;
 }
 
-.recipe-card {
-    width: 250px;
-}
-
 img {
     display: block;
     width: 100%;
 }
 
-.favorites-list {
-    background-color: aquamarine;
+/* картинка основна */
+.fav-picture-thumb {
+margin-bottom: 40px;
 }
 
-.favorites-img {
-    height: 240px;
-    /* background-image: url('https://static.ogorodniki.com/ogorod/fb/l_08369aff-d2f9-4f81-9154-d9f2a6267cfb.jpg');  */
-    background-image: url('./Favorites-img/favorites-jpg-1x-1080px.jpg');
-    background-size: cover;
-    background-position: center;
+img.fav-image {
+    width: unset;
+    max-width: 335px;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+
+/* секція */
+.section-favorites {
+   padding-top: 24px;
 }
 
 /* МЕДІА */
-@media screen and (min-width: 374px) {
-    .section-favorites {
-        padding-top: 24px;
-    }
-}
-
 @media screen and (min-width: 768px) {
     .section-favorites {
-        padding-top: 25px;
+    padding-top: 25px;
+    }
+
+    img.fav-image {
+    max-width: 704px;
+    }
+
+    .fav-picture-thumb {
+        margin-bottom: 64px;
     }
 }
 
 @media screen and (min-width: 1280px) {
     .section-favorites {
         padding-top: 0;
+    }
+
+    img.fav-image {
+        width: unset;
+         max-width: 1080px;
     }
 }
