@@ -1,20 +1,20 @@
-<div class="backdrop order-conteiner data-modal ">
-
-    <h1 class="title">ORDER NOW</h1>
-    <button type="button" data-modal-close class="modal-close-btn">
-      <svg class="modal-close-icon" width="24" height="24">
-        <use href="//src/image/sprite..svg#icon-close-input-default"></use>
-      </svg>
-    </button>
-      <!-- <div class="modal-right"> -->
-      <form class="modal-form ">
-        <label class="modal-form-field">
-          <span class="modal-form-field-desk">Name</span>
-          <span class="modal-form-input-wrapper">
+<div id="popup" class="conteiner is-hidde backdrop">
+  <div class="popup-body">
+    <div class="popup-content">
+      <div class="popup-title">ORDER NOW</div>
+      <button type="button" data-popup-close class="js-popup-close">
+        <svg class="popup-close-icon" width="20" height="20">
+          <use href="/src/image/sprite.svg#icon-close-input-default"></use>
+        </svg>
+      </button>
+      <form class="popup-form">
+        <label class="popup-field">
+          <span class="popup-field-desk">Name</span>
+          <span class="popup-input-wrapper">
             <input
               type="text"
               name="user_name"
-              class="modal-form-input"
+              class="popup-input"
               placeholder=""
               required
               minlength="2"
@@ -22,45 +22,46 @@
             />
           </span>
         </label>
-        <label class="modal-form-field">
-          <span class="modal-form-field-desk">Phone number</span>
-          <span class="modal-form-input-wrapper">
+        <label class="popup-field">
+          <span class="popup-field-desk">Phone number</span>
+          <span class="popup-input-wrapper">
             <input
               type="phone"
               name="phone"
-              class="modal-form-input"
+              class="popup-input"
               placeholder=""
               required
-              pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
-              title="xxx-xxx-xxx-xxxx"
+              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+              title="xxx-хх-xxх-хx-хx"
             />
           </span>
         </label>
 
-        <label class="modal-form-field">
-          <span class="modal-form-field-desk">Email</span>
-          <span class="modal-form-input-wrapper">
+        <label class="popup-field">
+          <span class="popup-field-desk">Email</span>
+          <span class="popup-input-wrapper">
             <input
               type="email"
               placeholder=""
               name="user_email"
-              class="modal-form-input"
+              class="popup-input"
               required
               pattern="^^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
             />
           </span>
         </label>
 
-        <label class="modal-form-field">
-          <span class="modal-form-input-desk">Comment</span>
+        <label class="popup-field">
+          <span class="popup-field-desk">Comment</span>
           <textarea
             name="user_message"
-            class="modal-form-message"
+            class="popup-input popup-message"
             placeholder=""
           ></textarea>
         </label>
-        <button type="submit" class="modal-form-btn">Send</button>
-             </form>
+        <button type="submit" class="popup-btn">Send</button>
+      </form>
     </div>
-   </div>
+  </div>
 </div>
+date

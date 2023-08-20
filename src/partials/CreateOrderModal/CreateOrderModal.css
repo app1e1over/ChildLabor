@@ -1,19 +1,50 @@
 .backdrop {
   z-index: 999;
   position: fixed;
-  top: 10%;
-  bottom: 10%;
+  top: 0%;
+  bottom: 0%;
   left: 0;
   opacity: 1;
   width: 100%;
   height: 100%;
-  background-color: rgba(24, 233, 94, 0.4);
+  background-color: rgba(13, 13, 13, 0.6);
   transition: opacity 300ms linear, visibility 300ms linear;
 }
 .backdrop.is-hidden.modal {
   transform: translate(-50%, -50%) scale(0);
 }
-.title {
+.popup-body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+}
+.popup-content {
+  background-color: #fff;
+  max-width: 90%;
+  height: 90%;
+  border-radius: 15px;
+  padding: 28px 20px;
+  position: relative;
+  padding: 28px 20px;
+}
+.js-popup-close {
+  position: absolute;
+  top: 14;
+  right: 14;
+  border: 0;
+  background-color: transparent;
+}
+.popup-close-icon {
+  stroke: #050505;
+}
+.popup-close-icon:hover,
+.popup-close-icon:focus {
+  stroke: #fff;
+  cursor: pointer;
+}
+.popup-title {
   color: #050505;
   font-family: Inter;
   font-size: 18px;
@@ -21,110 +52,80 @@
   font-weight: 600;
   line-height: 122.222%;
   text-transform: uppercase;
+  margin-bottom: 12px;
 }
-.order-conteiner {
-  z-index: 999;
-  width: 335px;
-  height: 582px;
-  overflow: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 300ms linear;
-  /* padding: 40px 20px 40px 20px; */
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 0px 223px rgba(0, 0, 0, 0.05),
-    0px 0px 130.6px rgba(0, 0, 0, 0.037963),
-    0px 0px 71.0296px rgba(0, 0, 0, 0.0303704),
-    0px 0px 36.2375px rgba(0, 0, 0, 0.025),
-    0px 0px 18.1704px rgba(0, 0, 0, 0.0196296),
-    0px 0px 8.77546px rgba(0, 0, 0, 0.012037);
-}
+
 .is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
-.modal-close-btn {
-  position: absolute;
-  color: #050505;
-  top: 24px;
-  right: 24px;
-  width: 24px;
-  height: 24px;
-  padding: 0;
-  border: none;
-  display: block;
-  margin-left: auto;
-  background: transparent;
-  transition: color var(--transition-time-cubic);
-}
-.modal-close-btn:hover,
-.modal-close-btn:focus {
-  color: #fff;
-}
-.modal-close-icon {
-  stroke: #000;
-}
-
-.modal-close-btn {
-  color: #000;
-  stroke: #000;
-}
-
-.modal-form {
+.popup-form {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  /* gap: 40px; */
 }
-/* .modal-form-field {
-  margin-bottom: 56px;
+.popup-field {
+}
+/* .popup-input-wrapper {
+  margin-bottom: 16px;
+  margin-right: 0;
 } */
-.modal-form-field-desk {
-  display: block;
-  color: rgba(5, 5, 5, 0.5);
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1128.571%;
-}
-.modal-form-input:focus {
+.popup-input {
+  border-radius: 15px;
+  display: flex;
+  max-width: 295px;
+
   padding: 14px 169px 14px 18px;
+  align-items: flex-start;
+  /* gap: 42px; */
+  /* height: 46px; */
+  border: 1px solid rgba(5, 5, 5, 0.2);
+}
+.popup-input:not(:last-child) {
+  margin-bottom: 16px;
+}
+.popup-input:focus {
   align-items: flex-start;
   outline: none;
   border-color: #9bb537;
 }
-.modal-form-input:valid {
+/* .popup-input:valid {
   border-color: #9bb537;
-}
-.modal-form-input:not(:placeholder-shown):invalid {
+} */
+.popup-input:not(:placeholder-shown):invalid {
   border-color: red;
 }
 
-.modal-form-input-desk {
+.popup-field-desk {
+  /* width: 360px; */
+  display: block;
   color: rgba(5, 5, 5, 0.5);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 128.571%;
-}
-.modal-form-message {
-  width: 100%;
-  border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  margin-bottom: 8px;
+  margin-top: 16px;
 }
 
-.modal-form-message:focus {
+.popup-message {
+  max-width: 295px;
+  height: 100px;
+  padding: 14px 169px 14px 18px;
+  border-radius: 15px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+  margin-bottom: 40px;
+}
+
+.popup-message:focus {
   outline: none;
   border-color: #9bb537;
 }
-.modal-form-btn {
-  width: 295px;
+.popup-btn {
+  width: 360px;
+  height: 48px;
   background: #fff;
   border-radius: 15px;
   font-family: Inter;
@@ -139,25 +140,24 @@
   padding: 15px 162px;
   margin-left: auto;
   margin-right: auto;
-
   transition: border var(--transition-time-cubic);
 }
-.modal-form-btn:hover,
-.modal-form-btn:focus {
+.popup-btn:hover,
+.popup-btn-btn:focus {
   border: none;
   color: #fff;
   background-color: #9bb537;
   border-radius: 16px;
 }
 
-@media screen and (min-width: 375px) {
+/* @media screen and (min-width: 375px) {
   .modal {
     overflow: auto;
   }
   .privacy-text {
     padding-right: 10px;
   }
-}
+} */
 /* @media screen and (min-width: 768px) {
   .order-conteiner {
     width: 440px;
@@ -205,7 +205,7 @@
     padding-right: 29px;
   }
 } */
-@media screen and (min-width: 1280px) {
+/* @media screen and (min-width: 1280px) {
   .order-conteiner {
     width: 440px;
     height: 632px;
@@ -233,21 +233,41 @@
   }
   .modal-form-btn {
     width: 100%;
-  }
+  } */
 
-  /* .modal-form-field-desk {
+/* .modal-form-field-desk {
     font-size: 14px;
     line-height: 1.28;
   } */
-  /* .modal-form-input-desk {
+/* .modal-form-input-desk {
     font-size: 14px;
     line-height: 1.28;
   } */
-  /* .modal-form-message {
+/* .modal-form-message {
     height: 166px;
   } */
 
-  /* .privacy-text {
+/* .privacy-text {
     padding-right: 10px;
-  } */
-}
+  }} */
+
+/* .order-conteiner {
+  z-index: 999;
+  width: 335px;
+  height: 582px;
+  overflow: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 300ms linear; */
+/* padding: 40px 20px 40px 20px; */
+/* background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 223px rgba(0, 0, 0, 0.05),
+    0px 0px 130.6px rgba(0, 0, 0, 0.037963),
+    0px 0px 71.0296px rgba(0, 0, 0, 0.0303704),
+    0px 0px 36.2375px rgba(0, 0, 0, 0.025),
+    0px 0px 18.1704px rgba(0, 0, 0, 0.0196296),
+    0px 0px 8.77546px rgba(0, 0, 0, 0.012037); */
