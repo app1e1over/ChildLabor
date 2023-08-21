@@ -69,7 +69,7 @@ export function UpdateFavorites() {
     let favoritesArr = JSON.parse(localStorage.getItem(FAV_KEY));
     console.log(favoritesArr);
 
-    if (favoritesArr.length) {
+    if (!favoritesArr.length) {
         favoritesPlug.classList.remove('is-hidden');
         if (window.matchMedia("(max-width: 767px)").matches) {
             favImgElem.classList.add('is-hidden');
