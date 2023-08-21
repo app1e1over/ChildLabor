@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { sprite } from '../../image/sprite.svg';
-//import {showPreloader, hidePreloader} from "../Preloader/Preloader"
+import { ModalStart } from '../ModalWindow/ModalWindow';
+import {showPreloader, hidePreloader} from "../Preloader/Preloader"
 function padEndRating(subj) {
   subj = subj.toString();
   if (subj.length === 1) {
@@ -41,12 +42,13 @@ export function Update() {
     .get(req)
     .then(v => v.data.results)
     .then(recepies => {
-      //showPreloader();
+      showPreloader();
       for (let recipe of recepies) {
         cont.append(DrawCard(recipe));
       }
     }).finally(()=>{
-      //hidePreloader();
+      hidePreloader();
+      ModalStart();
     });
 }
 export function DrawCard(recipe) {
