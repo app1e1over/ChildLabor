@@ -1,6 +1,18 @@
 
 const categoriesContainer = document.getElementById('categories');
-    fetch('https://tasty-treats-backend.p.goit.global/api/categories')
+    
+
+
+const butCateg = document.querySelector('.my-button');
+const optionCateg = document.querySelector('.category-option');
+
+const blokCat = categoriesContainer.addEventListener('change', () => {
+    Update();
+    console.log('Ви натиснули на категорію:', category.name);
+});
+
+export function startCategories() {
+  fetch('https://tasty-treats-backend.p.goit.global/api/categories')
         .then(response => response.json())
         .then(data => {
             // Створення кнопок для кожної категорії
@@ -16,27 +28,40 @@ const categoriesContainer = document.getElementById('categories');
         .catch(error => {
             console.error('Помилка отримання даних з бекенду:', error);
         });
-
-
-const butCateg = document.querySelector('.my-button');
-       
-
-butCateg.addEventListener("click", function () {
+    
+    butCateg.addEventListener("click", function () {
 categoriesContainer.value = ""; // присвоюємо пусту строку значенню селекту
 });
-  
-            
+}
 
-const blokCat = categoriesContainer.addEventListener('change', () => {
-    Update();
-    console.log('Ви натиснули на категорію:', category.name);
+
+ 
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+const header = document.querySelector("header");
+
+// Визначення видимості хедера
+function isHeaderVisible() {
+  let headerRect = header.getBoundingClientRect();
+  let headerBottom = headerRect.bottom || headerRect.y + headerRect.height;
+  return headerBottom > 0;
+}
+
+// Показати або приховати кнопку при прокрутці
+window.addEventListener("scroll", function() {
+  if (isHeaderVisible()) {
+    scrollToTopBtn.classList.remove("show");
+  } else {
+    scrollToTopBtn.classList.add("show");
+  }
 });
 
-
-
-           
-
-                
+// Прокрутка до верху при натисканні кнопки
+scrollToTopBtn.addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});     
 
 
 
