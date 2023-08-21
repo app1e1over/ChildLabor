@@ -1,6 +1,4 @@
-export function StartScrollUp(){
-    //код, який відбувається при запуску сайту, як наприклад виклик ф-цій і додання івент лістенерів
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 const header = document.querySelector("header");
 
 // Визначення видимості хедера
@@ -9,6 +7,10 @@ function isHeaderVisible() {
   let headerBottom = headerRect.bottom || headerRect.y + headerRect.height;
   return headerBottom > 0;
 }
+
+
+export function StartScrollUp() {
+    //код, який відбувається при запуску сайту, як наприклад виклик ф-цій і додання івент лістенерів
 
 // Показати або приховати кнопку при прокрутці
 window.addEventListener("scroll", function() {
