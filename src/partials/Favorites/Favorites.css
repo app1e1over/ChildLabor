@@ -25,6 +25,10 @@ img.fav-image {
 }
 
 /* заглушка */
+.favorites-plug {
+margin-top: 50%;
+margin-bottom: 50%;
+}
 
 .fav-plug-text {
     text-align: center;
@@ -80,6 +84,11 @@ img.fav-image {
         height: 83px;
         background-size: 97px 83px;
     }
+
+        .favorites-plug {
+            margin-top: unset;
+            margin-bottom: unset;
+        }
 }
 
 @media screen and (min-width: 1280px) {
