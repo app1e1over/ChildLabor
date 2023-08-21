@@ -95,6 +95,7 @@ export function DrawCard(recipe) {
   let seeRecep = document.createElement('div');
   seeRecep.classList.add('recipe-card-see-recipe');
   seeRecep.innerText = 'See recipe';
+  seeRecep.dataset.modalOpen="";
   lowerContainer.appendChild(seeRecep);
 
   cont.appendChild(bg);
