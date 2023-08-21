@@ -2,7 +2,7 @@ import { showByCategory } from '../Favorites/Favorites.js';
 import { DrawCard } from '../RecepieCards/RecepieCards.js';
 
 const filterBar = document.querySelector('.filters-list');
-const favoritesList = document.querySelector('.fav-boxes');
+const favoritesList = document.querySelector('.favorites-list');
 
 const FAV_KEY = 'Favorites';
 let getData = JSON.parse(localStorage.getItem(FAV_KEY)) || [];
