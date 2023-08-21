@@ -42,12 +42,12 @@ export function Update() {
     .get(req)
     .then(v => v.data.results)
     .then(recepies => {
-      showPreloader();
+      //showPreloader();
       for (let recipe of recepies) {
         cont.append(DrawCard(recipe));
       }
     }).finally(()=>{
-      hidePreloader();
+      //hidePreloader();
       ModalStart();
     });
 }
@@ -77,7 +77,7 @@ export function DrawCard(recipe) {
   like.classList.add('heart-button');
   like.classList.add('recipe-card-like-btn');
   like.innerText = 'like';
-  like.dataset.recipe = JSON.stringify(recipe);
+  like.dataset.recipe = recipe._id;
 
   let lowerContainer = document.createElement('div');
   lowerContainer.classList.add('recipe-card-lower-container');
