@@ -77,7 +77,6 @@ export function DrawCard(recipe) {
   like.classList.add('heart-button');
   like.classList.add('recipe-card-like-btn');
   like.innerText = 'like';
-  like.dataset.recipe = recipe._id;
 
   let lowerContainer = document.createElement('div');
   lowerContainer.classList.add('recipe-card-lower-container');
@@ -109,6 +108,9 @@ export function DrawCard(recipe) {
   wrap.appendChild(lowerContainer);
 
   cont.appendChild(wrap);
+
+  cont.dataset.recipe = recipe._id;
+
   return cont;
 }
 
