@@ -117,19 +117,7 @@
 
 @media screen and (min-width:374px) {
   /* mobile */
-  .recipe-container {
-    column-gap: 16px;
-    row-gap: 20px;
-    width: 782px;
-  }
-  .recipe-card-container {
-    width: 250px;
-    height: 287px;
-    border-radius: 30px;
-  }
-}
-@media screen and (min-width:768px) {
-  /* tablet */
+
   .recipe-card-container {
     width: 335px;
     height: 335px;
@@ -141,6 +129,21 @@
     column-gap: 16px;
     row-gap: 16px;
     width: 335px;
+   
+  }
+  
+}
+@media screen and (min-width:768px) {
+  /* tablet */
+  .recipe-container {
+    column-gap: 16px;
+    row-gap: 20px;
+    width: 496px;
+  }
+  .recipe-card-container {
+    width: 240px;
+    height: 287px;
+    border-radius: 30px;
   }
 }
 @media screen and (min-width:1280px) {
