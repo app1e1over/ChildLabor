@@ -43,7 +43,7 @@ border-radius: 4px;
 .svg-icon {
 width: 18px;
 height: 18px;
-background-image: url('../../image/search.svg');
+
 background-size: cover; /* или другое значение, чтобы изображение заполняло контейнер */
 background-position: center;
 opacity: 0.5;
