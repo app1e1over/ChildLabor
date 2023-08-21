@@ -10,6 +10,7 @@
 @import url("./partials/Selects/Selects.css");
 
 @import url("./partials/CreateOrderModal/CreateOrderModal.css");
+@import url("./partials/ScrollUp/ScrollUp.css");
 :root {
   --main-color: #050505;
   --main-rgb-color: rgb(5, 5, 5);
