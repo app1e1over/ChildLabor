@@ -23,39 +23,78 @@ function handlerOnCloseMenuButton() {
 function startHeader() {
   burgerMenuButton.addEventListener('click', handlerOnBurgerButtonClick);
   closeMenuButton.addEventListener('click', handlerOnCloseMenuButton);
-  toggleElement.addEventListener('click', handlerChangeTheme);
+  navListElement.addEventListener('click', onNavMenuLinkClick);
+  // toggleElement.addEventListener('click', handlerChangeTheme);
+  input.addEventListener('click', changeTheme);
+  // let savedTheme = localStorage.getItem('theme') || 'light';
+  // if (savedTheme === 'dark') {
+  //   body.classList.add('theme', 'dark');
+  //   iconLightTheme.classList.add('visually-hidden');
+  //   iconDarkTheme.classList.remove('visually-hidden');
+  // } else {
+  //   body.classList.remove('dark');
+  //   localStorage.setItem('theme', 'light');
+  //   iconLightTheme.classList.remove('visually-hidden');
+  //   iconDarkTheme.classList.add('visually-hidden');
+  // }
   let savedTheme = localStorage.getItem('theme') || 'light';
-  if (savedTheme === 'dark') {
-    body.classList.add('theme', 'dark');
-    iconLightTheme.classList.add('visually-hidden');
-    iconDarkTheme.classList.remove('visually-hidden');
+  if (savedTheme && savedTheme === 'dark') {
+    input.checked = true;
+    body.classList.add('dark');
   } else {
-    body.classList.remove('dark');
+    body.classList.toggle('dark');
+    input.checked = false;
     localStorage.setItem('theme', 'light');
-    iconLightTheme.classList.remove('visually-hidden');
-    iconDarkTheme.classList.add('visually-hidden');
   }
 }
 
 // Зміна теми
-const toggleElement = document.querySelector('.js-toggle');
-const body = document.querySelector('body');
-const iconLightTheme = document.querySelector('.toggle-icon-light-theme');
-const iconDarkTheme = document.querySelector('.toggle-icon-dark-theme');
+// const toggleElement = document.querySelector('.js-toggle');
+// const body = document.querySelector('body');
+// const iconLightTheme = document.querySelector('.toggle-icon-light-theme');
+// const iconDarkTheme = document.querySelector('.toggle-icon-dark-theme');
 
-function handlerChangeTheme(event) {
+// function handlerChangeTheme(event) {
+//   if (body.classList.contains('dark')) {
+//     body.classList.toggle('dark');
+//     localStorage.setItem('theme', 'light');
+//     iconLightTheme.classList.remove('visually-hidden');
+//     iconDarkTheme.classList.add('visually-hidden');
+//   } else {
+//     body.classList.add('dark');
+//     localStorage.setItem('theme', 'dark');
+//     iconLightTheme.classList.add('visually-hidden');
+//     iconDarkTheme.classList.remove('visually-hidden');
+//   }
+// }
+//Зміна теми з чекбоксом
+const input = document.querySelector('#input');
+const body = document.querySelector('body');
+
+input.addEventListener('click', changeTheme);
+
+let savedTheme = localStorage.getItem('theme') || 'light';
+if (savedTheme && savedTheme === 'dark') {
+  input.checked = true;
+  body.classList.add('dark');
+} else {
+  body.classList.toggle('dark');
+  input.checked = false;
+  localStorage.setItem('theme', 'light');
+}
+
+function changeTheme() {
   if (body.classList.contains('dark')) {
     body.classList.toggle('dark');
     localStorage.setItem('theme', 'light');
-    iconLightTheme.classList.remove('visually-hidden');
-    iconDarkTheme.classList.add('visually-hidden');
+    input.checked = false;
   } else {
     body.classList.add('dark');
     localStorage.setItem('theme', 'dark');
-    iconLightTheme.classList.add('visually-hidden');
-    iconDarkTheme.classList.remove('visually-hidden');
+    input.checked = true;
   }
 }
+
 // Перехід між сторінками
 const navListElement = document.querySelector('.js-nav-list');
 console.log(navListElement);
@@ -82,7 +121,7 @@ if (trimmedTitle === 'TastyTreats') {
             </li>`;
   navListElement.insertAdjacentHTML('beforeend', markupFavorites);
 }
-navListElement.addEventListener('click', onNavMenuLinkClick);
+// navListElement.addEventListener('click', onNavMenuLinkClick);
 
 function onNavMenuLinkClick(event) {
   event.preventDefault();
