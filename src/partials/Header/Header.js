@@ -1,4 +1,5 @@
 const closeMenuButton = document.querySelector('.mobile-menu-close-btn');
+const burgerMenuButton = document.querySelector('.burger-menu');
 const mobileMenu = document.querySelector('#mobile-menu');
 
 function handlerOnBurgerButtonClick(event) {
@@ -53,6 +54,44 @@ function handlerChangeTheme(event) {
     localStorage.setItem('theme', 'dark');
     iconLightTheme.classList.add('visually-hidden');
     iconDarkTheme.classList.remove('visually-hidden');
+  }
+}
+// Перехід між сторінками
+const navListElement = document.querySelector('.js-nav-list');
+console.log(navListElement);
+const title = document.querySelector('title');
+const trimmedTitle = title.textContent.trim();
+
+const homePath = 'href="./index.html"';
+const favoritesPath = 'href="./favorites.html"';
+const currentPath = 'href="./"';
+if (trimmedTitle === 'TastyTreats') {
+  let markupHome = `<li class="nav-item">
+              <a ${currentPath} class="nav-link link current">${trimmedTitle}</a>
+            </li>
+            <li class="nav-item">
+              <a ${favoritesPath} class="nav-link link">Favorites</a>
+            </li>`;
+  navListElement.insertAdjacentHTML('beforeend', markupHome);
+} else if (trimmedTitle === 'Favorites') {
+  let markupFavorites = `<li class="nav-item">
+              <a ${homePath} class="nav-link link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a ${currentPath} class="nav-link link current">${trimmedTitle}</a>
+            </li>`;
+  navListElement.insertAdjacentHTML('beforeend', markupFavorites);
+}
+navListElement.addEventListener('click', onNavMenuLinkClick);
+
+function onNavMenuLinkClick(event) {
+  event.preventDefault();
+  const clickedLink = event.target.closest('a');
+  if (clickedLink) {
+    const linkPath = clickedLink.getAttribute('href');
+    if (linkPath) {
+      window.location.href = linkPath;
+    }
   }
 }
 export { startHeader };
