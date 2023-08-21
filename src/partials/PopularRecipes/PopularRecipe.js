@@ -3,7 +3,7 @@ import axios from 'axios';
 const popularRecipesList = document.querySelector('.popular-recipes-container');
 const popularRecipesApiUrl = 'https://tasty-treats-backend.p.goit.global/api/recipes/popular';
 
-export async function fetchPopularRecipes() {
+async function fetchPopularRecipes() {
   try {
     const response = await axios.get(popularRecipesApiUrl);
     const recipes = response.data;
@@ -30,7 +30,7 @@ export async function fetchPopularRecipes() {
   }
 }
 
-fetchPopularRecipes();
+export default fetchPopularRecipes;
 
 // // Додаємо прослуховувач
 // popularRecipesList.addEventListener('click', async event => {
