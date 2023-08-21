@@ -1,19 +1,17 @@
-export const ModalStart=() => {
-    const refs = {
-      openModalBtn: document.querySelector("[data-modal-open]"),
-      closeModalBtn: document.querySelector("[data-modal-close]"),
-      modal: document.querySelector("[data-modal]"),
-      backdrop: document.querySelector(".backdrop"), // Додано посилання на елемент затемнення фону
-    };
-  
-    refs.openModalBtn.addEventListener("click", toggleModal);
-    refs.closeModalBtn.addEventListener("click", toggleModal);
-    refs.backdrop.addEventListener("click", toggleModal); // Додано обробник події для закриття при кліку на затемнення
-  
-    function toggleModal() {
-      refs.modal.classList.toggle("is-hidden");
-      refs.backdrop.classList.toggle("is-hidden"); // Додано зміну стану затемнення фону
-      document.body.classList.toggle("modal-open"); // Додано заборону/дозвіл прокрутки тіла
-    }
-  };
-  
+export const ModalStart = () => {
+  const openModalBtns = document.querySelectorAll("[data-modal-open]"); // Знайдіть всі кнопки, які відкривають модальне вікно
+  const closeModalBtn = document.querySelector("[data-modal-close]");
+  const modal = document.querySelector("[data-modal]");
+  const backdrop = document.querySelector(".backdrop");
+  // Додайте обробники подій для кожної кнопки, яка відкриває модальне вікно
+  openModalBtns.forEach(btn => {
+      btn.addEventListener("click", toggleModal);
+  });
+  closeModalBtn.addEventListener("click", toggleModal);
+  backdrop.addEventListener("click", toggleModal);
+  function toggleModal() {
+      modal.classList.toggle("is-hidden");
+      backdrop.classList.toggle("is-hidden");
+      document.body.classList.toggle("modal-open");
+  }
+};
