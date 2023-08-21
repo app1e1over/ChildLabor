@@ -1,0 +1,291 @@
+
+
+root {
+  --main-color: #050505;
+  --main-rgb-color: rgb(5, 5, 5);
+  --secondary-color: #f8f8f8;
+  --secondary-rgb-color: rgb(248, 248, 248);
+  --active-color: #9bb537;
+  --accent-color: #eea10c;
+  --additional-color: #cecdcd;
+  --rare-color: rgba(160, 158, 160, 0.6);
+  --box-shadow: 7px 5px 15px 0px var(--rare-color);
+  --transition-duration: 250ms;
+  --transition-time-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.search-input {
+width: 100%;
+padding: 8px;
+border: 1px solid #c7c7c7;
+border-radius: 4px;
+}
+.search-container .search-input {
+width: 100%;
+padding: 8px;
+border: 1px solid #c7c7c7;
+border-radius: 4px;
+
+}
+.for-svg{
+ position: relative;
+
+}
+
+.svg-icon {
+width: 18px;
+height: 18px;
+background-image: url('../../image/search.svg');
+background-size: cover; /* или другое значение, чтобы изображение заполняло контейнер */
+background-position: center;
+opacity: 0.5;
+position: absolute;
+top: 14px;
+left: 18px;
+}
+
+
+
+
+
+
+
+
+/* пробуем стилизовать инпут   */
+.slim-select-input {
+border: none;   /* Убираем рамку слим селект  */
+box-shadow: none;  /* Убираем тень  */
+
+}
+
+
+input.search.search-input {
+border-radius: 15px; 
+width: 335px;
+height: 46px;
+padding: 0;
+
+}
+.search-input::placeholder{
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;  /* шрифт в инпуте */
+line-height: 1.3;  
+color: #7e7e7e;
+padding-left: 48px;
+}
+/* контейнер для всех селектов */
+.selects {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 14px;
+}
+div.ss-main .ss-values{
+padding-left: 18px;   /* внутри селекта, пока там ничего не выбрано */
+}
+label{
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;  /* шрифт над селектом */
+  line-height: 1.2;  
+  color: #7e7e7e;
+  margin-bottom: 8px;
+  display: block;
+  
+}
+.ss-main .ss-values .ss-single {
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;  /* внутри селекта, ШРИФТ пока там ничего не выбрано */
+line-height: 1.2;  
+color: #7e7e7e;
+}
+div.ss-content.ss-open-below{  /* выпадающий список  */
+height: 188px;
+border-top-right-radius: 15px;
+border-top-left-radius: 15px;
+border-bottom-left-radius: 15px;
+border-bottom-right-radius: 15px; 
+border: none;
+padding-left: 18px;
+padding-right: 4px;
+padding-top: 4px;
+padding-bottom: 4px;
+
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 1.3;
+}
+
+.ss-list::-webkit-scrollbar {  /* сам ползунок  */
+width: 6px;
+height: 68px;
+}
+
+/*ползунок*/
+.ss-list::-webkit-scrollbar-thumb {
+background-color: #e6e6e6;   /*  Цвет ползунка */
+border-radius: 12px;  /* Скругление углов ползунка */
+height: 68px; 
+}
+
+/* Стилизация фона полосы прокрутки */
+.ss-list::-webkit-scrollbar-track {
+background-color: white;  /* Цвет фона полосы прокрутки  */
+}
+div.ss-content .ss-list .ss-option:not(.ss-disabled).ss-selected {
+background-color: white;
+color: #b4b4b4;  /* тут цвет текста и фона ПЕРВОГО ДИВА внутри выпадайки  */
+
+}
+div.ss-content.time.ss-open-below{
+height: 124px;
+}
+div.ss-content .ss-list .ss-option:hover{
+color: #050505; 
+background-color: white;   /* тут цвет текста и фона ХОВЕРА внутри выпадайки  */
+}
+div.ss-main.time,
+div.ss-main.country,
+div.ss-main.selectIngredients {
+background-color: #f8f8f8;
+width: 160px;
+height: 46px;   /*  тут сами селекты в неразвернутом виде  */
+border-top-right-radius: 15px;
+border-top-left-radius: 15px;
+border-bottom-left-radius: 15px;
+border-bottom-right-radius: 15px;
+
+}
+div.ss-main.ing{
+  width: 188px;
+}
+div.ss-main.ss-open-below {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+div.ss-main:focus{
+  box-shadow: none;  /* тут с них убрали синюю тень  */
+}
+
+div.ss-content .ss-list .ss-option{
+  color: #4d4d4d; 
+}
+.ss-content .ss-list div.ss-option.ss-highlighted, .ss-content .ss-list .ss-option:not(.ss-disabled).ss-selected {
+
+color: #050505;
+background-color: #f8f8f8;   /* когда селектишь не мышкой, а с клавиатуры  */
+}
+
+.form.container{
+display: flex;
+flex-wrap: wrap;
+}
+.search-form-food{
+display: flex;
+flex-wrap: wrap;
+width: 365px;
+gap: 14px;
+margin-left: auto;
+
+}
+@media screen and (min-width: 375px) {
+.container {
+    width: 365px;
+
+}
+
+}
+
+@media screen and (min-width: 768px) {
+.container {
+    width: 734px;
+}
+.search-form-food{
+    display: flex;
+    flex-wrap: wrap;
+  width: 420px;
+    gap: 16px;
+
+}
+
+input.search.search-input {
+    width: 278px;
+    height: 48px;
+    padding: 0;
+   box-sizing: border-box;
+  }
+  div.ss-main{
+     height: 48px;  
+  }
+  div.ss-main.time {
+    width: 125px;
+   
+  }
+  div.ss-main.country{
+    width: 141px;
+    padding: 0;
+  }
+  div.ss-main.selectIngredients{
+    width: 188px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+      width: 734px;
+  }
+  .search-form-food{
+      display: flex;
+      flex-wrap: wrap;
+    width: 420px;
+      gap: 16px;
+  
+  }
+ 
+  input.search.search-input {
+      width: 278px;
+      height: 48px;
+      padding: 0;
+     box-sizing: border-box;
+    }
+    div.ss-main{
+       height: 48px;  
+    }
+    div.ss-main.time {
+      width: 125px;
+     
+    }
+    div.ss-main.country{
+      width: 141px;
+      padding: 0;
+    }
+    div.ss-main.selectIngredients{
+      width: 188px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+      width: 1210px;
+  }
+  .search-form-food{
+   
+    width: 780px;
+    
+  
+  }
+}
