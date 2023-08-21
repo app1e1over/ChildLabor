@@ -3,7 +3,7 @@ import axios from 'axios';
 const popularRecipesList = document.querySelector('.popular-recipes-container');
 const popularRecipesApiUrl = 'https://tasty-treats-backend.p.goit.global/api/recipes/popular';
 
-async function fetchPopularRecipes() {
+export async function fetchPopularRecipes() {
   try {
     const response = await axios.get(popularRecipesApiUrl);
     const recipes = response.data;
