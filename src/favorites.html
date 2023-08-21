@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
+    <title>Favorites</title>
+    <link rel="icon" type="image/x-icon" href="./partials/Favorites/Favorites-img/favorites-jpg-1x-335px.jpg">
     <link rel="stylesheet" href="common.css"></link>
   </head>
   <body>
@@ -13,15 +14,77 @@
     <div class="container favorites">
 
         <include src="./partials/Header/Header.html"></include>
-        <img src="https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png" width="1080px" height="356px">
+
+    <section class="section-favorites">
+    <div class="fav-picture-thumb">
+      <picture>
+        <!-- mobile -->
+        <!-- якщо розмір в'юпорта > 375px, ширина забраження 335px -->
+        <!-- в іншому випадку зображення тягнеться -->
+        <source
+          srcset="./partials/Favorites/Favorites-img/favorites-jpg-1x-335px.jpg?as=webp 335w, 
+          ./partials/Favorites/Favorites-img/favorites-jpg-2x-335px.jpg?as=webp 750w"
+          type="image/webp"
+          media="(max-width: 767px)"
+          sizes="(min-width: 375px) 335px, 100vw"
+        />
+
+        <source
+          srcset="./partials/Favorites/Favorites-img/favorites-jpg-1x-335px.jpg 335w, 
+          ./partials/Favorites/Favorites-img/favorites-jpg-2x-335px.jpg 750w"
+          type="image/jpeg"
+          media="(max-width: 767px)"
+          sizes="(min-width: 375px) 335px, 100vw"
+        />
+
+        <!-- tablet -->
+        <source
+          srcset="./partials/Favorites/Favorites-img/favorites-jpg-1x-704px.jpg?as=webp 704w, 
+          ./partials/Favorites/Favorites-img/favorites-jpg-2x-704px.jpg?as=webp 1008w"
+          type="image/webp"
+          media="(max-width: 1279px)"
+          sizes="(min-width: 768px) 704px, 100vw"
+        />
+
+        <source
+          srcset="./partials/Favorites/Favorites-img/favorites-jpg-1x-704px.jpg 704w, 
+          ./partials/Favorites/Favorites-img/favorites-jpg-2x-704px.jpg 1008w"
+          type="image/jpeg"
+          media="(max-width: 1279px)"
+          sizes="(min-width: 768px) 704px, 100vw"
+        />
+
+        <!-- desktop -->
+        <source
+          srcset="./partials/Favorites/Favorites-img/favorites-jpg-1x-1080px.jpg?as=webp 1080w, 
+          ./partials/Favorites/Favorites-img/favorites-jpg-2x-1080px.jpg?as=webp 2016w"
+          type="image/webp"
+          media="(min-width: 1280px)"
+          sizes="(min-width: 1280px) 1080px, 100vw"
+        />
+
+        <source
+          srcset="./partials/Favorites/Favorites-img/favorites-jpg-1x-1080px.jpg 1080w, 
+          ./partials/Favorites/Favorites-img/favorites-jpg-2x-1080px.jpg 2016w"
+          type="image/jpeg"
+          media="(min-width: 1280px)"
+          sizes="(min-width: 1280px) 1080px, 100vw"
+        />
+
+        <img src="./partials/Favorites/Favorites-img/favorites-jpg-1x-1080px.jpg" alt="plate with delishios dish" class="fav-image"/>
+      </picture>
+    </div>
+  
+     <!-- фільтри і обрані рецепти -->
         <div style="display: flex; flex-direction: column;">
           <include src="./partials/FavoritesFilter/FavoritesFilter.html"></include>
           <include src="./partials/Favorites/Favorites.html"></include>
         </div>
+    </section>
 
         <include src="./partials/Pagination/Pagination.html"></include>   
+        <include src="./partials/ScrollUp/ScrollUp.html"></include>
       </div>
-<script src="partials/Favorites/Favorites.js" type="module"></script>
-<script src="partials/FavoritesFilter/FavoritesFilter.js" type="module"></script>
+<script src="favorites.js" type="module"></script>
   </body>
 </html>
