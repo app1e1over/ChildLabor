@@ -4,7 +4,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 335px;
-    height: 576px;
+    height: 1171px;
     background-color: #FFFFFF;
     border-radius: 15px;
     /* position: fixed;
@@ -237,3 +237,6 @@
   body.modal-open {
     overflow: hidden;
   } */
+  @media screen and (min-width: 375px) {
+
+  }
