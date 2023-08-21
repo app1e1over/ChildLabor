@@ -17,7 +17,7 @@ const recCard = document.querySelector('.recipe-container');
 // }
 export function onCardClick() {
   recCard.addEventListener('click', event => {
-    if (event.target.nodeName != 'IMG') return;
+    if (event.target.nodeName != 'BUTTON') return;
     const getFetch = JSON.parse(localStorage.getItem('fetch'));
     setFavorite(event.target, getFetch);
   });
