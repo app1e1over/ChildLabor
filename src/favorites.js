@@ -4,3 +4,4 @@ import { StartScrollUp } from "./partials/ScrollUp/ScrollUp.js";
 
 StartScrollUp();
 startHeader();
+UpdateFavorites();
