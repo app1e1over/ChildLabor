@@ -11,6 +11,7 @@
 
 @import url("./partials/CreateOrderModal/CreateOrderModal.css");
 @import url("./partials/ScrollUp/ScrollUp.css");
+@import url("./partials/Preloader/Preloader.css");
 :root {
   --main-color: #050505;
   --main-rgb-color: rgb(5, 5, 5);
@@ -41,6 +42,41 @@ body{
     background-color: var(--secondary-color);
     overflow-x: hidden;
     overflow-y: scroll;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+li {
+  list-style-type: none;
+}
+.link {
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 @media screen and (min-width:374px) {
@@ -174,6 +210,3 @@ body{
     display: none;
   }
   
-  [data-modal]{
-    display: none;
-  }

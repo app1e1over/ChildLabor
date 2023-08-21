@@ -56,6 +56,8 @@
   position: absolute;
   top: 16px;
   right: 16px;
+  background-color: transparent;
+  border: none;
 }
 .recipe-card-wrap {
   position: absolute;
@@ -158,4 +160,10 @@
     height: 287px;
     border-radius: 30px;
   }
+}
+.heart{
+  width: 30px;
+  height: 30px;
+ cursor: pointer;
+ fill: aqua;
 }
