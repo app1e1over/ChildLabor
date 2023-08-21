@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { sprite } from '../../image/sprite.svg';
+import {showPreloader, hidePreloader} from "../Preloader/Preloader"
 function padEndRating(subj) {
   subj = subj.toString();
   if (subj.length === 1) {
@@ -40,9 +41,12 @@ export function Update() {
     .get(req)
     .then(v => v.data.results)
     .then(recepies => {
+      showPreloader();
       for (let recipe of recepies) {
         cont.append(DrawCard(recipe));
       }
+    }).finally(()=>{
+      hidePreloader();
     });
 }
 function DrawCard(recipe) {
