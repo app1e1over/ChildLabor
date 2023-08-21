@@ -1,6 +1,18 @@
 
 const categoriesContainer = document.getElementById('categories');
-    fetch('https://tasty-treats-backend.p.goit.global/api/categories')
+    
+
+
+const butCateg = document.querySelector('.my-button');
+const optionCateg = document.querySelector('.category-option');
+
+const blokCat = categoriesContainer.addEventListener('change', () => {
+    Update();
+    console.log('Ви натиснули на категорію:', category.name);
+});
+
+export function startCategories() {
+  fetch('https://tasty-treats-backend.p.goit.global/api/categories')
         .then(response => response.json())
         .then(data => {
             // Створення кнопок для кожної категорії
@@ -16,25 +28,11 @@ const categoriesContainer = document.getElementById('categories');
         .catch(error => {
             console.error('Помилка отримання даних з бекенду:', error);
         });
-
-
-const butCateg = document.querySelector('.my-button');
-const optionCateg = document.querySelector('.category-option');
-
-       
-
-butCateg.addEventListener("click", function () {
+    
+    butCateg.addEventListener("click", function () {
 categoriesContainer.value = ""; // присвоюємо пусту строку значенню селекту
 });
-  
-            
-
-const blokCat = categoriesContainer.addEventListener('change', () => {
-    Update();
-    console.log('Ви натиснули на категорію:', category.name);
-});
-
-
+}
 
 
  
