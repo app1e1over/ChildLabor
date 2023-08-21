@@ -20,3 +20,4 @@ startHeader();
 getMasterClasses();
 startCategories();
 StartScrollUp();
+ModalStart();
