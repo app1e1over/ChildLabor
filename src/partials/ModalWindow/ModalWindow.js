@@ -1,8 +1,8 @@
-(() => {
+export const ModalStart=() => {
     const refs = {
-      openModalBtn: document.querySelector("[data-modal-details-open]"),
-      closeModalBtn: document.querySelector("[data-modal-details-close]"),
-      modal: document.querySelector("[data-modal-details]"),
+      openModalBtn: document.querySelector("[data-modal-open]"),
+      closeModalBtn: document.querySelector("[data-modal-close]"),
+      modal: document.querySelector("[data-modal]"),
       backdrop: document.querySelector(".backdrop"), // Додано посилання на елемент затемнення фону
     };
   
@@ -15,5 +15,5 @@
       refs.backdrop.classList.toggle("is-hidden"); // Додано зміну стану затемнення фону
       document.body.classList.toggle("modal-open"); // Додано заборону/дозвіл прокрутки тіла
     }
-  })();
+  };
   
