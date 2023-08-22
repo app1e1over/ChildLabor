@@ -1,8 +1,8 @@
-<div id="popup" class="conteiner is-hidde backdrop">
-  <div class="popup-body">
+<div class="backdrop is-hidden">
+  <div class="popup-body" data-popup>
     <div class="popup-content">
-      <div class="popup-title">ORDER NOW</div>
-      <button type="button" data-popup-close class="js-popup-close">
+      <h2 class="popup-title">ORDER NOW</h2>
+      <button type="button" data-popup-close class="js-popup-close button">
         <svg class="popup-close-icon" width="20" height="20">
           <use href="/src/image/sprite.svg#icon-close-input-default"></use>
         </svg>
@@ -59,9 +59,10 @@
             placeholder=""
           ></textarea>
         </label>
-        <button type="submit" class="popup-btn">Send</button>
+        <button type="submit" class="popup-btn js-popup-order button">
+          Send
+        </button>
       </form>
     </div>
   </div>
 </div>
-date
