@@ -55,18 +55,16 @@
             padding-bottom: 9px;
         }
 
-#categories option.category-option:hover,
-#categories option.category-option:focus,
-#categories option.category-option:active {
+.category-option:hover,
+.category-option:focus,
+.category-option:checked {
     outline: none;
-        background-color: var(--active-color);
-        color: var(--secondary-color);
+        /*background-color: var(--active-color);*/
+        color: var(--active-color);
 }
 
-#categories option.category-option:checked {
-  background: linear-gradient(#d6d6d6, #d6d6d6);
-    background-color: #d6d6d6 !important;
-   color: #000000 !important;
+.category-option:active {
+    color: var(--active-color);
 }
 
     .my-button {
