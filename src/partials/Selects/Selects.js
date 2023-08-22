@@ -3,15 +3,16 @@ import axios from 'axios';
 import SlimSelect from 'slim-select'
  
 import {showPreloader, hidePreloader} from "../Preloader/Preloader"
+import {Update} from "../RecepieCards/RecepieCards"
 
 const form = document.querySelector(".search-form-food")
-const selectIng = document.getElementById('selectIng');
-const selectCountry = document.getElementById('selectCountry');
-const selectTime = document.getElementById('selectTime');
+const ingredients = document.getElementById('selectIng');
+const area = document.getElementById('selectCountry');
+const time = document.getElementById('selectTime');
 const input = document.querySelector('.search')
 let ingredientsId;
 
-let ingredients;
+let ingredientsData;
 let areas;
 
 let selectedIngredientId =0;
@@ -35,8 +36,8 @@ function fetchIng (){
 .then(response => {
 //console.log(data) // тут можно посмотреть ингридиенты
 const data = response.data;
- ingredients = data;
-createIngList(ingredients);
+ingredientsData = data;
+createIngList(ingredientsData);
  
 })
 .catch(error => {
@@ -66,11 +67,11 @@ createAreaList(areas);
 
 
 // делаем список ингридиентов
-function createIngList(ingredients) {
-  const selectElementIng = selectIng;
+function createIngList(ingredientsData) {
+  const selectElementIng = ingredients;
 
   
-  ingredients.forEach(ingridient => {
+  ingredientsData.forEach(ingridient => {
     const optionElement = document.createElement('option');
     optionElement.value = ingridient.name;
     ingredientsId = ingridient._id;
@@ -90,7 +91,7 @@ function createIngList(ingredients) {
 
 // делаем список стран
 function createAreaList(areas) {
-  const selectElementArea = selectCountry;
+  const selectElementArea = area;
 
   areas.forEach(area => {
     const optionElement = document.createElement('option');
@@ -110,7 +111,7 @@ function createAreaList(areas) {
 }
 // делаем выбор времени
 function doTime (){
-  const selectElementTime = selectTime;
+  const selectElementTime = time;
   for(let i=5; i<=120; i+=5 ){
     const optionElement = document.createElement('option');
     optionElement.value = i;
@@ -133,9 +134,9 @@ function doTime (){
 
 // добавляем слушателей на все поля
 function addListeners() {
-selectIng.addEventListener("change", takeIng)
-selectTime.addEventListener("change", takeIng)
-selectCountry.addEventListener("change", takeIng)
+ingredients.addEventListener("change", takeIng)
+time.addEventListener("change", takeIng)
+area.addEventListener("change", takeIng)
 input.addEventListener("input",debounce(inputsSearching, 300))}
 
 new SlimSelect({
@@ -181,48 +182,17 @@ console.log(matchingIds) // смотрим, что у нас получилос�
 
 
 // функция на слушателя
-function takeIng(e){
-  //console.log(e.target.value) 
- // console.log(e.target)
-try {
-  if (e.target.name === "country"){
-  
-   const selectedCountrytName = e.target.value;
-    
-    // ищем выбранную страну из всех стран
-   let selectedCountry = areas.find(country => country.name === selectedCountrytName);
-   // если нашли, выводим ид
-    if (selectedCountry) {
-    selectedCountryId = selectedCountry._id;
-   // console.log( selectedCountryId); // тут консолим ид страны
-    c = `&area=${selectedCountryId};`
-    }
-  }
-  else if(e.target.name === "selectIngridients"){
-    if (e.target.name === "selectIngridients") {
-      const selectedIngredientName = e.target.value;
-      
-      // ищем выбранный ингридиент из всех ингридиентов
-     let selectedIngredient = ingredients.find(ingridient => ingridient.name === selectedIngredientName);
-      // если нашли, выводим его ид
-      if (selectedIngredient) {
-         selectedIngredientId = selectedIngredient._id;
-       // console.log(selectedIngredientId); // тут консолим ид ингридиента
-        p = `&ingredients=${selectedIngredientId}`;
-      }
-    }
-  }
-  else if ((e.target.name === "time")){
-    const selectedTimeName = e.target.value; // записали выбранное время
-    t = `&time=${selectedTimeName}`;
-  }}
-  finally {
-    url = `https://tasty-treats-backend.p.goit.global/api/recipes?category=Beef&page=1&limit=6${t}${c}${p}`;
-    console.log(url) // смотрим, все ли есть, что должно быть
-  }
 
- return url;
-}
+  function takeIng(e) {
+    try {
+      const updatedData = {}; 
+      updatedData[e.target.name] = e.target.value; 
+      Update(updatedData); 
+    } catch (error) {
+      console.error('Ошибка:', error);
+    }
+  }
+  
 function selects(){
   addListeners();
 fetchIng ();
