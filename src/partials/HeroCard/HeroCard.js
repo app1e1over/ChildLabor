@@ -142,7 +142,6 @@
         })
         .finally( () =>  {
           new Swiper('.sample-slider', {
-            slidesPerView: 3, // Встановлюємо кількість слайдів, які видно одночасно
             spaceBetween: 20, // Відступ між слайдами
             pagination: {
               el: '.swiper-pagination',
