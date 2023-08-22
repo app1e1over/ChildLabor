@@ -1,4 +1,4 @@
-(() => {
+export const ModalStart=() => {
     const refs = {
       openModalBtn: document.querySelector("[data-modal-open]"),
       closeModalBtn: document.querySelector("[data-modal-close]"),
@@ -15,5 +15,5 @@
       refs.backdrop.classList.toggle("is-hidden"); // Додано зміну стану затемнення фону
       document.body.classList.toggle("modal-open"); // Додано заборону/дозвіл прокрутки тіла
     }
-  })();
+  };
   
