@@ -1,5 +1,6 @@
 import axios from "axios";
 import { DrawCard } from "../RecepieCards/RecepieCards.js"
+import createPagination from "../Pagination/Pagination.js"
 
 
 const FAV_KEY = 'Favorites';
@@ -25,8 +26,12 @@ export function hadleAllFavoritesDeleted() {
 // 3. якщо одна категорія - filter, для кожного рецепта виклик DrawCard
 // 3. innerHTML = renderedCards
 
+let pageIndex = 1;
+const cardsPerPage = 12;
+
 // ВИКЛИКАЄТЬСЯ ПРИ СТАРТІ
 export function UpdateFavorites() {
+    favoritesList.innerHTML = '';
     favoritesPlug.classList.add('is-hidden');
     favImgElem.classList.remove('is-hidden');
 
@@ -40,7 +45,9 @@ export function UpdateFavorites() {
         }
         return;
     }
-
+    
+    let pageCount = Math.round(favoritesArr.length / cardsPerPage);
+    createPagination(pageCount, pageIndex);
     renderFavorites(favoritesArr);
 }
 
@@ -64,10 +71,10 @@ export function showByCategory(category) {
 }
 
 //РЕНДЕР РОЗМІТКИ ВСІХ УЛЮБЕНИХ РЕЦЕПТІВ 
-function renderFavorites(data) {
-    data.map(card => {
-        favoritesList.append(DrawCard(card));
-    });
+function renderFavorites(data, start, end) {
+for(let i = start; i <= end && i < data.length; i += 1 ){
+        favoritesList.append(DrawCard(data[i]));
+    }
 }
 
-// UpdateFavorites();
+//UpdateFavorites();

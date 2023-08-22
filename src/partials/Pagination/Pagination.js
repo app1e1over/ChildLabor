@@ -1,5 +1,6 @@
 import Pagination from './Helper-pagination'
 
+
 // PAGINATION
 const paginationContainer = document.querySelector(".pagination ul");
 
@@ -13,3 +14,4 @@ export function createPagination(pageCount, pageIndex) {
   index: pageIndex
 });
 }
+
