@@ -145,11 +145,28 @@
             slidesPerView: 'auto', // Встановлюємо кількість слайдів, які видно одночасно
             spaceBetween: 16, // Відступ між слайдами
             pagination: {
-              el: '.swiper-pagination', // Додаємо пагінацію (dots)
-              clickable: true, // Зробити dots клікабельними
+              el: '.swiper-pagination',
+              type: 'bullets',
+              clickable: true,
+              dynamicBullets: true,
             },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false
+            },
+            grabCursor: true,
+            // //   безкінечне гортання
+            loop: true,
+            // //   гортання мишкою
+            mousewheel: {
+              invert: true,
+            },
+            slidesPerView: 1,
+            // к-сть слайдів які пролистуються
+            slidesPerGroup: 1,
             // Додайте інші параметри Swiper за потреби
           });
+          
         })
       }
 
