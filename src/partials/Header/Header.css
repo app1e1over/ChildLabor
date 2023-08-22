@@ -222,7 +222,7 @@
   .checkbox {
     position: absolute;
     left: 20px;
-    bottom: 200px;
+    bottom: 20px;
   }
   .checkbox-inner::before {
     background-color: var(--circul-el-color);
