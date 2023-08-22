@@ -3,13 +3,13 @@ import Pagination from './Helper-pagination'
 // PAGINATION
 const paginationContainer = document.querySelector(".pagination ul");
 
-const pageCount = 2;
-let pageIndex = 1;
+// let pageCount;
+// let pageIndex;
 
-new Pagination({
+export function createPagination(pageCount, pageIndex) {
+  new Pagination({
   container: paginationContainer,
   count: pageCount,
   index: pageIndex
 });
-
-
+}
