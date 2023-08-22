@@ -120,6 +120,7 @@ function MakeRequestString() {
   const selectTime = document.getElementById('selectTime');
   const search = document.querySelector('.search');
   const category = document.getElementById('categories');
+  console.log(category.checked);
   const paginator = document.getElementById('pagination');
   let obj = {
     category: category,
