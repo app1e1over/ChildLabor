@@ -23,7 +23,7 @@ function handlerOnCloseMenuButton() {
 function startHeader() {
   burgerMenuButton.addEventListener('click', handlerOnBurgerButtonClick);
   closeMenuButton.addEventListener('click', handlerOnCloseMenuButton);
-  // navListElement.addEventListener('click', onNavMenuLinkClick);
+  navListElement.addEventListener('click', onNavMenuLinkClick);
 
   input.addEventListener('click', changeTheme);
 
@@ -38,7 +38,7 @@ function startHeader() {
   }
 }
 
-// Зміна теми
+// Зміна теми,якщо перемикач іконки
 // const toggleElement = document.querySelector('.js-toggle');
 // const body = document.querySelector('body');
 // const iconLightTheme = document.querySelector('.toggle-icon-light-theme');
@@ -87,27 +87,14 @@ function changeTheme() {
 
 // Перехід між сторінками
 
-// navListElement.addEventListener('click', onNavMenuLinkClick);
-
-// function onNavMenuLinkClick(event) {
-//   event.preventDefault();
-//   const clickedLink = event.target.closest('a');
-//   if (clickedLink) {
-//     const linkPath = clickedLink.getAttribute('href');
-//     if (linkPath) {
-//       window.location.href = linkPath;
-//     }
-//   }
-// }
-
-// test
 const navListElement = document.querySelector('.js-nav-list');
-const currentPath = 'href="./"';
+const title = document.querySelector('title');
+const trimmedTitle = title.textContent.trim();
+
 const homePath = 'href="./index.html"';
 const favoritesPath = 'href="./favorites.html"';
-
-const currentUrl = window.location.href;
-if (currentUrl.includes('index.html')) {
+const currentPath = 'href="./"';
+if (trimmedTitle === 'TastyTreats') {
   let markupHome = `<li class="nav-item">
               <a ${currentPath} class="nav-link link current">Home</a>
             </li>
@@ -115,7 +102,7 @@ if (currentUrl.includes('index.html')) {
               <a ${favoritesPath} class="nav-link link">Favorites</a>
             </li>`;
   navListElement.insertAdjacentHTML('beforeend', markupHome);
-} else if (currentUrl.includes('favorites.html')) {
+} else if (trimmedTitle === 'Favorites') {
   let markupFavorites = `<li class="nav-item">
               <a ${homePath} class="nav-link link">Home</a>
             </li>
@@ -124,5 +111,37 @@ if (currentUrl.includes('index.html')) {
             </li>`;
   navListElement.insertAdjacentHTML('beforeend', markupFavorites);
 }
+navListElement.addEventListener('click', onNavMenuLinkClick);
+function onNavMenuLinkClick(event) {
+  event.preventDefault();
+  const clickedLink = event.target.closest('a');
+  if (clickedLink) {
+    const linkPath = clickedLink.getAttribute('href');
+    if (linkPath) {
+      window.location.href = linkPath;
+    }
+  }
+}
+
+// test
+
+// const currentUrl = window.location.href;
+// if (currentUrl.includes('index.html')) {
+//   let markupHome = `<li class="nav-item">
+//               <a ${currentPath} class="nav-link link current">Home</a>
+//             </li>
+//             <li class="nav-item">
+//               <a ${favoritesPath} class="nav-link link">Favorites</a>
+//             </li>`;
+//   navListElement.insertAdjacentHTML('beforeend', markupHome);
+// } else if (currentUrl.includes('favorites.html')) {
+//   let markupFavorites = `<li class="nav-item">
+//               <a ${homePath} class="nav-link link">Home</a>
+//             </li>
+//             <li class="nav-item">
+//               <a ${currentPath} class="nav-link link current">Favorites</a>
+//             </li>`;
+//   navListElement.insertAdjacentHTML('beforeend', markupFavorites);
+// }
 
 export { startHeader };

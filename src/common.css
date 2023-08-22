@@ -29,7 +29,13 @@
   --new-el-color:#9bb537;
 --link-el-color:#f8f8f8;
 --circul-el-color:#f8f8f8;
-  --firts-font: 'Inter Medium'
+ --popular-color:rgba(5,5,5,0.5);
+  --popular-list-color:rgba(5,5,5,0.3);
+  --text-color:rgba(5,5,5,0.8);
+  --card-title:#f8f8f8;
+   --card-text:#f8f8f8;
+   --card-number:#f8f8f8;
+  --firts-font: 'Inter Medium';
   color-scheme:"light";
 }
 .dark{
@@ -42,6 +48,13 @@
   --new-el-color:#050505;
 --link-el-color:#fff;
 --circul-el-color:#fff;
+--plane-white:#050505;
+  --popular-color:rgba(255,255,255,0.5);
+  --text-color:rgba(255,255,255,0.8);
+  --popular-list-color:rgba(255,255,255,0.3);
+   --card-title:#fff;
+    --card-text:rgba(255,255,255,0.8);
+     --card-number:rgba(255,255,255,0.5);
 }
 body{
     background-color: var(--secondary-color);
