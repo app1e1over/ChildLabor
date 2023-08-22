@@ -1,8 +1,6 @@
 
 @media screen and (min-width: 375px) {
-    .container {
-        width: 365px;
-    }
+
 
     #categories {
         width: 326px;
@@ -36,8 +34,8 @@
         .category-option {
             width: 100%;
             background-color: transparent;
-            padding-top: 9px;
-            padding-bottom: 9px;
+            /*padding-top: 9px;
+            padding-bottom: 9px;*/
             border: none;
             text-align: left;
             font-family: "Inter";
@@ -46,19 +44,28 @@
             line-height: 1.28;
             cursor: pointer;
             color: rgba(5, 5, 5, 0.3);
-            transition: .3s case-in-out;
+            transition: color var(--transition-duration) var(--transition-time-function);
         }
 
-        .category-option:hover,
-        .category-option:focus {
-            outline: none;
-            background-color: var(--active-color);
-            color: #F8F8F8;
+        .category-option:not(:first-child) {
+            padding-top: 9px;
         }
-        .category-option:active {
-            background-color: var(--active-color);
+        
+        .category-option:not(:last-child) {
+            padding-bottom: 9px;
         }
 
+.category-option:hover,
+.category-option:focus,
+.category-option:checked {
+    outline: none;
+        /*background-color: var(--active-color);*/
+        color: var(--active-color);
+}
+
+.category-option:active {
+    color: var(--active-color);
+}
 
     .my-button {
         width: 176px;
@@ -78,7 +85,8 @@
                 .my-button:hover,
                 .my-button:focus {
                     background-color: var(--active-color);
-                    color: #F8F8F8;
+                    color: var(--secondary-color);
+                    transition: color var(--transition-duration) var(--transition-time-function);
                 }
 
     .cont {
@@ -91,9 +99,6 @@
 }
 
 @media screen and (min-width: 768px) {
-    .container {
-        width: 734px;
-    }
         #categories {
             width: 176px;
             height: 416px;
@@ -112,9 +117,6 @@
 }
 
 @media screen and (min-width: 1280px) {
-    .container {
-        width: 1210 px;
-    }
     #categories {
         width: 235px;
         height: 416px;

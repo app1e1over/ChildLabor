@@ -33,11 +33,17 @@ function makeSvg(src, clas) {
   svg.innerHTML = `<use href="${src}"></use>`;
   return svg;
 }
+const filterObj = {};
+export function Update(obj) {
+  for(key in obj){
+    filterObj[key] = obj[key];
+    console.log(filterObj[key]);
 
-export function Update() {
+  }
   let req = MakeRequestString();
   console.log(req);
   let cont = document.querySelector('.recipe-container');
+  cont.innerHTML = "";
   axios
     .get(req)
     .then(v => v.data.results)
@@ -115,25 +121,14 @@ export function DrawCard(recipe) {
 }
 
 function MakeRequestString() {
-  const selectIngredients = document.getElementById('selectIng');
-  const selectCountry = document.getElementById('selectCountry');
-  const selectTime = document.getElementById('selectTime');
-  const search = document.querySelector('.search');
-  const category = document.getElementById('categories');
-  const paginator = document.getElementById('pagination');
-  let obj = {
-    category: category,
-    page: paginator,
-    time: selectTime,
-    area: selectCountry,
-    ingredients: selectIngredients,
-  };
   let first = true;
-
+  let obj = filterObj;
+  console.log(obj);
   let str = 'https://tasty-treats-backend.p.goit.global/api/recipes';
   for (let key in obj) {
     if (obj[key] != undefined && obj[key] != null) {
-      let val = obj[key].value;
+      let val = obj[key];
+      
       if (val != undefined && val.trim() != '') {
         if (!first) {
           str += '&';
@@ -141,10 +136,9 @@ function MakeRequestString() {
           str += '?';
           first = false;
         }
-        str += key + '=' + obj[key].value;
+        str += key + '=' + val;
       }
     }
   }
   return str;
 }
-Update();

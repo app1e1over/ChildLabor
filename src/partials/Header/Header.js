@@ -1,4 +1,5 @@
 const closeMenuButton = document.querySelector('.mobile-menu-close-btn');
+const burgerMenuButton = document.querySelector('.burger-menu');
 const mobileMenu = document.querySelector('#mobile-menu');
 
 function handlerOnBurgerButtonClick(event) {
@@ -22,37 +23,114 @@ function handlerOnCloseMenuButton() {
 function startHeader() {
   burgerMenuButton.addEventListener('click', handlerOnBurgerButtonClick);
   closeMenuButton.addEventListener('click', handlerOnCloseMenuButton);
-  toggleElement.addEventListener('click', handlerChangeTheme);
+  navListElement.addEventListener('click', onNavMenuLinkClick);
+  // toggleElement.addEventListener('click', handlerChangeTheme);
+  input.addEventListener('click', changeTheme);
+  // let savedTheme = localStorage.getItem('theme') || 'light';
+  // if (savedTheme === 'dark') {
+  //   body.classList.add('theme', 'dark');
+  //   iconLightTheme.classList.add('visually-hidden');
+  //   iconDarkTheme.classList.remove('visually-hidden');
+  // } else {
+  //   body.classList.remove('dark');
+  //   localStorage.setItem('theme', 'light');
+  //   iconLightTheme.classList.remove('visually-hidden');
+  //   iconDarkTheme.classList.add('visually-hidden');
+  // }
   let savedTheme = localStorage.getItem('theme') || 'light';
-  if (savedTheme === 'dark') {
-    body.classList.add('theme', 'dark');
-    iconLightTheme.classList.add('visually-hidden');
-    iconDarkTheme.classList.remove('visually-hidden');
+  if (savedTheme && savedTheme === 'dark') {
+    input.checked = true;
+    body.classList.add('dark');
   } else {
-    body.classList.remove('dark');
+    body.classList.toggle('dark');
+    input.checked = false;
     localStorage.setItem('theme', 'light');
-    iconLightTheme.classList.remove('visually-hidden');
-    iconDarkTheme.classList.add('visually-hidden');
   }
 }
 
 // Зміна теми
-const toggleElement = document.querySelector('.js-toggle');
-const body = document.querySelector('body');
-const iconLightTheme = document.querySelector('.toggle-icon-light-theme');
-const iconDarkTheme = document.querySelector('.toggle-icon-dark-theme');
+// const toggleElement = document.querySelector('.js-toggle');
+// const body = document.querySelector('body');
+// const iconLightTheme = document.querySelector('.toggle-icon-light-theme');
+// const iconDarkTheme = document.querySelector('.toggle-icon-dark-theme');
 
-function handlerChangeTheme(event) {
+// function handlerChangeTheme(event) {
+//   if (body.classList.contains('dark')) {
+//     body.classList.toggle('dark');
+//     localStorage.setItem('theme', 'light');
+//     iconLightTheme.classList.remove('visually-hidden');
+//     iconDarkTheme.classList.add('visually-hidden');
+//   } else {
+//     body.classList.add('dark');
+//     localStorage.setItem('theme', 'dark');
+//     iconLightTheme.classList.add('visually-hidden');
+//     iconDarkTheme.classList.remove('visually-hidden');
+//   }
+// }
+//Зміна теми з чекбоксом
+const input = document.querySelector('#input');
+const body = document.querySelector('body');
+
+input.addEventListener('click', changeTheme);
+
+let savedTheme = localStorage.getItem('theme') || 'light';
+if (savedTheme && savedTheme === 'dark') {
+  input.checked = true;
+  body.classList.add('dark');
+} else {
+  body.classList.toggle('dark');
+  input.checked = false;
+  localStorage.setItem('theme', 'light');
+}
+
+function changeTheme() {
   if (body.classList.contains('dark')) {
     body.classList.toggle('dark');
     localStorage.setItem('theme', 'light');
-    iconLightTheme.classList.remove('visually-hidden');
-    iconDarkTheme.classList.add('visually-hidden');
+    input.checked = false;
   } else {
     body.classList.add('dark');
     localStorage.setItem('theme', 'dark');
-    iconLightTheme.classList.add('visually-hidden');
-    iconDarkTheme.classList.remove('visually-hidden');
+    input.checked = true;
+  }
+}
+
+// Перехід між сторінками
+const navListElement = document.querySelector('.js-nav-list');
+console.log(navListElement);
+const title = document.querySelector('title');
+const trimmedTitle = title.textContent.trim();
+
+const homePath = 'href="./index.html"';
+const favoritesPath = 'href="./favorites.html"';
+const currentPath = 'href="./"';
+if (trimmedTitle === 'TastyTreats') {
+  let markupHome = `<li class="nav-item">
+              <a ${currentPath} class="nav-link link current">${trimmedTitle}</a>
+            </li>
+            <li class="nav-item">
+              <a ${favoritesPath} class="nav-link link">Favorites</a>
+            </li>`;
+  navListElement.insertAdjacentHTML('beforeend', markupHome);
+} else if (trimmedTitle === 'Favorites') {
+  let markupFavorites = `<li class="nav-item">
+              <a ${homePath} class="nav-link link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a ${currentPath} class="nav-link link current">${trimmedTitle}</a>
+            </li>`;
+  navListElement.insertAdjacentHTML('beforeend', markupFavorites);
+}
+// navListElement.addEventListener('click', onNavMenuLinkClick);
+
+function onNavMenuLinkClick(event) {
+  event.preventDefault();
+  const clickedLink = event.target.closest('a');
+  if (clickedLink) {
+    const linkPath = clickedLink.getAttribute('href');
+    if (linkPath) {
+      window.location.href = linkPath;
+    }
   }
 }
 export { startHeader };
