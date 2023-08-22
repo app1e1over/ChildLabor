@@ -141,9 +141,9 @@
           console.error("Помилка запиту до сервера:", error);
         })
         .finally( () =>  {
-          new Swiper('.swiper-container', {
-            slidesPerView: 'auto', // Встановлюємо кількість слайдів, які видно одночасно
-            spaceBetween: 16, // Відступ між слайдами
+          new Swiper('.sample-slider', {
+            slidesPerView: 3, // Встановлюємо кількість слайдів, які видно одночасно
+            spaceBetween: 20, // Відступ між слайдами
             pagination: {
               el: '.swiper-pagination',
               type: 'bullets',
@@ -198,14 +198,25 @@
 
       card.appendChild(eventInfoDiv);
     
-      const previewImage = createImage(event.topic.previewUrl);
-      previewImage.classList.add('event-card-preview');
-      card.appendChild(previewImage);
+      // const previewImage = createImage(event.topic.previewUrl);
+      // previewImage.classList.add('event-card-preview');
+      // card.appendChild(previewImage);
     
-      const dishImage = createImage(event.topic.imgUrl);
-      dishImage.classList.add('event-card-bigimg');
-      card.appendChild(dishImage);
+      // const dishImage = createImage(event.topic.imgUrl);
+      // dishImage.classList.add('event-card-bigimg');
+      // card.appendChild(dishImage);
+      const previewImageDiv = document.createElement('div');
+    previewImageDiv.classList.add('event-card-preview');
+    const previewImage = createImage(event.topic.previewUrl);
+    previewImageDiv.appendChild(previewImage);
+    card.appendChild(previewImageDiv);
 
+    // Створюємо <div> для dishImage і додаємо в нього зображення
+    const dishImageDiv = document.createElement('div');
+    dishImageDiv.classList.add('event-card-bigimg');
+    const dishImage = createImage(event.topic.imgUrl);
+    dishImageDiv.appendChild(dishImage);
+    card.appendChild(dishImageDiv);
     
       return card;
     }

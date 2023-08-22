@@ -1,11 +1,22 @@
+
+
+
 .swiper-slide{
     display: flex !important;
     overflow: hidden;
     min-width: 0;
    }
-.swiper-wrapper{
-    
+
+.swiper-container{
+    position: relative;
+    width: 496px;
+    height: auto;
+    margin-top: 48px;
 }
+ .swiper-pagination{
+    bottom: 30px!important;
+}
+
 .title {
     font-family: Inter;
     font-size: 26px;
@@ -53,41 +64,60 @@
    }
 
    .event-card-preview{
-    width: 157px;
-    height: 142px;
+    width: 200px;
+    height: auto;
     padding: 56px 22px 82px 21px;
     background-color: #050505;
+    border-radius: 15px;
+    margin-right: 16px;
    }
    .event-card-cook{
-    width: 122px;
-    height: 305px;
+    width: 80px;
+    height: auto;
     object-fit: cover;
+    border-radius: 15px;
+    margin-right: 16px;
    }
 
    .event-card-bigimg{
-    width: 180px;
-    height: 280px;
-    object-fit: fill;
+    width: 200px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
    }
 
    .event-card-text{
     display: block;
     position: absolute;
+    width: 145px;
+    height: auto;
     /* top: -50%;
     left: -50%;
     transform: translate(-50%, -50%); */
+    bottom: 10%;
+    left: 20px;
+    right: 0;
+    text-align: center;
+    justify-content: center;
     color: rgba(247.56, 247.56, 247.56, 0.60);
     font-size: 10px;
     font-family: Inter;
     font-weight: 500;
     text-transform: uppercase;
     line-height: 1.4; 
-    font-size: 24px;
     padding: 10px;
    }
    .event-card-area{
     position: absolute;
-    color:  rgba(247.56, 247.56, 247.56, 0.20); ;
+    color: rgba(247.56, 247.56, 247.56, 0.20);
+    font-size: 8px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 1.5;  
+    bottom: 5%;
+    left: 87px;
+    right: 0;
+    text-align: center;
    }
 
    @media screen and (min-width: 768px) {
@@ -122,5 +152,13 @@
        .hero-section {
            padding-top:48px;
        }
+       .hero-left-container{
+        display: flex;
+        flex-direction: column;
+        margin-right: 21px;
+    }
+    .hero-container{
+        display: flex;
+    }
     
    }
