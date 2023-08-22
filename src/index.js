@@ -5,6 +5,7 @@ import { getMasterClasses } from "./partials/HeroCard/HeroCard.js";
 import { startCategories } from "./partials/Categories/Categories.js";
 import { StartScrollUp } from "./partials/ScrollUp/ScrollUp.js";
 import {ModalStart} from "./partials/ModalWindow/ModalWindow.js"
+import { selects } from "./partials/Selects/Selects.js";
 
 try {
 UpdateFavorites();    
@@ -21,3 +22,4 @@ getMasterClasses();
 startCategories();
 StartScrollUp();
 ModalStart();
+selects();
