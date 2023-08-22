@@ -6,6 +6,7 @@ import { startCategories } from "./partials/Categories/Categories.js";
 import { StartScrollUp } from "./partials/ScrollUp/ScrollUp.js";
 import {ModalStart} from "./partials/ModalWindow/ModalWindow.js"
 import { selects } from "./partials/Selects/Selects.js";
+import fetchPopularRecipes from "./partials/PopularRecipes/PopularRecipe.js"
 
 try {
 UpdateFavorites();    
@@ -22,4 +23,5 @@ getMasterClasses();
 startCategories();
 StartScrollUp();
 ModalStart();
+fetchPopularRecipes();
 selects();

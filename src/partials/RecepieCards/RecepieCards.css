@@ -153,7 +153,7 @@
   .recipe-container {
     column-gap: 16px;
     row-gap: 20px;
-    width: 782px;
+    width: calc(270px * 3);
   }
   .recipe-card-container {
     width: 250px;
@@ -165,5 +165,4 @@
   width: 30px;
   height: 30px;
  cursor: pointer;
- fill: aqua;
 }
