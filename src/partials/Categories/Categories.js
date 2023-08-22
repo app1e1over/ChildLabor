@@ -1,3 +1,4 @@
+import { Update } from '../RecepieCards/RecepieCards.js';
 
 const categoriesContainer = document.getElementById('categories');
     
@@ -6,10 +7,7 @@ const categoriesContainer = document.getElementById('categories');
 const butCateg = document.querySelector('.my-button');
 const optionCateg = document.querySelector('.category-option');
 
-const blokCat = categoriesContainer.addEventListener('change', () => {
-    Update();
-    console.log('Ви натиснули на категорію:', category.name);
-});
+
 
 export function startCategories() {
   fetch('https://tasty-treats-backend.p.goit.global/api/categories')
@@ -29,10 +27,21 @@ export function startCategories() {
             console.error('Помилка отримання даних з бекенду:', error);
         });
     
+    const blokCat = categoriesContainer.addEventListener('change', () => {
+        Update({ category: categoriesContainer.options[categoriesContainer.selectedIndex].text });
+        categoriesContainer.blur();
+});
+    
     butCateg.addEventListener("click", function () {
-categoriesContainer.value = ""; // присвоюємо пусту строку значенню селекту
+        categoriesContainer.value = ""; // присвоюємо пусту строку значенню селекту
 });
 }
+
+
+ 
+
+
+
 
 
  
