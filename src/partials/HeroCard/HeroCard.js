@@ -59,10 +59,69 @@
     // }
     
     
+    
+    
+    // export async function getMasterclass() {
+    //   try {
+    //     const response = await axios.get('https://tasty-treats-backend.p.goit.global/api/events');
+    //     const events = response.data;
+        
+    //     const slider = document.querySelector('.slider-container'); 
+    
+    //     events.forEach(event => {
+    //       const card = document.createElement('div');
+    //       card.classList.add('event-card');
+          
+    //       const chefImage = new Image();
+    //       chefImage.src = event.cook.imgUrl;
+    //       card.appendChild(chefImage);
+          
+    //       const eventName = document.createElement('h2');
+    //       eventName.textContent = event.topic.name;
+    //       card.appendChild(eventName);
+          
+    //       const dishRegion = document.createElement('p');
+    //       dishRegion.textContent = event.topic.area;
+    //       card.appendChild(dishRegion);
+          
+    //       const previewImage = new Image();
+    //       previewImage.src = event.topic.previewUrl;
+    //       card.appendChild(previewImage);
+          
+    //       const dishImage = new Image();
+    //       dishImage.src = event.topic.imgUrl;
+    //       card.appendChild(dishImage);
+          
+    //       slider.appendChild(card);
+    //     });
+        
+    //     return response;
+    //   } catch (error) {
+    //     console.error('An error occurred:', error);
+    //   }
+    // }
+    // getMasterclass();
+    
+    // export function getMasterclass() {
+    //   const slider = document.querySelector('.slider-container'); 
+    //   axios.get('https://tasty-treats-backend.p.goit.global/api/events')
+    //     .then(response => {
+    //       const events = response.data;
+    
+    //       events.forEach(event => {
+    //         const card = DrawEventCard(event);
+    //         slider.appendChild(card);
+    //       });
+    //     })
+    //     .catch(error => {
+    //       console.error('An error occurred:', error);
+    //     });
+    // }
+    
     import axios from "axios";
     import Swiper from 'swiper';
-    import 'swiper/swiper-bundle.css';
-    
+    import 'swiper/swiper-bundle.min.css';
+
     export function getMasterClasses() {
       let req = MakeRequestString();
       console.log(req);
@@ -93,31 +152,76 @@
           });
         })
       }
+
       
     function DrawEventCard(event) {
-      const card = document.createElement('div');
-      card.classList.add('event-card');
+      const card = document.querySelector('.swiper-slide')
+      // card.classList.add('event-card');
     
       const chefImage = createImage(event.cook.imgUrl);
-      chefImage.setAttribute("width", 150)
+      chefImage.classList.add('event-card-cook');
       card.appendChild(chefImage);
      
-      const eventName = createHeading('h2', event.topic.name);
-      card.appendChild(eventName);
+      // const eventName = createHeading('h2', event.topic.name);
+      // eventName.classList.add('event-card-text');
+      // card.appendChild(eventName);
     
+      // const dishRegion = createParagraph(event.topic.area);
+      // dishRegion.classList.add('event-card-area');
+      // card.appendChild(dishRegion);
+      const eventInfoDiv = document.createElement('div');
+      eventInfoDiv.classList.add('event-card-textdiv');
+      const eventName = createHeading('h2', event.topic.name);
+      eventName.classList.add('event-card-text');
+      eventInfoDiv.appendChild(eventName);
+
       const dishRegion = createParagraph(event.topic.area);
-      card.appendChild(dishRegion);
+      dishRegion.classList.add('event-card-area');
+      eventInfoDiv.appendChild(dishRegion);
+
+      card.appendChild(eventInfoDiv);
     
       const previewImage = createImage(event.topic.previewUrl);
+      previewImage.classList.add('event-card-preview');
       card.appendChild(previewImage);
     
       const dishImage = createImage(event.topic.imgUrl);
+      dishImage.classList.add('event-card-bigimg');
       card.appendChild(dishImage);
+
     
       return card;
     }
     
-    getMasterClasses();
+    function MakeRequestString() {
+      const baseUrl = "https://tasty-treats-backend.p.goit.global"; 
+    
+      const resource = "/api/events"; 
+    
+      const requestUrl = `${baseUrl}${resource}`;
+    
+      return requestUrl;
+    }
+    
+    function createImage(src) {
+      const image = document.createElement('img');
+      image.src = src;
+      return image;
+    }
+    
+    function createHeading(headingType, text) {
+      const heading = document.createElement(headingType);
+      heading.textContent = text;
+      return heading;
+    }
+    
+    function createParagraph(text) {
+      const paragraph = document.createElement('p');
+      paragraph.textContent = text;
+      return paragraph;
+    }
+  
+    
     
     // const sliderWrapperElement = document.querySelector('.swiper-wrapper');
     // const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api/events';
@@ -160,33 +264,7 @@
     
     // sliderWrapperElement.innerHTML = addGalleryMarkup;
     
-    function MakeRequestString() {
-      const baseUrl = "https://tasty-treats-backend.p.goit.global"; 
     
-      const resource = "/api/events"; 
-    
-      const requestUrl = `${baseUrl}${resource}`;
-    
-      return requestUrl;
-    }
-    
-    function createImage(src) {
-      const image = document.createElement('img');
-      image.src = src;
-      return image;
-    }
-    
-    function createHeading(headingType, text) {
-      const heading = document.createElement(headingType);
-      heading.textContent = text;
-      return heading;
-    }
-    
-    function createParagraph(text) {
-      const paragraph = document.createElement('p');
-      paragraph.textContent = text;
-      return paragraph;
-    }
     
     
     // import axios from "axios";
