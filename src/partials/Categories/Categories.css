@@ -34,8 +34,8 @@
         .category-option {
             width: 100%;
             background-color: transparent;
-            padding-top: 9px;
-            padding-bottom: 9px;
+            /*padding-top: 9px;
+            padding-bottom: 9px;*/
             border: none;
             text-align: left;
             font-family: "Inter";
@@ -47,25 +47,26 @@
             transition: color var(--transition-duration) var(--transition-time-function);
         }
 
-       /* .category-option:hover,
-        .category-option:focus {
-            outline: none;
-            background-color: var(--active-color);
-            color: var(--secondary-color);
-        }*/
-select option:hover,
-select option:focus,
-select option:active {
+        .category-option:not(:first-child) {
+            padding-top: 9px;
+        }
+        
+        .category-option:not(:last-child) {
+            padding-bottom: 9px;
+        }
+
+#categories option.category-option:hover,
+#categories option.category-option:focus,
+#categories option.category-option:active {
     outline: none;
         background-color: var(--active-color);
         color: var(--secondary-color);
 }
 
-select option:checked {
-    background: linear-gradient(#d6d6d6, #d6d6d6);
+#categories option.category-option:checked {
+  background: linear-gradient(#d6d6d6, #d6d6d6);
     background-color: #d6d6d6 !important;
-    /* for IE */
-   /* color: #000000 !important;*/
+   color: #000000 !important;
 }
 
     .my-button {

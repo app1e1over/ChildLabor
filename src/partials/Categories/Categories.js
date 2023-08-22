@@ -28,15 +28,17 @@ export function startCategories() {
         });
     
     const blokCat = categoriesContainer.addEventListener('change', () => {
-    Update();
-    console.log('Ви натиснули на категорію:', category.name);
+        Update({ category: categoriesContainer.options[categoriesContainer.selectedIndex].text });
+        categoriesContainer.blur();
 });
     
     butCateg.addEventListener("click", function () {
-categoriesContainer.value = ""; // присвоюємо пусту строку значенню селекту
+        categoriesContainer.value = ""; // присвоюємо пусту строку значенню селекту
 });
 }
 
+
+ 
 
 
 
