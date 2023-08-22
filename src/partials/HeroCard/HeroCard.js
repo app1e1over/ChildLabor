@@ -175,7 +175,7 @@
       // card.classList.add('event-card');
     
       const chefImage = createImage(event.cook.imgUrl);
-      chefImage.classList.add('event-card-cook');
+      chefImage.classList.add('event-card-cook', 'cook-card');
       card.appendChild(chefImage);
      
       // const eventName = createHeading('h2', event.topic.name);
@@ -185,17 +185,17 @@
       // const dishRegion = createParagraph(event.topic.area);
       // dishRegion.classList.add('event-card-area');
       // card.appendChild(dishRegion);
-      const eventInfoDiv = document.createElement('div');
-      eventInfoDiv.classList.add('event-card-textdiv');
-      const eventName = createHeading('h2', event.topic.name);
-      eventName.classList.add('event-card-text');
-      eventInfoDiv.appendChild(eventName);
+      // const eventInfoDiv = document.createElement('div');
+      // eventInfoDiv.classList.add('event-card-textdiv');
+      // const eventName = createHeading('h2', event.topic.name);
+      // eventName.classList.add('event-card-text');
+      // eventInfoDiv.appendChild(eventName);
 
-      const dishRegion = createParagraph(event.topic.area);
-      dishRegion.classList.add('event-card-area');
-      eventInfoDiv.appendChild(dishRegion);
+      // const dishRegion = createParagraph(event.topic.area);
+      // dishRegion.classList.add('event-card-area');
+      // eventInfoDiv.appendChild(dishRegion);
 
-      card.appendChild(eventInfoDiv);
+      // card.appendChild(eventInfoDiv);
     
       // const previewImage = createImage(event.topic.previewUrl);
       // previewImage.classList.add('event-card-preview');
@@ -204,16 +204,34 @@
       // const dishImage = createImage(event.topic.imgUrl);
       // dishImage.classList.add('event-card-bigimg');
       // card.appendChild(dishImage);
-      const previewImageDiv = document.createElement('div');
+    //   const previewImageDiv = document.createElement('div');
+    // previewImageDiv.classList.add('event-card-preview');
+    // const previewImage = createImage(event.topic.previewUrl);
+    // previewImageDiv.appendChild(previewImage);
+    // card.appendChild(previewImageDiv);
+
+    const previewImageDiv = document.createElement('div');
     previewImageDiv.classList.add('event-card-preview');
+
     const previewImage = createImage(event.topic.previewUrl);
     previewImageDiv.appendChild(previewImage);
+
+    // Додайте text та aria безпосередньо до previewImageDiv
+    const eventName = createHeading('h2', event.topic.name);
+    eventName.classList.add('event-card-text');
+    previewImageDiv.appendChild(eventName);
+
+    const dishRegion = createParagraph(event.topic.area);
+    dishRegion.classList.add('event-card-area');
+    previewImageDiv.appendChild(dishRegion);
+
     card.appendChild(previewImageDiv);
 
     // Створюємо <div> для dishImage і додаємо в нього зображення
     const dishImageDiv = document.createElement('div');
     dishImageDiv.classList.add('event-card-bigimg');
     const dishImage = createImage(event.topic.imgUrl);
+    dishImage.classList.add('event-card-bigimg-url');
     dishImageDiv.appendChild(dishImage);
     card.appendChild(dishImageDiv);
     
