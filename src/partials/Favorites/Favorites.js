@@ -46,9 +46,10 @@ export function UpdateFavorites() {
 
 
 // ця не викликається при старті, її імпортне собі Віталій
-export function showByCategory() {
+export function showByCategory(category) {
     favoritesList.innerHTML = '';
-    const selectedCategory = document.querySelector('.active').dataset.id;
+    const selectedCategory = category;
+    // const selectedCategory = document.querySelector('.active').dataset.id;
     // const selectedCategory = "Dessert"; це була заглушка
 
     if (selectedCategory === "All") {

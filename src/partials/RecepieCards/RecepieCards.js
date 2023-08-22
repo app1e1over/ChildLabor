@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { sprite } from '../../image/sprite.svg';
-//import {showPreloader, hidePreloader} from "../Preloader/Preloader"
+import { ModalStart } from '../ModalWindow/ModalWindow';
+import {showPreloader, hidePreloader} from "../Preloader/Preloader"
 function padEndRating(subj) {
   subj = subj.toString();
   if (subj.length === 1) {
@@ -41,12 +42,13 @@ export function Update() {
     .get(req)
     .then(v => v.data.results)
     .then(recepies => {
-      //showPreloader();
+      showPreloader();
       for (let recipe of recepies) {
         cont.append(DrawCard(recipe));
       }
     }).finally(()=>{
-      //hidePreloader();
+      hidePreloader();
+      ModalStart();
     });
 }
 export function DrawCard(recipe) {
@@ -74,9 +76,8 @@ export function DrawCard(recipe) {
   let like = document.createElement('button');
   like.classList.add('heart-button');
   like.classList.add('recipe-card-like-btn');
-  like.innerText = 'like';
-  like.dataset.recipe = JSON.stringify(recipe);
 
+  like.innerHTML = `<svg class="heart"><path fill="none" opacity="0.5" stroke="#f8f8f8" style="stroke: var(--color1, #f8f8f8)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9091" d="M15.99 6.848c-2.665-3.117-7.111-3.956-10.451-1.101-3.34 2.854-3.811 7.625-1.187 11.001 2.182 2.806 8.781 8.724 10.944 10.64 0.241 0.214 0.364 0.321 0.503 0.364 0.057 0.017 0.123 0.028 0.191 0.028s0.133-0.010 0.195-0.029l-0.005 0.001c0.143-0.042 0.262-0.15 0.505-0.364 2.163-1.916 8.764-7.834 10.944-10.64 2.623-3.375 2.211-8.177-1.187-11.001-3.398-2.825-7.786-2.016-10.452 1.101z"></path></svg>`;
   let lowerContainer = document.createElement('div');
   lowerContainer.classList.add('recipe-card-lower-container');
 
@@ -107,6 +108,9 @@ export function DrawCard(recipe) {
   wrap.appendChild(lowerContainer);
 
   cont.appendChild(wrap);
+
+  cont.dataset.recipe = recipe._id;
+
   return cont;
 }
 
@@ -116,6 +120,7 @@ function MakeRequestString() {
   const selectTime = document.getElementById('selectTime');
   const search = document.querySelector('.search');
   const category = document.getElementById('categories');
+  console.log(category.checked);
   const paginator = document.getElementById('pagination');
   let obj = {
     category: category,
