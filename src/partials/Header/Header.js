@@ -71,17 +71,17 @@ function startHeader() {
 const input = document.querySelector('#input');
 const body = document.querySelector('body');
 
-input.addEventListener('click', changeTheme);
+// input.addEventListener('click', changeTheme);
 
-let savedTheme = localStorage.getItem('theme') || 'light';
-if (savedTheme && savedTheme === 'dark') {
-  input.checked = true;
-  body.classList.add('dark');
-} else {
-  body.classList.toggle('dark');
-  input.checked = false;
-  localStorage.setItem('theme', 'light');
-}
+// let savedTheme = localStorage.getItem('theme') || 'light';
+// if (savedTheme && savedTheme === 'dark') {
+//   input.checked = true;
+//   body.classList.add('dark');
+// } else {
+//   body.classList.toggle('dark');
+//   input.checked = false;
+//   localStorage.setItem('theme', 'light');
+// }
 
 function changeTheme() {
   if (body.classList.contains('dark')) {
