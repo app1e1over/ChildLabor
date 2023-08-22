@@ -23,20 +23,10 @@ function handlerOnCloseMenuButton() {
 function startHeader() {
   burgerMenuButton.addEventListener('click', handlerOnBurgerButtonClick);
   closeMenuButton.addEventListener('click', handlerOnCloseMenuButton);
-  navListElement.addEventListener('click', onNavMenuLinkClick);
-  // toggleElement.addEventListener('click', handlerChangeTheme);
+  // navListElement.addEventListener('click', onNavMenuLinkClick);
+
   input.addEventListener('click', changeTheme);
-  // let savedTheme = localStorage.getItem('theme') || 'light';
-  // if (savedTheme === 'dark') {
-  //   body.classList.add('theme', 'dark');
-  //   iconLightTheme.classList.add('visually-hidden');
-  //   iconDarkTheme.classList.remove('visually-hidden');
-  // } else {
-  //   body.classList.remove('dark');
-  //   localStorage.setItem('theme', 'light');
-  //   iconLightTheme.classList.remove('visually-hidden');
-  //   iconDarkTheme.classList.add('visually-hidden');
-  // }
+
   let savedTheme = localStorage.getItem('theme') || 'light';
   if (savedTheme && savedTheme === 'dark') {
     input.checked = true;
@@ -96,41 +86,43 @@ function changeTheme() {
 }
 
 // Перехід між сторінками
-const navListElement = document.querySelector('.js-nav-list');
-console.log(navListElement);
-const title = document.querySelector('title');
-const trimmedTitle = title.textContent.trim();
 
+// navListElement.addEventListener('click', onNavMenuLinkClick);
+
+// function onNavMenuLinkClick(event) {
+//   event.preventDefault();
+//   const clickedLink = event.target.closest('a');
+//   if (clickedLink) {
+//     const linkPath = clickedLink.getAttribute('href');
+//     if (linkPath) {
+//       window.location.href = linkPath;
+//     }
+//   }
+// }
+
+// test
+const navListElement = document.querySelector('.js-nav-list');
+const currentPath = 'href="./"';
 const homePath = 'href="./index.html"';
 const favoritesPath = 'href="./favorites.html"';
-const currentPath = 'href="./"';
-if (trimmedTitle === 'TastyTreats') {
+
+const currentUrl = window.location.href;
+if (currentUrl.includes('index.html')) {
   let markupHome = `<li class="nav-item">
-              <a ${currentPath} class="nav-link link current">${trimmedTitle}</a>
+              <a ${currentPath} class="nav-link link current">Home</a>
             </li>
             <li class="nav-item">
               <a ${favoritesPath} class="nav-link link">Favorites</a>
             </li>`;
   navListElement.insertAdjacentHTML('beforeend', markupHome);
-} else if (trimmedTitle === 'Favorites') {
+} else if (currentUrl.includes('favorites.html')) {
   let markupFavorites = `<li class="nav-item">
               <a ${homePath} class="nav-link link">Home</a>
             </li>
             <li class="nav-item">
-              <a ${currentPath} class="nav-link link current">${trimmedTitle}</a>
+              <a ${currentPath} class="nav-link link current">Favorites</a>
             </li>`;
   navListElement.insertAdjacentHTML('beforeend', markupFavorites);
 }
-// navListElement.addEventListener('click', onNavMenuLinkClick);
 
-function onNavMenuLinkClick(event) {
-  event.preventDefault();
-  const clickedLink = event.target.closest('a');
-  if (clickedLink) {
-    const linkPath = clickedLink.getAttribute('href');
-    if (linkPath) {
-      window.location.href = linkPath;
-    }
-  }
-}
 export { startHeader };
