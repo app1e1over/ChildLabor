@@ -1,19 +1,29 @@
-export const ModalStart=() => {
-    const refs = {
-      openModalBtn: document.querySelector("[data-modal-open]"),
-      closeModalBtn: document.querySelector("[data-modal-close]"),
-      modal: document.querySelector("[data-modal]"),
-      backdrop: document.querySelector(".backdrop"), // Додано посилання на елемент затемнення фону
-    };
-  
-    refs.openModalBtn.addEventListener("click", toggleModal);
-    refs.closeModalBtn.addEventListener("click", toggleModal);
-    refs.backdrop.addEventListener("click", toggleModal); // Додано обробник події для закриття при кліку на затемнення
-  
-    function toggleModal() {
-      refs.modal.classList.toggle("is-hidden");
-      refs.backdrop.classList.toggle("is-hidden"); // Додано зміну стану затемнення фону
-      document.body.classList.toggle("modal-open"); // Додано заборону/дозвіл прокрутки тіла
-    }
-  };
-  
+const refs = {
+  openModalBtn: document.querySelector('[data-action="open-modal"]'),
+  modal: document.querySelector('[data-modal-recipe]'),
+  backdrop: document.querySelector('.recipe-backdrop'),
+};
+refs.openModalBtn.addEventListener('click', onOpenModal);
+refs.backdrop.addEventListener('click', onBackdropClick);
+
+function onOpenModal() {
+  refs.modal.classList.toggle('is-hidden');
+  const closeModalBtn = document.querySelector('[data-action="close-modal"]');
+  closeModalBtn.addEventListener('click', onCloseModal);
+  window.addEventListener('keydown', onEscKeyPress);
+}
+
+function onCloseModal() {
+  refs.modal.classList.toggle('is-hidden');
+  window.removeEventListener('keydown', onEscKeyPress);
+}
+function onBackdropClick(event) {
+  if (event.currentTarget === event.target) {
+      onCloseModal();
+  }
+}
+function onEscKeyPress(event) {
+  if (event.code === 'Escape') {
+      onCloseModal();
+  }
+}
