@@ -34,7 +34,9 @@ export function startCategories() {
     
     butCateg.addEventListener("click", function () {
         Update({ category: "" });
-        categoriesContainer.value = ""; // присвоюємо пусту строку значенню селекту
+        categoriesContainer.value = "";// присвоюємо пусту строку значенню селекту
+        categoriesContainer.selectedIndex = -1;
+
 });
 }
 
