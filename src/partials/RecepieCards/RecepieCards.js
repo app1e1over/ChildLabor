@@ -40,7 +40,7 @@ function makeSvg(src, clas) {
 }
 const filterObj = {};
 export function Update(obj) {
-  for(key in obj){
+  for(let key in obj){
     filterObj[key] = obj[key];
     console.log(filterObj[key]);
 
