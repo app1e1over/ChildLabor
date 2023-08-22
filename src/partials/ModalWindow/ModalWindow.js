@@ -1,17 +1,29 @@
-export const ModalStart = () => {
-  const openModalBtns = document.querySelectorAll("[data-modal-open]");
-  const closeModalBtn = document.querySelector("[data-modal-close]");
-  const modal = document.querySelector("[data-modal]");
-  const backdrop = document.querySelector(".backdrop");
-  openModalBtns.forEach(btn => {
-      console.log(btn); // Вивести в консоль поточну кнопку
-      btn.addEventListener("click", toggleModal);
-  });
-  closeModalBtn.addEventListener("click", toggleModal);
-  backdrop.addEventListener("click", toggleModal);
-  function toggleModal(e) {
-      modal.classList.toggle("is-hidden");
-      backdrop.classList.toggle("is-hidden");
-      document.body.classList.toggle("modal-open");
-  }
+const refs = {
+  openModalBtn: document.querySelector('[data-action="open-modal"]'),
+  modal: document.querySelector('[data-modal-recipe]'),
+  backdrop: document.querySelector('.recipe-backdrop'),
 };
+refs.openModalBtn.addEventListener('click', onOpenModal);
+refs.backdrop.addEventListener('click', onBackdropClick);
+
+function onOpenModal() {
+  refs.modal.classList.toggle('is-hidden');
+  const closeModalBtn = document.querySelector('[data-action="close-modal"]');
+  closeModalBtn.addEventListener('click', onCloseModal);
+  window.addEventListener('keydown', onEscKeyPress);
+}
+
+function onCloseModal() {
+  refs.modal.classList.toggle('is-hidden');
+  window.removeEventListener('keydown', onEscKeyPress);
+}
+function onBackdropClick(event) {
+  if (event.currentTarget === event.target) {
+      onCloseModal();
+  }
+}
+function onEscKeyPress(event) {
+  if (event.code === 'Escape') {
+      onCloseModal();
+  }
+}
