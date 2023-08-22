@@ -7,14 +7,13 @@ import { StartScrollUp } from "./partials/ScrollUp/ScrollUp.js";
 import {ModalStart} from "./partials/ModalWindow/ModalWindow.js"
 import { selects } from "./partials/Selects/Selects.js";
 import fetchPopularRecipes from "./partials/PopularRecipes/PopularRecipe.js"
-import { createPagination } from "./partials/Pagination/Pagination.js";
 
 try {
 UpdateFavorites();    
 } catch (error) {
     console.log("Error in UpdateFavorites:"+error);
 }
-Update();
+Update({});
 try {
 startHeader();    
 } catch (error) {
@@ -26,4 +25,3 @@ StartScrollUp();
 ModalStart();
 fetchPopularRecipes();
 selects();
-createPagination();

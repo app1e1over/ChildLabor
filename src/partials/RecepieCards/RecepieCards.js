@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { sprite } from '../../image/sprite.svg';
 import { ModalStart } from '../ModalWindow/ModalWindow';
+import { createPagination } from "../Pagination/Pagination.js";
+
 import {showPreloader, hidePreloader} from "../Preloader/Preloader"
 function padEndRating(subj) {
   subj = subj.toString();
@@ -46,8 +48,12 @@ export function Update(obj) {
   cont.innerHTML = "";
   axios
     .get(req)
-    .then(v => v.data.results)
+    .then(v => {
+      if(!obj.hasOwnProperty("page"))
+        createPagination(v.data.totalPages, 1);
+      return v.data.results;})
     .then(recepies => {
+      
       showPreloader();
       for (let recipe of recepies) {
         cont.append(DrawCard(recipe));
@@ -123,7 +129,6 @@ export function DrawCard(recipe) {
 function MakeRequestString() {
   let first = true;
   let obj = filterObj;
-  console.log(obj);
   let str = 'https://tasty-treats-backend.p.goit.global/api/recipes';
   for (let key in obj) {
     if (obj[key] != undefined && obj[key] != null) {
