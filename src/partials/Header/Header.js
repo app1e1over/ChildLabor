@@ -58,18 +58,18 @@ function startHeader() {
 //   }
 // }
 //Зміна теми з чекбоксом
-const input = document.querySelector('#input');
+const inputs = document.querySelectorAll('.checkbox-input');
 const body = document.querySelector('body');
 
-input.addEventListener('click', changeTheme);
+inputs.forEach(input => input.addEventListener('click', changeTheme));
 
 let savedTheme = localStorage.getItem('theme') || 'light';
 if (savedTheme && savedTheme === 'dark') {
-  input.checked = true;
+  inputs.checked = true;
   body.classList.add('dark');
 } else {
   body.classList.toggle('dark');
-  input.checked = false;
+  inputs.checked = false;
   localStorage.setItem('theme', 'light');
 }
 
