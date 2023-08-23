@@ -40,11 +40,7 @@
       </div> -->
       <div class="switch-checkbox-wrapper">
         <label class="checkbox">
-          <input
-            type="checkbox"
-            class="checkbox-input visually-hidden"
-            id="input"
-          />
+          <input type="checkbox" class="checkbox-input visually-hidden" />
           <span class="checkbox-inner"></span>
         </label>
       </div>
@@ -59,25 +55,22 @@
   </div>
   <!-----------------Mobile menu---------------->
   <div class="mobile-menu js-menu-container" id="mobile-menu">
-    <div class="mobile-menu-container">
-      <button type="button" class="mobile-menu-close-btn icon-btn">
-        <svg class="mobile-close-icon" width="32px" height="32px">
-          <use href="./image/sprite.svg#icon-close-input-default"></use>
-        </svg>
-      </button>
-      <nav class="mobile-nav">
-        <ul class="mobile-nav-list list js-nav-list">
-          <li class="nav-item">
-            <a href="./" class="mobile-nav-link link current">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="./favorites.html" class="mobile-nav-link link"
-              >Favorites</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <!-- <div class="mobile-header-toggle">
+    <button type="button" class="mobile-menu-close-btn icon-btn">
+      <svg class="mobile-close-icon" width="32px" height="32px">
+        <use href="./image/sprite.svg#icon-close-input-default"></use>
+      </svg>
+    </button>
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list list js-nav-list">
+        <li class="nav-item">
+          <a href="./" class="mobile-nav-link link current">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="./favorites.html" class="mobile-nav-link link">Favorites</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- <div class="mobile-header-toggle">
         <button class="mobile-toggle-btn icon-btn button" type="button">
           <svg class="mobile-toggle-icon" width="46px" height="20px">
             <use
@@ -91,16 +84,16 @@
           </svg>
         </button>
       </div> -->
-      <div class="mobile-switch-checkbox-wrapper">
-        <label class="checkbox">
-          <input
-            type="checkbox"
-            class="checkbox-input visually-hidden"
-            id="input"
-          />
-          <span class="checkbox-inner"></span>
-        </label>
-      </div>
+    <div class="mobile-switch-checkbox-wrapper">
+      <label class="checkbox">
+        <input
+          type="checkbox"
+          class="checkbox-input visually-hidden"
+          id="input"
+        />
+        <span class="checkbox-inner"></span>
+      </label>
     </div>
   </div>
+  <div class="mobile-backdrop is-hidden"></div>
 </header>

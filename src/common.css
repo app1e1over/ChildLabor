@@ -19,7 +19,8 @@
   --secondary-rgb-color: rgb(248, 248, 248);
   --active-color:#9bb537;
   --plain-white: #ffffff;
-  --backdrop-color:rgba(82,80,80,0.3);
+
+--backdrop-color:rgba(82,80,80,0.3);
   --accent-color: #eea10c;
   --additional-color: #cecdcd;
   --rare-color: rgba(160, 158, 160, 0.6);
@@ -35,14 +36,21 @@
   --card-title:#f8f8f8;
    --card-text:#f8f8f8;
    --card-number:#f8f8f8;
+   --arrow-number-color:#050505;;
+   --arrow-left-color:rgba(248,248,248,0.5);
+    --arrow-right-color:#050505;
+    --input-border-color:rgba(5,5,5,0.2);
+
    --input-border-color:rgba(5,5,5,0.2);
    --popup-title-color:#050505;
    --page-color:#f8f8f8;
    --mini-slider-color:rgba(5,5,5,0.18);
+
   --firts-font: 'Inter Medium';
   color-scheme:"light";
 }
 .dark{
+
   --page-color:#161616;
   --main-color:#f8f8f8;
   --main-rgb-color:rgb(248, 248, 248);
@@ -53,13 +61,23 @@
   --new-el-color:#050505;
 --link-el-color:#fff;
 --circul-el-color:#fff;
---plane-white:#050505;
+--plaine-white:#050505;
   --popular-color:rgba(255,255,255,0.5);
   --text-color:rgba(255,255,255,0.8);
   --popular-list-color:rgba(255,255,255,0.3);
    --card-title:#fff;
     --card-text:rgba(255,255,255,0.8);
      --card-number:rgba(255,255,255,0.5);
+
+      --arrow-number-color:#fff; 
+      --arrow-left-color:rgba(255,255,255,0.5);
+       --arrow-right-color:#050505;
+        --input-border-color:rgba(255,255,255,0.2);
+         
+
+}
+body{
+
      --input-border-color:rgba(255,255,255,0.2);
          --popup-title-color:#fff;
          --backdrop-color:rgba(82,80,80,0.6);
