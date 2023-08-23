@@ -1,6 +1,6 @@
 export const PopupStart = () => {
   const refs = {
-    openPopupBtns: document.querySelectorAll('[data-popup-open]'), // Змінено на querySelectorAll
+    openPopupBtns: document.querySelectorAll('[data-popup-open]'),
     closePopupBtn: document.querySelector('[data-popup-close]'),
     popup: document.querySelector('.popup-body'),
     'popup-backdrop': document.querySelector('.popup-backdrop'),
@@ -32,6 +32,7 @@ export const PopupStart = () => {
   }
 };
 
+// відправляє на бекенд
 // document.addEventListener('DOMContentLoaded', () => {
 //   PopupStart();
 // });
