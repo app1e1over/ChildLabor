@@ -19,6 +19,7 @@
   --secondary-rgb-color: rgb(248, 248, 248);
   --active-color:#9bb537;
   --plain-white: #ffffff;
+
 --backdrop-color:rgba(82,80,80,0.3);
   --accent-color: #eea10c;
   --additional-color: #cecdcd;
@@ -39,12 +40,18 @@
    --arrow-left-color:rgba(248,248,248,0.5);
     --arrow-right-color:#050505;
     --input-border-color:rgba(5,5,5,0.2);
-    
+
+   --input-border-color:rgba(5,5,5,0.2);
+   --popup-title-color:#050505;
+   --page-color:#f8f8f8;
+   --mini-slider-color:rgba(5,5,5,0.18);
+
   --firts-font: 'Inter Medium';
   color-scheme:"light";
 }
 .dark{
-  
+
+  --page-color:#161616;
   --main-color:#f8f8f8;
   --main-rgb-color:rgb(248, 248, 248);
   --secondary-color:#050505;
@@ -61,6 +68,7 @@
    --card-title:#fff;
     --card-text:rgba(255,255,255,0.8);
      --card-number:rgba(255,255,255,0.5);
+
       --arrow-number-color:#fff; 
       --arrow-left-color:rgba(255,255,255,0.5);
        --arrow-right-color:#050505;
@@ -69,11 +77,18 @@
 
 }
 body{
-  
+
+     --input-border-color:rgba(255,255,255,0.2);
+         --popup-title-color:#fff;
+         --backdrop-color:rgba(82,80,80,0.6);
+          --mini-slider-color:rgba(255,255,255,0.18);
+}
+body{
+  background-color: var(--page-color);
     overflow-x: hidden;
     overflow-y: scroll;
 }
-
+.button{cursor:pointer}
 h1,
 h2,
 h3,
@@ -109,11 +124,28 @@ ul {
   overflow: hidden;
 }
 
+.index-recepie-container{
+  display: flex;
+}
+.index-recepie-side-container{
+  display: flex; 
+  flex-direction: column;
+}
+
+.is-hidden{
+  display: none;
+}
+
+
+
 @media screen and (min-width:374px) {
     /* mobile */
     .container{
+        padding-left: 20px;
         padding-right: 20px;
-        padding-top: 27.5px;
+    }
+    .index-recepie-container{
+      flex-direction: column;
     }
   }
   @media screen and (min-width:768px) {
@@ -121,6 +153,9 @@ ul {
     .container{
         padding-left: 32px;
         padding-right: 32px;
+    }
+    .index-recepie-container{
+      flex-direction: row;
     }
   }
 @media screen and (min-width:1280px) {
@@ -222,15 +257,4 @@ ul {
   }
   
 
-  .index-recepie-container{
-    display: flex;
-  }
-  .index-recepie-side-container{
-    display: flex; 
-    flex-direction: column;
-  }
 
-  .is-hidden{
-    display: none;
-  }
-  

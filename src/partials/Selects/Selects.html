@@ -9,7 +9,12 @@
       <input type="text" id="searchInput" class="search search-input" placeholder="Enter Text">
    
       <svg class="svg-icon">
-        <use xlink:href="./image/sprite.svg#icon-search--default"></use>
+        <use xlink:href="./image/sprite.svg#icon-search--default" class="search-icon"></use>
+        <use xlink:href="./image/sprite.svg#icon-search-active" class="search-icon-active"></use>
+      </svg>
+      
+      <svg class="svg-icon-close">
+        <use xlink:href="./image/sprite.svg#icon-close-input-default" class="close-icon-select" ></use>
       </svg>
   </div></div>
  
@@ -19,11 +24,11 @@
       <select name="time" id="selectTime" class="time"></select>  
   </div>
   <div class="area-container">
-      <label for="selectCountry">Area</label>
+      <label for="area">Area</label>
       <select name="area" class="country" id="selectCountry"></select>
     </div>
     <div class="ing-container">
-      <label for="selectIngredients">Ingredients</label>
+      <label for="ingredient">Ingredients</label>
       <select name="ingredients" class="selectIngredients" id="selectIng" class="ing"></select>
     </div>
   

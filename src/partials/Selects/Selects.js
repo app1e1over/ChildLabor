@@ -9,7 +9,9 @@ const form = document.querySelector(".search-form-food")
 const ingredients = document.getElementById('selectIng');
 const area = document.getElementById('selectCountry');
 const time = document.getElementById('selectTime');
-const input = document.querySelector('.search')
+const input = document.querySelector('.search');
+const clearInputSvg = document.querySelector('.for-svg');
+
 let ingredientsId;
 
 let ingredientsData;
@@ -137,7 +139,17 @@ function addListeners() {
 ingredients.addEventListener("change", takeIng)
 time.addEventListener("change", takeIng)
 area.addEventListener("change", takeIng)
-input.addEventListener("input",debounce(inputsSearching, 300))}
+input.addEventListener("input",debounce(inputsSearching, 300))
+clearInputSvg.addEventListener("click",  clearInput);
+}
+function clearInput(e) {
+  const target = e.target;
+
+  if (target.classList.contains('for-svg')) {
+    input.value = ''; 
+  }
+};
+
 
 new SlimSelect({
   select: input,

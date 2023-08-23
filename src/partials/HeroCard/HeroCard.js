@@ -1,123 +1,98 @@
 
+// const EVENTS_URL = 'https://tasty-treats-backend.p.goit.global/api/events';
+
+// const swiperContainer = document.querySelector('.swiper-container');
+// const swiperWrapper = document.querySelector('.swiper-wrapper');
+
+// // Функція для отримання даних з сервера
+// async function fetchData() {
+//   try {
+//     const response = await axios.get(EVENTS_URL);
+//     return response.data;
+//   } catch (error) {
+//     console.error('Помилка запиту до сервера:', error);
+//     return [];
+//   }
+// }
+
+// // Функція для створення розмітки карточки кухаря
+// function createCookCard(cook) {
+//   return `
+//     <div class="swiper-slide">
+//       <div class="swiper-img">
+//         <img src="${cook.imgUrl}" srcset="${cook.imgWebpUrl}" alt="${cook.name}" class="swiper-slide-img cook-card" />
+//       </div>
+//     </div>
+//   `;
+// }
+
+// // Функція для створення розмітки центральної карточки
+// function createCenterCard(topic) {
+//   return `
+//     <div class="swiper-slide">
+//       <div class="event-card-preview">
+//         <img src="${topic.previewUrl}" alt="masterclass" class="swiper-slide-img food-center-card" />
+//         <p class="master-class">${topic.name}</p>
+//         <p class="master-class-coutry">${topic.area}</p>
+//       </div>
+//     </div>
+//   `;
+// }
+
+// // Функція для створення розмітки останньої карточки
+// function createLastCard(topic) {
+//   return `
+//     <div class="swiper-slide">
+//       <div class="swiper-img">
+//         <img src="${topic.imgUrl}" alt="tasty food" class="swiper-slide-img big-slide-salat-img" />
+//       </div>
+//     </div>
+//   `;
+// }
+
+// // Основна функція для відображення слайдів
+// async function displaySlides() {
+//   const data = await fetchData();
+//   if (!data.length) return;
+
+//   data.forEach(({ cook, topic }, index) => {
+//     const cookCard = createCookCard(cook);
+//     const centerCard = createCenterCard(topic);
+//     const lastCard = createLastCard(topic);
+
+//     swiperWrapper.insertAdjacentHTML('beforeend', cookCard + centerCard + lastCard);
+//   });
+
+//   new Swiper(swiperContainer, {
+//     spaceBetween: 20,
+//     pagination: {
+//       el: '.swiper-pagination',
+//       type: 'bullets',
+//       clickable: true,
+//       dynamicBullets: true,
+//     },
+//     autoplay: {
+//       delay: 5000,
+//       disableOnInteraction: false,
+//     },
+//     grabCursor: true,
+//     loop: true,
+//     mousewheel: {
+//       invert: true,
+//     },
+//     slidesPerView: 1,
+//     slidesPerGroup: 1,
+//   });
+// }
+
+// window.addEventListener('load', displaySlides);
 
 
-// export async function getMasterclass() {
-    //   try {
-    //     const response = await axios.get('https://tasty-treats-backend.p.goit.global/api/events');
-    //     const events = response.data;
-        
-    //     const slider = document.querySelector('.slider-container'); 
-    
-    //     events.forEach(event => {
-    //       const card = document.createElement('div');
-    //       card.classList.add('event-card');
-          
-    //       const chefImage = new Image();
-    //       chefImage.src = event.cook.imgUrl;
-    //       card.appendChild(chefImage);
-          
-    //       const eventName = document.createElement('h2');
-    //       eventName.textContent = event.topic.name;
-    //       card.appendChild(eventName);
-          
-    //       const dishRegion = document.createElement('p');
-    //       dishRegion.textContent = event.topic.area;
-    //       card.appendChild(dishRegion);
-          
-    //       const previewImage = new Image();
-    //       previewImage.src = event.topic.previewUrl;
-    //       card.appendChild(previewImage);
-          
-    //       const dishImage = new Image();
-    //       dishImage.src = event.topic.imgUrl;
-    //       card.appendChild(dishImage);
-          
-    //       slider.appendChild(card);
-    //     });
-        
-    //     return response;
-    //   } catch (error) {
-    //     console.error('An error occurred:', error);
-    //   }
-    // }
-    // getMasterclass();
-    
-    // export function getMasterclass() {
-    //   const slider = document.querySelector('.slider-container'); 
-    //   axios.get('https://tasty-treats-backend.p.goit.global/api/events')
-    //     .then(response => {
-    //       const events = response.data;
-    
-    //       events.forEach(event => {
-    //         const card = DrawEventCard(event);
-    //         slider.appendChild(card);
-    //       });
-    //     })
-    //     .catch(error => {
-    //       console.error('An error occurred:', error);
-    //     });
-    // }
-    
-    
-    
-    
-    // export async function getMasterclass() {
-    //   try {
-    //     const response = await axios.get('https://tasty-treats-backend.p.goit.global/api/events');
-    //     const events = response.data;
-        
-    //     const slider = document.querySelector('.slider-container'); 
-    
-    //     events.forEach(event => {
-    //       const card = document.createElement('div');
-    //       card.classList.add('event-card');
-          
-    //       const chefImage = new Image();
-    //       chefImage.src = event.cook.imgUrl;
-    //       card.appendChild(chefImage);
-          
-    //       const eventName = document.createElement('h2');
-    //       eventName.textContent = event.topic.name;
-    //       card.appendChild(eventName);
-          
-    //       const dishRegion = document.createElement('p');
-    //       dishRegion.textContent = event.topic.area;
-    //       card.appendChild(dishRegion);
-          
-    //       const previewImage = new Image();
-    //       previewImage.src = event.topic.previewUrl;
-    //       card.appendChild(previewImage);
-          
-    //       const dishImage = new Image();
-    //       dishImage.src = event.topic.imgUrl;
-    //       card.appendChild(dishImage);
-          
-    //       slider.appendChild(card);
-    //     });
-        
-    //     return response;
-    //   } catch (error) {
-    //     console.error('An error occurred:', error);
-    //   }
-    // }
-    // getMasterclass();
-    
-    // export function getMasterclass() {
-    //   const slider = document.querySelector('.slider-container'); 
-    //   axios.get('https://tasty-treats-backend.p.goit.global/api/events')
-    //     .then(response => {
-    //       const events = response.data;
-    
-    //       events.forEach(event => {
-    //         const card = DrawEventCard(event);
-    //         slider.appendChild(card);
-    //       });
-    //     })
-    //     .catch(error => {
-    //       console.error('An error occurred:', error);
-    //     });
-    // }
-    
+
+
+
+
+
     import axios from "axios";
     import Swiper from 'swiper';
     import 'swiper/swiper-bundle.min.css';
@@ -134,7 +109,8 @@
       })
         .then(events => {
           for (let event of events) {
-            cont.append(DrawEventCard(event));
+            const slide = DrawEventCard(event);
+            cont.appendChild(slide);
           } 
         })
         .catch(error => {
@@ -171,55 +147,30 @@
 
       
     function DrawEventCard(event) {
-      const card = document.querySelector('.swiper-slide')
-      // card.classList.add('event-card');
-    
-      const chefImage = createImage(event.cook.imgUrl);
-      chefImage.classList.add('event-card-cook', 'cook-card');
-      card.appendChild(chefImage);
+      const card = document.querySelector('.swiper-slide');
      
-      // const eventName = createHeading('h2', event.topic.name);
-      // eventName.classList.add('event-card-text');
-      // card.appendChild(eventName);
-    
-      // const dishRegion = createParagraph(event.topic.area);
-      // dishRegion.classList.add('event-card-area');
-      // card.appendChild(dishRegion);
-      // const eventInfoDiv = document.createElement('div');
-      // eventInfoDiv.classList.add('event-card-textdiv');
-      // const eventName = createHeading('h2', event.topic.name);
-      // eventName.classList.add('event-card-text');
-      // eventInfoDiv.appendChild(eventName);
+      const chefImageDiv = document.createElement('div')
+      chefImageDiv.classList.add( 'cook-card');
+      const chefImage = createImage(event.cook.imgUrl);
+      chefImage.classList.add('event-card-cook');
+      chefImageDiv.appendChild(chefImage);
 
-      // const dishRegion = createParagraph(event.topic.area);
-      // dishRegion.classList.add('event-card-area');
-      // eventInfoDiv.appendChild(dishRegion);
-
-      // card.appendChild(eventInfoDiv);
-    
-      // const previewImage = createImage(event.topic.previewUrl);
-      // previewImage.classList.add('event-card-preview');
-      // card.appendChild(previewImage);
-    
-      // const dishImage = createImage(event.topic.imgUrl);
-      // dishImage.classList.add('event-card-bigimg');
-      // card.appendChild(dishImage);
-    //   const previewImageDiv = document.createElement('div');
-    // previewImageDiv.classList.add('event-card-preview');
-    // const previewImage = createImage(event.topic.previewUrl);
-    // previewImageDiv.appendChild(previewImage);
-    // card.appendChild(previewImageDiv);
-
+     card.appendChild(chefImageDiv);
+      
     const previewImageDiv = document.createElement('div');
     previewImageDiv.classList.add('event-card-preview');
 
+
     const previewImage = createImage(event.topic.previewUrl);
+    previewImage.classList.add('slider-middle-img');
     previewImageDiv.appendChild(previewImage);
 
     // Додайте text та aria безпосередньо до previewImageDiv
-    const eventName = createHeading('h2', event.topic.name);
+    const eventName = createParagraph( event.topic.name);
     eventName.classList.add('event-card-text');
     previewImageDiv.appendChild(eventName);
+
+
 
     const dishRegion = createParagraph(event.topic.area);
     dishRegion.classList.add('event-card-area');
@@ -371,28 +322,3 @@
     //   return heading;
     // }
     
-    // function createParagraph(text) {
-    //   const paragraph = document.createElement('p');
-    //   paragraph.textContent = text;
-    //   return paragraph;
-    // }
-    //   function DrawEventCard(event) {
-    //     const card = document.createElement('div');
-    //     card.classList.add('swiper-slide'); // Додали клас для слайду
-    //       const chefImage = createImage(event.cook.imgUrl);
-    //       card.appendChild(chefImage);
-         
-    //       const eventName = createHeading('h2', event.topic.name);
-    //       card.appendChild(eventName);
-        
-    //       const dishRegion = createParagraph(event.topic.area);
-    //       card.appendChild(dishRegion);
-        
-    //       const previewImage = createImage(event.topic.previewUrl);
-    //       card.appendChild(previewImage);
-        
-    //       const dishImage = createImage(event.topic.imgUrl);
-    //       card.appendChild(dishImage);
-        
-    //       return card;
-    //     }
