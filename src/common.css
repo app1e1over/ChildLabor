@@ -19,7 +19,7 @@
   --secondary-rgb-color: rgb(248, 248, 248);
   --active-color:#9bb537;
   --plain-white: #ffffff;
---backdrop-color:rgba(0,0,0,0.6);
+--backdrop-color:rgba(82,80,80,0.3);
   --accent-color: #eea10c;
   --additional-color: #cecdcd;
   --rare-color: rgba(160, 158, 160, 0.6);
@@ -65,7 +65,7 @@
        --arrow-right-color:#050505;
         --input-border-color:rgba(255,255,255,0.2);
          --popup-title-color:#fff;
-         --backdrop-color:rgba(0,0,0,0.3);
+         --backdrop-color:rgba(82,80,80,0.6);
 
 }
 body{
