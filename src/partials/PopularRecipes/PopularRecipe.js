@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { ModalStart, addModal } from '../ModalWindow/ModalWindow';
 
 const popularRecipesList = document.querySelector('.popular-recipes-container');
 const popularRecipesApiUrl = 'https://tasty-treats-backend.p.goit.global/api/recipes/popular';
@@ -11,20 +12,27 @@ async function fetchPopularRecipes() {
     let markup = '';
 
     recipes.forEach(recipe => {
-      const { recipeID, preview, title, description } = recipe;
+      const { _id, preview, title, description } = recipe;
+      const cont = document.createElement("div")
+      cont.className = "popular-recipes-list";
+      cont.dataset.recipe = _id;
+      addModal(cont, 'recipe')
 
-      markup += `
-        <div class="popular-recipes-list" data-recipe-id="${recipeID}">
+      console.log(_id);
+
+      cont.innerHTML = `
           <img src="${preview}" alt="${title}" class="popular-recipe-image">
           <div class="popular-recipes-content">
             <div class="popular-recipe-item-title">${title}</div>
             <div class="popular-recipe-description">${description}</div>
           </div>
-        </div>
+        
       `;
+      popularRecipesList.appendChild(cont);
     });
 
-    popularRecipesList.insertAdjacentHTML('beforeend', markup);
+    // popularRecipesList.insertAdjacentHTML('beforeend', markup);
+    ModalStart();
   } catch (error) {
     console.error('Произошла ошибка:', error);
   }
