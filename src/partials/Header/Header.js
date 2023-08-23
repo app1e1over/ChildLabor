@@ -126,25 +126,4 @@ function onNavMenuLinkClick(event) {
   }
 }
 
-// test
-
-// const currentUrl = window.location.href;
-// if (currentUrl.includes('index.html')) {
-//   let markupHome = `<li class="nav-item">
-//               <a ${currentPath} class="nav-link link current">Home</a>
-//             </li>
-//             <li class="nav-item">
-//               <a ${favoritesPath} class="nav-link link">Favorites</a>
-//             </li>`;
-//   navListElement.insertAdjacentHTML('beforeend', markupHome);
-// } else if (currentUrl.includes('favorites.html')) {
-//   let markupFavorites = `<li class="nav-item">
-//               <a ${homePath} class="nav-link link">Home</a>
-//             </li>
-//             <li class="nav-item">
-//               <a ${currentPath} class="nav-link link current">Favorites</a>
-//             </li>`;
-//   navListElement.insertAdjacentHTML('beforeend', markupFavorites);
-// }
-
 export { startHeader };
