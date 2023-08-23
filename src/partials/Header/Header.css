@@ -151,7 +151,7 @@
   }
 
   .mobile-close-icon {
-    stroke: var(--secondary-rgb-color);
+    stroke: var(--circul-el-color);
     position: absolute;
     top: 20px;
     right: 20px;
