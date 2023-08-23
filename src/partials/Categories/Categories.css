@@ -19,7 +19,7 @@
 
 #categories::-webkit-scrollbar-thumb {
     border-radius: 12px;
-    background-color: rgba(5, 5, 5, 0.18);
+    background-color: var(--mini-slider-color);
 }
 
 
@@ -31,7 +31,7 @@
     font-family: "Inter";
     font-weight: 500;
     cursor: pointer;
-    color: rgba(5, 5, 5, 0.3);
+    color: var(--popular-list-color);
     transition: color var(--transition-duration) var(--transition-time-function);
 }
 
@@ -59,14 +59,14 @@
     width: 176px;
     height: 50px;
     background-color: transparent;
-    color: rgba(5, 5, 5, 0.2);
+    color: var(--popular-color);
     font-family: "Inter";
     font-weight: 500;
     text-align: center;
     font-size: 18px;
     line-height: 1.21;
     padding: 14px 28px 14px 28px;
-    border: 1px solid rgba(5, 5, 5, 0.2);
+    border: 1px solid var(--input-border-color);
     border-radius: 15px;
     cursor: pointer;
 }
@@ -89,6 +89,9 @@
             height: 198px;
             gap: 18px;
         }
+        .cont{
+            margin-bottom: 18px;
+        }
 
 #categories::-webkit-scrollbar-thumb {
         width: 8px;
@@ -105,7 +108,9 @@ line-height: 1.28;
         #categories {
             width: 176px;
             height: 416px;
-            gap: 24px;
+        }
+        .cont{
+            margin-bottom: 24px;
         }
 
         #categories::-webkit-scrollbar-thumb {
