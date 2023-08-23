@@ -50,7 +50,7 @@ export function Update(obj) {
   axios
     .get(req)
     .then(v => {
-      if (!obj.hasOwnProperty('page')) createPagination(v.data.totalPages, 1);
+      if (!obj.hasOwnProperty('page')) createPagination(v.data.totalPages, 1, Update);
       return v.data.results;
     })
     .then(recepies => {
