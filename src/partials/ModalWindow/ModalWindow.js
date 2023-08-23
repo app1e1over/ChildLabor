@@ -9,8 +9,8 @@ function getVideoIdFromLink(link) {
 
 function onOpenModal(e, dataId) {
   const id =
-    e.target.nearest(`[data-${dataId}]`).dataset[dataId];
-
+    e.target.closest(`[data-${dataId}]`).dataset[dataId];
+document.createElement("div")
   axios
     .get('https://tasty-treats-backend.p.goit.global/api/recipes/' + id)
     .then(response => response.data)
