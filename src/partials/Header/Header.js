@@ -1,11 +1,13 @@
 const closeMenuButton = document.querySelector('.mobile-menu-close-btn');
 const burgerMenuButton = document.querySelector('.burger-menu');
-const mobileMenu = document.querySelector('#mobile-menu');
+const mobileMenu = document.querySelector('.js-menu-container');
+const mobileBackdrop = document.querySelector('.mobile-backdrop');
 
 function handlerOnBurgerButtonClick(event) {
   const isOpen = mobileMenu.classList.contains('is-open');
   if (!isOpen) {
     mobileMenu.classList.add('is-open');
+    mobileBackdrop.classList.remove('is-hidden');
     burgerMenuButton.removeEventListener('click', handlerOnBurgerButtonClick);
     closeMenuButton.addEventListener('click', handlerOnCloseMenuButton);
   }
@@ -15,6 +17,7 @@ function handlerOnCloseMenuButton() {
   const isOpen = mobileMenu.classList.contains('is-open');
   if (isOpen) {
     mobileMenu.classList.remove('is-open');
+    mobileBackdrop.classList.add('is-hidden');
     closeMenuButton.removeEventListener('click', handlerOnCloseMenuButton);
     burgerMenuButton.addEventListener('click', handlerOnBurgerButtonClick);
   }

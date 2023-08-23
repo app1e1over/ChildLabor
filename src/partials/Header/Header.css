@@ -163,7 +163,7 @@
     height: 100vh;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 1000;
     background-color: var(--active-color);
     padding-top: 200px;
     opacity: 0;
@@ -175,6 +175,24 @@
   }
   .mobile-menu {
     background-color: var(--new-el-color);
+  }
+  .mobile-backdrop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    opacity: 1;
+    background-color: rgba(82, 80, 80, 0.3);
+    transition: opacity var(--transition-duration)
+        var(--transition-time-function),
+      visibility var(--transition-duration) var(--transition-time-function);
+  }
+  .mobile-backdrop.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
   }
 
   .mobile-menu-close-btn {
