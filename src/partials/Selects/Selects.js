@@ -167,7 +167,7 @@ function inputsSearching(e){
 keyWord = e.target.value.trim(); 
 //console.log(keyWord)
 // фетчим рецепты
-axios.get('https://tasty-treats-backend.p.goit.global/api/recipes?page=1&limit=250') // почему лимит 250? хз, чтобы много. не знаю, как сделать все
+Update({}, keyword) // почему лимит 250? хз, чтобы много. не знаю, как сделать все
 .then(response => {
   const data = response.data;
   let recipes = data;
