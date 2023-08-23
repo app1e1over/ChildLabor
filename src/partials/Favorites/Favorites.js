@@ -16,7 +16,15 @@ export function hadleAllFavoritesDeleted() {
     if (!favoritesArr.length) {
         UpdateFavorites({page: 1});
     }
+
 }
+
+// функція UpdateFavorites():
+// бере інф з ЛС, де зберіг. [ { }-ів ] з рецептами за кл. сл. 'Favorites'
+// 1. якщо ЛС пустий: рендер заглушки, ретьорн
+// 2. якщо вибрані всі категорії - рендер розмітки всього масиву
+// 3. якщо одна категорія - filter, для кожного рецепта виклик DrawCard
+// 3. innerHTML = renderedCards
 
 
 // функція UpdateFavorites():
@@ -80,6 +88,7 @@ export function showByCategory(category) {
 }
 
 //РЕНДЕР РОЗМІТКИ ВСІХ УЛЮБЕНИХ РЕЦЕПТІВ 
+
 // let start = (pageIndex * cardsPerPage - cardsPerPage) + 1;
 // let end = pageIndex * cardsPerPage;
 

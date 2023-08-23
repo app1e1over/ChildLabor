@@ -1,8 +1,9 @@
 .is-hidden {
-    display: none;
+  display: none;
 }
 
 img {
+
     display: block;
     width: 100%;
 }
