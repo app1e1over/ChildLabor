@@ -141,7 +141,7 @@ function MakeRequestString() {
     if (obj[key] != undefined && obj[key] != null) {
       let val = obj[key];
 
-      if (val != undefined && val.trim() != '') {
+      if (typeof val=="number" || val.trim() != '') {
         if (!first) {
           str += '&';
         } else {
