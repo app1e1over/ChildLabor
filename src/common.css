@@ -35,6 +35,9 @@
   --card-title:#f8f8f8;
    --card-text:#f8f8f8;
    --card-number:#f8f8f8;
+   --arrow-number-color:#fff;
+   --arrow-left-color:rgba(248,248,248,0.5);
+    --arrow-right-color:#050505;
   --firts-font: 'Inter Medium';
   color-scheme:"light";
 }
@@ -55,6 +58,10 @@
    --card-title:#fff;
     --card-text:rgba(255,255,255,0.8);
      --card-number:rgba(255,255,255,0.5);
+      --arrow-number-color:#fff; 
+      --arrow-left-color:rgba(255,255,255,0.5);
+       --arrow-right-color:#050505;
+
 }
 body{
     background-color: var(--secondary-color);
