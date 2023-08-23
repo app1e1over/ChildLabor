@@ -7,9 +7,9 @@ function getVideoIdFromLink(link) {
   return matches && matches[1] ? matches[1] : '';
 }
 
-function onOpenModal(e) {
+function onOpenModal(e, dataId) {
   const id =
-    e.target.parentElement.parentElement.parentElement.dataset.recipe;
+    e.target.nearest(`[data-${dataId}]`).dataset[dataId];
 
   axios
     .get('https://tasty-treats-backend.p.goit.global/api/recipes/' + id)
