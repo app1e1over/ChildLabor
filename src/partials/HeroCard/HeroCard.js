@@ -1,6 +1,3 @@
-// import axios from 'axios';
-// import Swiper from 'swiper';
-// import 'swiper/swiper-bundle.min.css';
 
 // const EVENTS_URL = 'https://tasty-treats-backend.p.goit.global/api/events';
 
@@ -152,11 +149,13 @@
     function DrawEventCard(event) {
       const card = document.querySelector('.swiper-slide');
      
-    
+      const chefImageDiv = document.createElement('div')
+      chefImageDiv.classList.add( 'cook-card');
       const chefImage = createImage(event.cook.imgUrl);
-      chefImage.classList.add('event-card-cook', 'cook-card');
-      card.appendChild(chefImage);
-     
+      chefImage.classList.add('event-card-cook');
+      chefImageDiv.appendChild(chefImage);
+
+     card.appendChild(chefImageDiv);
       
     const previewImageDiv = document.createElement('div');
     previewImageDiv.classList.add('event-card-preview');
@@ -167,9 +166,11 @@
     previewImageDiv.appendChild(previewImage);
 
     // Додайте text та aria безпосередньо до previewImageDiv
-    const eventName = createHeading('h2', event.topic.name);
+    const eventName = createParagraph( event.topic.name);
     eventName.classList.add('event-card-text');
     previewImageDiv.appendChild(eventName);
+
+
 
     const dishRegion = createParagraph(event.topic.area);
     dishRegion.classList.add('event-card-area');
@@ -218,4 +219,106 @@
   
     
     
+    // const sliderWrapperElement = document.querySelector('.swiper-wrapper');
+    // const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api/events';
+    // console.log(BASE_URL);
+    
+    // async function fetchMasterClasses() {
+    //   try {
+    //     const response = await axios.get(BASE_URL);
+    //     return response.data;
+    //   } catch (error) {
+    //     console.error(error);
+    //     return [];
+    //   }
+    // }
+    
+    // fetchMasterClasses();
+    
+    // const item = [];
+    
+    // function createSlideMarkup(item) {
+    //   const { cook, topic } = item;
+    //   return 
+    //     `<div class="swiper-slide">
+    //       <img src="${cook.imgUrl}" alt="${cook.name}" class="cook-img" style="width: 182px; height: 442px; margin-right: 16px; border-radius: 15px">
+    //       </div>
+    //        <div class="swiper-slide">
+    //       <img src="${topic.previewUrl}" alt="${topic.name}" class="dish-img middle-img">
+    //       <div class="content">
+    //         <h2 class="slider-title">${topic.name}</h2>
+    //         <p class="slider-text">${topic.area}</p>
+    //       </div>
+    //       </div>
+    //        <div class="swiper-slide">
+    //       <img src="${topic.imgUrl}" alt="${topic.name}" class="dish-img">
+    //       </div>
+    //     </div>`   ;
+    // }
+    
+    // const addGalleryMarkup = createSlideMarkup(item);
+    
+    // sliderWrapperElement.innerHTML = addGalleryMarkup;
+    
+    
+    
+    
+    // import axios from "axios";
+    // import Swiper from 'swiper/swiper-bundle.min'; // Імпорт Swiper з npm
+    
+    
+    // // Отримайте елементи DOM
+    // const sliderContainer = document.querySelector('.swiper-container');
+    // const sliderWrapper = sliderContainer.querySelector('.swiper-wrapper');
+    
+    // // Отримайте дані з бекенду, які містять фотографії
+    // function fetchMasterClasses() {
+    //   const req = MakeRequestString();
+    //   axios
+    //     .get(req)
+    //     .then(response => {
+    //       const events = response.data;
+    //       for (const event of events) {
+    //         // Створюємо елементи для фотографій кухарів і додаємо їх до слайдера
+    //         const card = DrawEventCard(event);
+    //         sliderWrapper.appendChild(card);
+    //       }
+    
+    //       // Після додавання всіх слайдів налаштуйте Swiper
+    //       new Swiper(sliderContainer, {
+    //         slidesPerView: 'auto', // Встановлюємо кількість слайдів, які видно одночасно
+    //         spaceBetween: 16, // Відступ між слайдами
+    //         pagination: {
+    //           el: '.swiper-pagination', // Додаємо пагінацію (dots)
+    //           clickable: true, // Зробити dots клікабельними
+    //         },
+    //         // Додайте інші параметри Swiper за потреби
+    //       });
+    //     })
+    //     .catch(error => {
+    //       console.error("Помилка запиту до сервера:", error);
+    //     });
+    // }
+    
+    // // Викликати функцію для отримання даних та ініціалізації слайдера
+    // fetchMasterClasses();
+    
+    // function MakeRequestString() {
+    //   const baseUrl = "https://tasty-treats-backend.p.goit.global"; 
+    //   const resource = "/api/events"; 
+    //   const requestUrl = `${baseUrl}${resource}`;
+    //   return requestUrl;
+    // }
+    
+    // function createImage(src) {
+    //   const image = document.createElement('img');
+    //   image.src = src;
+    //   return image;
+    // }
+    
+    // function createHeading(headingType, text) {
+    //   const heading = document.createElement(headingType);
+    //   heading.textContent = text;
+    //   return heading;
+    // }
     
