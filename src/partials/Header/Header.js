@@ -80,11 +80,11 @@ function changeTheme() {
   if (body.classList.contains('dark')) {
     body.classList.toggle('dark');
     localStorage.setItem('theme', 'light');
-    input.checked = false;
+    inputs.checked = false;
   } else {
     body.classList.add('dark');
     localStorage.setItem('theme', 'dark');
-    input.checked = true;
+    inputs.checked = true;
   }
 }
 
