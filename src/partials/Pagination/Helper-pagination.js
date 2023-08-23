@@ -8,6 +8,7 @@ export default class Pagination {
     this.pageIndex = index;
     this.container = container;
     this.onRender = onRender;
+
     this.render = this.render.bind(this);
     this.handlePaginationItemClick = this.handlePaginationItemClick.bind(this);
 

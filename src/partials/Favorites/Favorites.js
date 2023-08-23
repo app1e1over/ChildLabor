@@ -14,7 +14,7 @@ const favImgElem = document.querySelector('.fav-picture-thumb');
 // запускається, коли користувач сидів в обраних і повидаляв усі рецепти
 export function hadleAllFavoritesDeleted() {
     if (!favoritesArr.length) {
-        UpdateFavorites();
+        UpdateFavorites({page: 1});
     }
 }
 
@@ -28,7 +28,14 @@ export function hadleAllFavoritesDeleted() {
 
 // let pageIndex = 1;
 const cardsPerPage = 1;
+export function StartFavorites(){
+    let favoritesArr = JSON.parse(localStorage.getItem(FAV_KEY));
+    let pageCount = Math.ceil(favoritesArr.length / cardsPerPage);
+    UpdateFavorites({page: 1})
+    
+    createPagination(pageCount, 1, UpdateFavorites);
 
+}
 // ВИКЛИКАЄТЬСЯ ПРИ СТАРТІ
 export function UpdateFavorites({ page }) {
     favoritesList.innerHTML = '';
@@ -47,11 +54,9 @@ export function UpdateFavorites({ page }) {
         return;
     }
     
-    let start = (pageIndex * cardsPerPage - cardsPerPage) + 1;
-    let end = pageIndex * cardsPerPage;
+    let start = (page * cardsPerPage - cardsPerPage) + 1;
+    let end = page * cardsPerPage;
 
-    let pageCount = Math.ceil(favoritesArr.length / cardsPerPage);
-    createPagination(pageCount, page, UpdateFavorites);
     renderFavorites(favoritesArr, start, end);
 }
 
@@ -86,4 +91,4 @@ export function renderFavorites(data, start, end) {
 
 
 //console.log(UpdateFavorites());
-UpdateFavorites();
+//UpdateFavorites();
