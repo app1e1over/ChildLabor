@@ -190,6 +190,9 @@
     opacity: 1;
    
   }
+  .hero-container{
+    padding-right: 0;
+  }
   
 
    @media screen and (min-width: 768px) {
@@ -233,7 +236,7 @@
     }
     .cook-card{
       height: 442px;
-      width: 140px !important;
+      width: 180px !important;
       margin-right: 16px;
     }
     .event-card-cook {
