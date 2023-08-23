@@ -1,15 +1,99 @@
 <header class="header-page">
-  <nav class="nav">
-    <ul class="nav-list list">
-      <li class="nav-item">
-        <a href="./" class="nav-link linc current">Home</a>
-      </li>
-      <li class="nav-item">
-        <a href="./favorites.html" class="nav-link linc">Favorites</a>
-      </li>
-    </ul>
-  </nav>
-  <a href="./index.html" class="header-logo"
-    >tasty<span class="logo=part">treats.</span></a
-  >
+  <div class="container header-container">
+    <nav class="nav-menu">
+      <ul class="nav-list list js-nav-list">
+        <!-- <li class="nav-item">
+          <a href="./" class="nav-link link current">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="./favorites.html" class="nav-link link">Favorites</a>
+        </li> -->
+      </ul>
+    </nav>
+    <a href="./index.html" class="header-logo header-logo-main link"
+      >tasty<span class="header-logo header-logo-part">treats.</span></a
+    >
+    <div class="header-icon-wrapper">
+      <button
+        type="button"
+        class="header-bascket-btn btn icon-btn button js-popup-open"
+        data-popup-open
+      >
+        <svg class="bascket-icon" width="24px" height="24px">
+          <use href="./image/sprite.svg#icon-bascket-default-dark"></use>
+        </svg>
+      </button>
+
+      <!-- <div class="header-toggle">
+        <button class="toggle-btn icon-btn button js-toggle" type="button">
+          <svg class="mobile-toggle-icon" width="46px" height="20px">
+            <use
+              href="./image/sprite.svg#icon-switch_1"
+              class="toggle-icon-light-theme"
+            ></use>
+            <use
+              href="./image/sprite.svg#icon-switch-dark-theme"
+              class="toggle-icon-dark-theme"
+            ></use>
+          </svg>
+        </button>
+      </div> -->
+      <div class="switch-checkbox-wrapper">
+        <label class="checkbox">
+          <input type="checkbox" class="checkbox-input visually-hidden" />
+          <span class="checkbox-inner"></span>
+        </label>
+      </div>
+      <div class="burger-menu-wrapper">
+        <button type="button" class="burger-menu icon-btn button">
+          <svg class="icon-menu" width="32px" height="32px">
+            <use href="./image/sprite.svg#icon-burger-default-light"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-----------------Mobile menu---------------->
+  <div class="mobile-menu js-menu-container" id="mobile-menu">
+    <button type="button" class="mobile-menu-close-btn icon-btn">
+      <svg class="mobile-close-icon" width="32px" height="32px">
+        <use href="./image/sprite.svg#icon-close-input-default"></use>
+      </svg>
+    </button>
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list list js-nav-list">
+        <li class="nav-item">
+          <a href="./" class="mobile-nav-link link current">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="./favorites.html" class="mobile-nav-link link">Favorites</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- <div class="mobile-header-toggle">
+        <button class="mobile-toggle-btn icon-btn button" type="button">
+          <svg class="mobile-toggle-icon" width="46px" height="20px">
+            <use
+              href="./image/sprite.svg#icon-switch_1"
+              class="toggle-icon-light-theme"
+            ></use>
+            <use
+              href="./image/sprite.svg#icon-switch-dark-theme"
+              class="toggle-icon-dark-theme visually-hidden"
+            ></use>
+          </svg>
+        </button>
+      </div> -->
+    <div class="mobile-switch-checkbox-wrapper">
+      <label class="checkbox">
+        <input
+          type="checkbox"
+          class="checkbox-input visually-hidden"
+          id="input"
+        />
+        <span class="checkbox-inner"></span>
+      </label>
+    </div>
+  </div>
+  <div class="mobile-backdrop is-hidden"></div>
 </header>

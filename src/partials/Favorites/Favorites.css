@@ -3,16 +3,17 @@
 }
 
 img {
-  display: block;
-  width: 100%;
+
+    display: block;
+    width: 100%;
 }
 
-/* секція /
+/* секція */
 .section-favorites {
     padding-top: 24px;
 }
 
-/ картинка основна /
+/* картинка основна */
 .fav-picture-thumb {
 margin-bottom: 40px;
 }
@@ -24,7 +25,7 @@ img.fav-image {
     margin: 0 auto;
 }
 
-/ заглушка /
+/* заглушка */
 .favorites-plug {
 margin-top: 50%;
 margin-bottom: 50%;
@@ -59,45 +60,45 @@ margin-bottom: 50%;
 }
 
 
-/ МЕДІА */
+/* МЕДІА */
 @media screen and (min-width: 768px) {
-  .section-favorites {
+    .section-favorites {
     padding-top: 25px;
-  }
+    }
 
-  img.fav-image {
+    img.fav-image {
     max-width: 704px;
-  }
+    }
 
-  .fav-picture-thumb {
-    margin-bottom: 64px;
-  }
+    .fav-picture-thumb {
+        margin-bottom: 64px;
+    }
 
-  .fav-plug-text {
-    font-size: 16px;
-    max-width: 481px;
-  }
+     .fav-plug-text {  
+        font-size: 16px;
+        max-width: 481px;
+     }
 
-  .fav-plug-img {
-    margin: 0 auto 32px;
-    width: 97px;
-    height: 83px;
-    background-size: 97px 83px;
-  }
+    .fav-plug-img {
+        margin: 0 auto 32px;
+        width: 97px;
+        height: 83px;
+        background-size: 97px 83px;
+    }
 
-  .favorites-plug {
-    margin-top: unset;
-    margin-bottom: unset;
-  }
+        .favorites-plug {
+            margin-top: unset;
+            margin-bottom: unset;
+        }
 }
 
 @media screen and (min-width: 1280px) {
-  .section-favorites {
-    padding-top: 0;
-  }
+    .section-favorites {
+        padding-top: 0;
+    }
 
-  img.fav-image {
-    width: unset;
-    max-width: 1080px;
-  }
+    img.fav-image {
+        width: unset;
+         max-width: 1080px;
+    }
 }

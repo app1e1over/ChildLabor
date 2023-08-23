@@ -1,0 +1,68 @@
+<div class="popup-backdrop popup-container is-hidden">
+  <div class="popup-body" data-popup>
+    <div class="popup-content">
+      <h2 class="popup-title">ORDER NOW</h2>
+      <button type="button" data-popup-close class="js-popup-close button">
+        <svg class="popup-close-icon" width="20" height="20">
+          <use href="/src/image/sprite.svg#icon-close-input-default"></use>
+        </svg>
+      </button>
+      <form class="popup-form">
+        <label class="popup-field">
+          <span class="popup-field-desk">Name</span>
+          <span class="popup-input-wrapper">
+            <input
+              type="text"
+              name="user_name"
+              class="popup-input"
+              placeholder="Name"
+              required
+              minlength="3"
+              pattern="[a-zA-Zа-яА-ЯіІїЇї]+"
+            />
+          </span>
+        </label>
+        <label class="popup-field">
+          <span class="popup-field-desk">Phone number</span>
+          <span class="popup-input-wrapper">
+            <input
+              type="phone"
+              name="phone"
+              class="popup-input"
+              placeholder="380-67-000-00-00"
+              required
+              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+              title="xxx-хх-xxх-хx-хx"
+            />
+          </span>
+        </label>
+
+        <label class="popup-field">
+          <span class="popup-field-desk">Email</span>
+          <span class="popup-input-wrapper">
+            <input
+              type="email"
+              placeholder="minion@childlab.com"
+              name="user_email"
+              class="popup-input"
+              required
+              pattern="^^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+            />
+          </span>
+        </label>
+
+        <label class="popup-field">
+          <span class="popup-field-desk">Comment</span>
+          <textarea
+            name="user_message"
+            class="popup-message"
+            placeholder="&#x2661&#x2661Leave your wishes&#x2661&#x2661"
+          ></textarea>
+        </label>
+        <button type="submit" class="popup-btn js-popup-order button">
+          Send
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,83 +1,146 @@
+#categories {
+    border: none;
+    outline: none;
+    background: transparent;
+    overflow-y: auto;
+    /*white-space: nowrap;*/
+    scrollbar-width: thin;
+    display: flex;
+    flex-direction: column;
+    transition: .4s linear .2s;
+}
 
-@media screen and (min-width: 375px) {
-    .container {
-        width: 365px;
-    }
 
+#categories::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+}
+
+#categories::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    background-color: var(--mini-slider-color);
+}
+
+
+.category-option {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    font-family: "Inter";
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--popular-list-color);
+    transition: color var(--transition-duration) var(--transition-time-function);
+}
+
+
+
+.category-option:hover,
+.category-option:focus,
+.category-option:checked {
+    outline: none;
+    /*background-color: var(--active-color);*/
+    color: var(--active-color);
+}
+
+.category-option:active {
+    color: var(--active-color);
+}
+
+.my-button {
+    width: 176px;
+    height: 50px;
+    background-color: transparent;
+    color: var(--popular-color);
+    font-family: "Inter";
+    font-weight: 500;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.21;
+    padding: 14px 28px 14px 28px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.my-button:hover,
+.my-button:focus {
+    background-color: var(--active-color);
+    color: #f8f8f8;
+    transition: color var(--transition-duration) var(--transition-time-function);
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (max-width: 767px) {
     #categories {
-        width: 326px;
-        height: 198px;
-        border: none;
-        border-radius: 10px;
-        background: transparent;
-        overflow-y: scroll;
-        /*white-space: nowrap;*/
-        scrollbar-width: thin;
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-    }
+            width: 326px;
+            height: 198px;
+        }
+        .cont{
+            margin-bottom: 18px;
+        }
 
-
-    .my-button {
-        width: 178px;
-        height: 50px;
-        background-color: hsla(0, 0%, 0%, 0);
-        color: rgba(0, 0, 0, 0.2);
-        font-family: "Inter";
-        font-weight: 500;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        font-size: 18px;
-        line-height: 1.21;
-        padding: 14px 29px;
-        border: 1px solid rgba(5, 5, 5, 0.2);
-        border-radius: 15px;
-        cursor: pointer;
+#categories::-webkit-scrollbar-thumb {
+        width: 8px;
+        height: 116px;
     }
-                .my-button:hover,
-                .my-button:focus {
-                    background-color: #9BB537;
-                    color: #F8F8F8;
-                }
+.category-option {
+font-size: 14px;
+line-height: 1.28;
+}
+.category-option:not(:first-child) {
+    padding-top: 9px;
+}
 
-    .cont {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .category-option {
-        background-color: hsla(0, 0%, 0%, 0);
-        padding: 10px;
-        border: none;
-        text-align: left;
-        font-family: "Inter";
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 1.28;
-        cursor: pointer;
-        color: rgba(5, 5, 5, 0.3);
-    }
-
-    #catCont {
-        width: 500px;
-        height: 500px;
-        background-color: blue;
-    }
+.category-option:not(:last-child) {
+    padding-bottom: 9px;
+}
+.cont {
+    margin-bottom: 40px;
+    gap: 24px;
+}
 
 }
 
 @media screen and (min-width: 768px) {
-    .container {
-        width: 734px;
-    }
+        #categories {
+            width: 176px;
+            height: 416px;
+        }
+        .cont{
+            gap: 30px;
+            margin-bottom: 64px;
+        }
+
+        #categories::-webkit-scrollbar-thumb {
+            width: 8px;
+            height: 201px;
+        }
+        .category-option:not(:first-child) {
+            padding-top: 12px;
+        }
+        
+        .category-option:not(:last-child) {
+            padding-bottom: 12px;
+        }
+
 }
 
 @media screen and (min-width: 1280px) {
-    .container {
-        width: 1210 px;
-
+    #categories {
+        width: 235px;
+        height: 416px;
     }
+    .my-button {
+        width: 174px;
+        padding: 14px 27px;
+    }
+    .cont{
+        gap: 42px;
+    }
+
 }
