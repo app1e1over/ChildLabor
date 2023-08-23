@@ -1,17 +1,56 @@
-
-
-root {
+:root {
   --main-color: #050505;
   --main-rgb-color: rgb(5, 5, 5);
   --secondary-color: #f8f8f8;
   --secondary-rgb-color: rgb(248, 248, 248);
-  --active-color: #9bb537;
+  --active-color:#9bb537;
+  --plain-white: #ffffff;
+
   --accent-color: #eea10c;
   --additional-color: #cecdcd;
   --rare-color: rgba(160, 158, 160, 0.6);
   --box-shadow: 7px 5px 15px 0px var(--rare-color);
   --transition-duration: 250ms;
   --transition-time-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --new-el-color:#9bb537;
+--link-el-color:#f8f8f8;
+--circul-el-color:#f8f8f8;
+ --popular-color:rgba(5,5,5,0.5);
+  --popular-list-color:rgba(5,5,5,0.3);
+  --text-color:rgba(5,5,5,0.8);
+  --card-title:#f8f8f8;
+   --card-text:#f8f8f8;
+   --card-number:#f8f8f8;
+   --arrow-number-color:#050505;;
+   --arrow-left-color:rgba(248,248,248,0.5);
+    --arrow-right-color:#050505;
+    --input-border-color:rgba(5,5,5,0.2);
+    --popup-title-color:#050505;
+  --firts-font: 'Inter Medium';
+  color-scheme:"light";
+}
+.dark{
+  --main-color:#f8f8f8;
+  --main-rgb-color:rgb(248, 248, 248);
+  --secondary-color:#050505;
+  --secondary-rgb-color: --main-rgb-color: rgb(5, 5, 5);
+  --active-color: #9bb537;
+  --color-sheme:"dark";
+  --new-el-color:#050505;
+--link-el-color:#fff;
+--circul-el-color:#fff;
+--plain-white:#050505;
+  --popular-color:rgba(255,255,255,0.5);
+  --text-color:rgba(255,255,255,0.8);
+  --popular-list-color:rgba(255,255,255,0.3);
+   --card-title:#fff;
+    --card-text:rgba(255,255,255,0.8);
+     --card-number:rgba(255,255,255,0.5);
+      --arrow-number-color:#fff; 
+      --arrow-left-color:rgba(255,255,255,0.5);
+       --arrow-right-color:#050505;
+        --input-border-color:rgba(255,255,255,0.2);
+         --popup-title-color:#fff;
 }
 
 .container {
@@ -21,20 +60,54 @@ root {
   margin-right: auto;
 
 }
-
+div.ss-content{
+  background-color:var(--plain-white) }
 .search-input {
 width: 100%;
 padding: 8px;
-border: 1px solid #c7c7c7;
+border: 1px solid var(--input-border-color);
 border-radius: 4px;
 }
 .search-container .search-input {
 width: 100%;
 padding: 8px;
-border: 1px solid #c7c7c7;
+border: 1px solid var(--input-border-color);
 border-radius: 4px;
 
 }
+input.search.search-input:focus-visible {
+ 
+  outline: none;
+  padding-left: 48px;
+  
+}
+.input-container:focus-within .search-icon {
+  display: none;
+}
+
+.input-container:focus-within .search-icon-active {
+  display: block;
+}
+
+.input-container .search-icon {
+  display: block;
+}
+
+.input-container .search-icon-active {
+  display: none;
+}
+.close-icon-select{
+width: 18px;
+height: 18px;
+stroke:var(--arrow-number-color);
+
+display: block;
+}
+
+.search-input:focus-visible::placeholder{
+  color: var(--secondary-color);
+}
+
 .for-svg{
  position: relative;
 
@@ -44,12 +117,26 @@ border-radius: 4px;
 width: 18px;
 height: 18px;
 
-background-size: cover; /* или другое значение, чтобы изображение заполняло контейнер */
+background-size: cover; 
 background-position: center;
 opacity: 0.5;
 position: absolute;
 top: 14px;
 left: 18px;
+}
+.input-container:focus-within .svg-icon-close{
+width: 18px;
+  height: 18px;
+  background-size: cover; 
+  background-position: center;
+fill: #050505;
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  display: block;
+}
+.svg-icon-close{
+  display: none;
 }
 
 
@@ -68,10 +155,12 @@ box-shadow: none;  /* Убираем тень  */
 
 
 input.search.search-input {
+border-color: var(--input-border-color);
 border-radius: 15px; 
 width: 335px;
 height: 46px;
 padding: 0;
+background-color: var(--secondary-color);
 
 }
 .search-input::placeholder{
@@ -80,7 +169,7 @@ font-size: 12px;
 font-style: normal;
 font-weight: 500;  /* шрифт в инпуте */
 line-height: 1.3;  
-color: #7e7e7e;
+color: var(--popular-color);
 padding-left: 48px;
 }
 /* контейнер для всех селектов */
@@ -98,7 +187,7 @@ label{
   font-style: normal;
   font-weight: 500;  /* шрифт над селектом */
   line-height: 1.2;  
-  color: #7e7e7e;
+  color: var(--popular-color);
   margin-bottom: 8px;
   display: block;
   
@@ -109,7 +198,7 @@ font-size: 12px;
 font-style: normal;
 font-weight: 500;  /* внутри селекта, ШРИФТ пока там ничего не выбрано */
 line-height: 1.2;  
-color: #7e7e7e;
+color: var(--popular-color);
 }
 div.ss-content.ss-open-below{  /* выпадающий список  */
 height: 188px;
@@ -137,37 +226,38 @@ height: 68px;
 
 /*ползунок*/
 .ss-list::-webkit-scrollbar-thumb {
-background-color: #e6e6e6;   /*  Цвет ползунка */
+background-color: var(--popular-list-color);   /*  Цвет ползунка */
 border-radius: 12px;  /* Скругление углов ползунка */
 height: 68px; 
 }
 
 /* Стилизация фона полосы прокрутки */
 .ss-list::-webkit-scrollbar-track {
-background-color: white;  /* Цвет фона полосы прокрутки  */
+background-color: var( --plain-white);  /* Цвет фона полосы прокрутки  */
 }
 div.ss-content .ss-list .ss-option:not(.ss-disabled).ss-selected {
-background-color: white;
-color: #b4b4b4;  /* тут цвет текста и фона ПЕРВОГО ДИВА внутри выпадайки  */
+background-color: var( --plain-white);
+color: var(--popular-list-color); /* тут цвет текста и фона ПЕРВОГО ДИВА внутри выпадайки  */
 
 }
 div.ss-content.time.ss-open-below{
 height: 124px;
 }
 div.ss-content .ss-list .ss-option:hover{
-color: #050505; 
-background-color: white;   /* тут цвет текста и фона ХОВЕРА внутри выпадайки  */
+color:var(--text-color);
+background-color: var( --plain-white);   /* тут цвет текста и фона ХОВЕРА внутри выпадайки  */
 }
 div.ss-main.time,
 div.ss-main.country,
 div.ss-main.selectIngredients {
-background-color: #f8f8f8;
+background-color: var(--secondary-color);
 width: 160px;
 height: 46px;   /*  тут сами селекты в неразвернутом виде  */
 border-top-right-radius: 15px;
 border-top-left-radius: 15px;
 border-bottom-left-radius: 15px;
 border-bottom-right-radius: 15px;
+border-color: var(--input-border-color);
 
 }
 div.ss-main.ing{
@@ -182,12 +272,12 @@ div.ss-main:focus{
 }
 
 div.ss-content .ss-list .ss-option{
-  color: #4d4d4d; 
+  color:var(--popular-list-color);
 }
 .ss-content .ss-list div.ss-option.ss-highlighted, .ss-content .ss-list .ss-option:not(.ss-disabled).ss-selected {
 
-color: #050505;
-background-color: #f8f8f8;   /* когда селектишь не мышкой, а с клавиатуры  */
+color: var(--popular-color);
+background-color: var(--secondary-color);   /* когда селектишь не мышкой, а с клавиатуры  */
 }
 
 .form.container{
