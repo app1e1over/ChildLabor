@@ -40,10 +40,13 @@
     --arrow-right-color:#050505;
     --input-border-color:rgba(5,5,5,0.2);
     --popup-title-color:#050505;
+    --page-color:#f8f8f8;
+    --mini-slider-color:rgba(5,5,5,0.18);
   --firts-font: 'Inter Medium';
   color-scheme:"light";
 }
 .dark{
+   --page-color:#161616;
   --main-color:#f8f8f8;
   --main-rgb-color:rgb(248, 248, 248);
   --secondary-color:#050505;
@@ -66,6 +69,7 @@
         --input-border-color:rgba(255,255,255,0.2);
          --popup-title-color:#fff;
          --backdrop-color:rgba(82,80,80,0.6);
+          --mini-slider-color:rgba(255,255,255,0.18);
 
 }
 body{
