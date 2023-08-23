@@ -199,7 +199,7 @@ display: flex;
 flex-wrap: wrap;
 width: 365px;
 gap: 14px;
-margin-left: auto;
+
 
 }
 @media screen and (min-width: 375px) {
@@ -242,6 +242,12 @@ input.search.search-input {
   div.ss-main.selectIngredients{
     width: 188px;
   }
+  .form.container{
+    
+    padding-top: 40px;
+    padding-left: 0;
+  padding-bottom: 14px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -276,11 +282,23 @@ input.search.search-input {
     div.ss-main.selectIngredients{
       width: 188px;
     }
+    .form.container{
+    
+      padding-top: 80px;
+      padding-left: 0;
+    padding-bottom: 44px;
+    }
 }
 
 @media screen and (min-width: 1280px) {
   .container {
       width: 1210px;
+  }
+  .form.container{
+    width: 780px;
+    padding-top: 100px;
+    padding-left: 0;
+  padding-bottom: 44px;
   }
   .search-form-food{
    
