@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { sprite } from '../../image/sprite.svg';
-import { ModalStart } from '../ModalWindow/ModalWindow';
+import { ModalStart, addModal } from '../ModalWindow/ModalWindow';
 import { createPagination } from '../Pagination/Pagination.js';
 import { showPreloader, hidePreloader } from '../Preloader/Preloader';
 
@@ -117,7 +117,7 @@ export function DrawCard(recipe) {
   seeRecep.innerText = 'See recipe';
   seeRecep.dataset.action = 'open-modal';
   lowerContainer.appendChild(seeRecep);
-
+  addModal(seeRecep, "recipe");
   cont.appendChild(bg);
   textContainer.appendChild(name);
   textContainer.appendChild(description);
