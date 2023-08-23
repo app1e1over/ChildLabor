@@ -1,6 +1,6 @@
 import axios from "axios";
 import { DrawCard } from "../RecepieCards/RecepieCards.js"
-import createPagination from "../Pagination/Pagination.js"
+import { createPagination } from "../Pagination/Pagination.js"
 
 
 const FAV_KEY = 'Favorites';
@@ -27,7 +27,7 @@ export function hadleAllFavoritesDeleted() {
 // 3. innerHTML = renderedCards
 
 let pageIndex = 1;
-const cardsPerPage = 12;
+const cardsPerPage = 1;
 
 // ВИКЛИКАЄТЬСЯ ПРИ СТАРТІ
 export function UpdateFavorites() {
@@ -36,7 +36,8 @@ export function UpdateFavorites() {
     favImgElem.classList.remove('is-hidden');
 
     let favoritesArr = JSON.parse(localStorage.getItem(FAV_KEY));
-    // console.log(favoritesArr);
+    console.log(favoritesArr);
+    console.log(favoritesArr.length);
 
     if (!favoritesArr.length) {
         favoritesPlug.classList.remove('is-hidden');
@@ -46,9 +47,13 @@ export function UpdateFavorites() {
         return;
     }
     
-    let pageCount = Math.round(favoritesArr.length / cardsPerPage);
+    let pageCount = Math.ceil(favoritesArr.length / cardsPerPage);
+    console.log(pageCount);
+    console.log(pageIndex);
     createPagination(pageCount, pageIndex);
-    renderFavorites(favoritesArr);
+    console.log(createPagination);
+    renderFavorites(favoritesArr, start, end);
+    console.log(renderFavorites)
 }
 
 
@@ -71,10 +76,15 @@ export function showByCategory(category) {
 }
 
 //РЕНДЕР РОЗМІТКИ ВСІХ УЛЮБЕНИХ РЕЦЕПТІВ 
+let start = (pageIndex * cardsPerPage - cardsPerPage) + 1;
+let end = pageIndex * cardsPerPage;
+
 function renderFavorites(data, start, end) {
-for(let i = start; i <= end && i < data.length; i += 1 ){
+    for (let i = start; i <= end; i += 1 ){
         favoritesList.append(DrawCard(data[i]));
     }
 }
 
-//UpdateFavorites();
+
+//console.log(UpdateFavorites());
+UpdateFavorites();
