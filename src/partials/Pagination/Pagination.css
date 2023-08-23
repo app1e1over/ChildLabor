@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
     margin-top: 40px;
     margin-bottom: 80px;
@@ -17,6 +18,7 @@
     line-height: 122%;
     text-align: center;
 
+    font-family: 'Inter';
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
@@ -54,22 +56,22 @@
 .pagination ul li.list-item:hover,
 .pagination ul li:first-child:hover,
 .pagination ul li:last-child:hover {
-    background: #9BB537;
-    border: 1px solid #9BB537;
+    background: var(--active-color);
+    border: 1px solid var(--active-color);
 }
 
 .unicode-icon {
     font-size: 30px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .unicode-icon.prev-icon {
-    margin-right: 3px;
+    margin-right: 2px;
     color: var(--arrow-color-left);
 }
 
 .unicode-icon.next-icon {
-    margin-left: 3px;
+    margin-left: 2px;
     color: var(--arrowcolor-right);
 }
 
