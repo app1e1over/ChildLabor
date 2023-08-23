@@ -8,11 +8,12 @@ const paginationContainer = document.querySelector(".pagination ul");
 // let pageCount;
 // let pageIndex;
 
-export function createPagination(pageCount, pageIndex) {
+export function createPagination(pageCount, pageIndex, onRender) {
   new Pagination({
   container: paginationContainer,
   count: pageCount,
-  index: pageIndex
+  index: pageIndex,
+  onRender,
 });
 }
 

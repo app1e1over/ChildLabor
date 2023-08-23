@@ -3,11 +3,11 @@ export default class Pagination {
   pageIndex = 0;
   container = null;
 
-  constructor({ container, count, index }) {
+  constructor({ container, count, index, onRender }) {
     this.pageCount = count;
     this.pageIndex = index;
     this.container = container;
-
+    this.onRender = onRender;
     this.render = this.render.bind(this);
     this.handlePaginationItemClick = this.handlePaginationItemClick.bind(this);
 
@@ -17,6 +17,7 @@ export default class Pagination {
   }
 
   render() {
+    this.onRender({page: this.pageIndex});
     let liTag = "";
     let active = "";
     let beforePage = this.pageIndex - 1;
