@@ -100,10 +100,8 @@ ul {
 @media screen and (min-width:374px) {
     /* mobile */
     .container{
-        padding-left: 20px;
         padding-right: 20px;
         padding-top: 27.5px;
-        padding-bottom: 80px;
     }
   }
   @media screen and (min-width:768px) {
@@ -111,8 +109,6 @@ ul {
     .container{
         padding-left: 32px;
         padding-right: 32px;
-        padding-top: 32px;
-        padding-bottom: 100px;
     }
   }
 @media screen and (min-width:1280px) {
@@ -120,8 +116,6 @@ ul {
     .container{
         padding-left: 100px;
         padding-right: 100px;
-        padding-top: 40px;
-        padding-bottom: 100px;
     }
   }
 
