@@ -1,6 +1,6 @@
 import axios from "axios";
 import { DrawCard } from "../RecepieCards/RecepieCards.js"
-import {createPagination} from "../Pagination/Pagination.js"
+import createPagination from "../Pagination/Pagination.js"
 
 
 const FAV_KEY = 'Favorites';
