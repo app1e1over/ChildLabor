@@ -61,8 +61,8 @@ function setFavorite(heart, parseInfo) {
   updateHearts();
 }
 
-updateHearts();
-updateFilterBar();
+// updateHearts();
+// updateFilterBar();
 
 //   --------------------Copied-------------
 export function updateHearts() {
@@ -80,7 +80,7 @@ export function updateHearts() {
 }
 
 //   --------------------Copied-------------
-function updateFilterBar() {
+export function updateFilterBar() {
   if (!liked || !liked.length) {
     filterBar.innerHTML = '';
   } else {
