@@ -165,7 +165,7 @@ new SlimSelect({
 function inputsSearching(e){
 
 keyWord = e.target.value.trim(); 
-console.log(keyWord)
+//console.log(keyWord)
 // фетчим рецепты
 axios.get('https://tasty-treats-backend.p.goit.global/api/recipes?page=1&limit=250') // почему лимит 250? хз, чтобы много. не знаю, как сделать все
 .then(response => {
@@ -188,7 +188,7 @@ recipes.results.forEach(recipe => {
       matchingIds.push(recipe._id); // если находим, пушим ид рецепта, в котором нашли
     }
   });
-console.log(matchingIds) // смотрим, что у нас получилось (тут ид рецептов у которых есть теги)
+//console.log(matchingIds) // смотрим, что у нас получилось (тут ид рецептов у которых есть теги)
   return matchingIds; // и возвращаем массив ид рецептов у которых в тегах есть ключевое слово из инпута
 }
 
