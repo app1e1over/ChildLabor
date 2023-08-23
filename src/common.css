@@ -1,0 +1,236 @@
+@import url("./partials/Header/Header.css");
+@import url("./partials/Categories/Categories.css");
+@import url("./partials/Favorites/Favorites.css");
+@import url("./partials/FavoritesFilter/FavoritesFilter.css");
+@import url("./partials/HeroCard/HeroCard.css");
+@import url("./partials/ModalWindow/ModalWindow.css");
+@import url("./partials/Pagination/Pagination.css");
+@import url("./partials/PopularRecipes/PopularRecipe.css");
+@import url("./partials/RecepieCards/RecepieCards.css");
+@import url("./partials/Selects/Selects.css");
+
+@import url("./partials/CreateOrderModal/CreateOrderModal.css");
+@import url("./partials/ScrollUp/ScrollUp.css");
+@import url("./partials/Preloader/Preloader.css");
+:root {
+  --main-color: #050505;
+  --main-rgb-color: rgb(5, 5, 5);
+  --secondary-color: #f8f8f8;
+  --secondary-rgb-color: rgb(248, 248, 248);
+  --active-color:#9bb537;
+  --plain-white: #ffffff;
+--backdrop-color:rgba(82,80,80,0.3);
+  --accent-color: #eea10c;
+  --additional-color: #cecdcd;
+  --rare-color: rgba(160, 158, 160, 0.6);
+  --box-shadow: 7px 5px 15px 0px var(--rare-color);
+  --transition-duration: 250ms;
+  --transition-time-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --new-el-color:#9bb537;
+--link-el-color:#f8f8f8;
+--circul-el-color:#f8f8f8;
+ --popular-color:rgba(5,5,5,0.5);
+  --popular-list-color:rgba(5,5,5,0.3);
+  --text-color:rgba(5,5,5,0.8);
+  --card-title:#f8f8f8;
+   --card-text:#f8f8f8;
+   --card-number:#f8f8f8;
+   --arrow-number-color:#050505;;
+   --arrow-left-color:rgba(248,248,248,0.5);
+    --arrow-right-color:#050505;
+    --input-border-color:rgba(5,5,5,0.2);
+    
+  --firts-font: 'Inter Medium';
+  color-scheme:"light";
+}
+.dark{
+  
+  --main-color:#f8f8f8;
+  --main-rgb-color:rgb(248, 248, 248);
+  --secondary-color:#050505;
+  --secondary-rgb-color: --main-rgb-color: rgb(5, 5, 5);
+  --active-color: #9bb537;
+  --color-sheme:"dark";
+  --new-el-color:#050505;
+--link-el-color:#fff;
+--circul-el-color:#fff;
+--plaine-white:#050505;
+  --popular-color:rgba(255,255,255,0.5);
+  --text-color:rgba(255,255,255,0.8);
+  --popular-list-color:rgba(255,255,255,0.3);
+   --card-title:#fff;
+    --card-text:rgba(255,255,255,0.8);
+     --card-number:rgba(255,255,255,0.5);
+      --arrow-number-color:#fff; 
+      --arrow-left-color:rgba(255,255,255,0.5);
+       --arrow-right-color:#050505;
+        --input-border-color:rgba(255,255,255,0.2);
+         
+
+}
+body{
+  
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+li {
+  list-style-type: none;
+}
+.link {
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@media screen and (min-width:374px) {
+    /* mobile */
+    .container{
+        padding-right: 20px;
+        padding-top: 27.5px;
+    }
+  }
+  @media screen and (min-width:768px) {
+    /* tablet */
+    .container{
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+  }
+@media screen and (min-width:1280px) {
+    /* desktop */
+    .container{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+  }
+
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: medium;
+    font-weight: 500;
+    src: url('./fonts/Inter-Medium.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/Inter-Medium.eot?#iefix')
+        format('embedded-opentype'),
+      /* IE6-IE8 */ url('./fonts/Inter-Medium.woff2') format('woff2'),
+      /* Super Modern Browsers */ url('./fonts/Inter-Medium.woff')
+        format('woff'),
+      /* Modern Browsers */ url('./fonts/Inter-Medium.ttf')
+        format('truetype')
+  }
+
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: medium;
+    font-weight: 600;
+    src: url('./fonts/Inter-SemiBold.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/Inter-SemiBold.eot?#iefix')
+        format('embedded-opentype'),
+      /* IE6-IE8 */ url('./fonts/Inter-SemiBold.woff2') format('woff2'),
+      /* Super Modern Browsers */ url('./fonts/Inter-SemiBold.woff')
+        format('woff'),
+      /* Modern Browsers */ url('./fonts/Inter-SemiBold.ttf')
+        format('truetype')
+  }
+
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/Inter-Regular.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/Inter-Regular.eot?#iefix')
+        format('embedded-opentype'),
+      /* IE6-IE8 */ url('./fonts/Inter-Regular.woff2') format('woff2'),
+      /* Super Modern Browsers */ url('./fonts/Inter-Regular.woff')
+        format('woff'),
+      /* Modern Browsers */ url('./fonts/Inter-Regular.ttf')
+        format('truetype')
+  }
+
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+    src: url('./fonts/Inter-Italic.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/Inter-Italic.eot?#iefix')
+        format('embedded-opentype'),
+      /* IE6-IE8 */ url('./fonts/Inter-Italic.woff2') format('woff2'),
+      /* Super Modern Browsers */ url('./fonts/Inter-Italic.woff')
+        format('woff'),
+      /* Modern Browsers */ url('./fonts/Inter-Italic.ttf')
+        format('truetype')
+  }
+  
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./fonts/PoppinsTVG-SemiBold.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/PoppinsTVG-SemiBold.eot?#iefix')
+        format('embedded-opentype'),
+      /* IE6-IE8 */ url('./fonts/PoppinsTVG-SemiBold.woff2') format('woff2'),
+      /* Super Modern Browsers */ url('./fonts/PoppinsTVG-SemiBold.woff')
+        format('woff'),
+      /* Modern Browsers */ url('./fonts/PoppinsTVG-SemiBold.ttf')
+        format('truetype')
+  }
+  
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./fonts/DMSans-Medium.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/DMSans-Medium.eot?#iefix')
+        format('embedded-opentype'),
+      /* IE6-IE8 */ url('./fonts/DMSans-Medium.woff2') format('woff2'),
+      /* Super Modern Browsers */ url('./fonts/DMSans-Medium.woff')
+        format('woff'),
+      /* Modern Browsers */ url('./fonts/DMSans-Medium.ttf')
+        format('truetype')
+  }
+  
+
+  .index-recepie-container{
+    display: flex;
+  }
+  .index-recepie-side-container{
+    display: flex; 
+    flex-direction: column;
+  }
+
+  .is-hidden{
+    display: none;
+  }
+  
