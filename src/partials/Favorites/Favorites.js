@@ -27,7 +27,7 @@ export function hadleAllFavoritesDeleted() {
 // 3. innerHTML = renderedCards
 
 let pageIndex = 1;
-const cardsPerPage = 12;
+const cardsPerPage = 1;
 
 // ВИКЛИКАЄТЬСЯ ПРИ СТАРТІ
 export function UpdateFavorites() {
@@ -36,7 +36,8 @@ export function UpdateFavorites() {
     favImgElem.classList.remove('is-hidden');
 
     let favoritesArr = JSON.parse(localStorage.getItem(FAV_KEY));
-    // console.log(favoritesArr);
+    console.log(favoritesArr);
+    console.log(favoritesArr.length);
 
     if (!favoritesArr.length) {
         favoritesPlug.classList.remove('is-hidden');
@@ -47,8 +48,12 @@ export function UpdateFavorites() {
     }
     
     let pageCount = Math.round(favoritesArr.length / cardsPerPage);
+    console.log(pageCount);
+    console.log(pageIndex);
     createPagination(pageCount, pageIndex);
+    // console.log(createPagination(pageCount, pageIndex));
     renderFavorites(favoritesArr);
+    console.log(renderFavorites, start, end)
 }
 
 
@@ -65,15 +70,19 @@ export function showByCategory() {
         recipe => recipe.category === selectedCategory
     );
     // console.log(filteredFavorites);
-    renderFavorites(filteredFavorites);
+    renderFavorites(filteredFavorites, start, end);
     }
 }
 
 //РЕНДЕР РОЗМІТКИ ВСІХ УЛЮБЕНИХ РЕЦЕПТІВ 
+let start = 1;
+let end = 2;
 function renderFavorites(data, start, end) {
 for(let i = start; i <= end && i < data.length; i += 1 ){
         favoritesList.append(DrawCard(data[i]));
     }
 }
 
-//UpdateFavorites();
+renderFavorites(favoritesArr);
+//console.log(UpdateFavorites());
+UpdateFavorites();
