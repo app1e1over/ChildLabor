@@ -10,7 +10,7 @@ const ingredients = document.getElementById('selectIng');
 const area = document.getElementById('selectCountry');
 const time = document.getElementById('selectTime');
 const input = document.querySelector('.search');
-const clearInputSvg = document.querySelector('.for-svg');
+const clearInputSvg = document.querySelector('.clear-input');
 
 let ingredientsId;
 
@@ -142,23 +142,15 @@ area.addEventListener("change", takeIng)
 input.addEventListener("input",debounce(inputsSearching, 300))
 clearInputSvg.addEventListener("click",  clearInput);
 }
-function clearInput(e) {
-  const target = e.target;
+function clearInput() {
 
-  if (target.classList.contains('for-svg')) {
+
     input.value = ''; 
-  }
+  
 };
 
 
-new SlimSelect({
-  select: input,
-  settings: {
-    showSearch: false,
-    searchHighlight: true,
-    openPosition: 'down'
-  }
-});
+
 
 // поиск на инпуте
 
@@ -167,16 +159,8 @@ function inputsSearching(e){
 keyWord = e.target.value.trim(); 
 //console.log(keyWord)
 // фетчим рецепты
-Update({}, keyword) // почему лимит 250? хз, чтобы много. не знаю, как сделать все
-.then(response => {
-  const data = response.data;
-  let recipes = data;
-  //console.log(recipes) // тут можно посмотреть все, что пришло
-  searchByKeyword(keyWord, recipes)
-})
-.catch(error => {
-  console.error('Ошибка запроса:', error);
-});  
+Update({}, keyword)
+ 
 
 }
 
