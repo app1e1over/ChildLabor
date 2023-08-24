@@ -5,7 +5,7 @@ import { createPagination } from '../Pagination/Pagination.js';
 import { showPreloader, hidePreloader } from '../Preloader/Preloader';
 import { UpdateFavorites } from '../Favorites/Favorites';
 
-function padEndRating(subj) {
+export function padEndRating(subj) {
   subj = subj.toString();
   if (subj.length === 1) {
     return subj + '.0';
