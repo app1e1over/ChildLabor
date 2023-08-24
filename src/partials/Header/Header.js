@@ -22,7 +22,6 @@ function handlerOnCloseMenuButton() {
     burgerMenuButton.addEventListener('click', handlerOnBurgerButtonClick);
   }
 }
-
 function startHeader() {
   burgerMenuButton.addEventListener('click', handlerOnBurgerButtonClick);
   closeMenuButton.addEventListener('click', handlerOnCloseMenuButton);
@@ -70,7 +69,7 @@ if (savedTheme === 'dark') {
 function changeTheme() {
   if (body.classList.contains('dark')) {
     body.classList.remove('dark');
-    inputs.forEach(input => input.forEach((input = input.checked = false)));
+    inputs.forEach(input => (input.checked = false));
     localStorage.setItem('theme', 'light');
     localStorage.setItem('checkbox', JSON.stringify(false));
   } else {
