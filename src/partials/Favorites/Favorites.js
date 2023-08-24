@@ -80,7 +80,7 @@ export function showByCategory(category) {
     // const selectedCategory = "Dessert"; це була заглушка
 
     if (selectedCategory === "All") {
-        renderFavorites(favoritesArr);
+        renderFavorites(favoritesArr, start, end);
     } else {
     const filteredFavorites = favoritesArr.filter(
         recipe => recipe.category === selectedCategory
