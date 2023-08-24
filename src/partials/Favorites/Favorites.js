@@ -35,14 +35,15 @@ export function hadleAllFavoritesDeleted() {
 // 3. innerHTML = renderedCards
 
 // let pageIndex = 1;
-const cardsPerPage = 1;
+const cardsPerPage = 12;
 export function StartFavorites(){
     let favoritesArr = JSON.parse(localStorage.getItem(FAV_KEY));
     let pageCount = Math.ceil(favoritesArr.length / cardsPerPage);
     UpdateFavorites({page: 1})
     
+    if (favoritesArr.length > cardsPerPage) {
     createPagination(pageCount, 1, UpdateFavorites);
-
+    }
 }
 // ВИКЛИКАЄТЬСЯ ПРИ СТАРТІ
 export function UpdateFavorites({ page }) {
@@ -51,10 +52,12 @@ export function UpdateFavorites({ page }) {
     favImgElem.classList.remove('is-hidden');
 
     let favoritesArr = JSON.parse(localStorage.getItem(FAV_KEY));
-    console.log(favoritesArr);
-    console.log(favoritesArr.length);
+    //console.log(favoritesArr);
+    //console.log(favoritesArr.length);
+
 
     if (!favoritesArr.length) {
+
         favoritesPlug.classList.remove('is-hidden');
         if (window.matchMedia("(max-width: 767px)").matches) {
             favImgElem.classList.add('is-hidden');

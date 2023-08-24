@@ -3,8 +3,8 @@ import { showByCategory } from '../Favorites/Favorites.js';
 const cont = document.querySelector('.recipe-container');
 const filterBar = document.querySelector('.filters-list');
 const favoritesList = document.querySelector('.favorites-container');
-const liked = JSON.parse(localStorage.getItem(FAV_KEY)) || [];
 const FAV_KEY = 'Favorites';
+const liked = JSON.parse(localStorage.getItem(FAV_KEY)) || [];
 
 //  --------------------Copied-------------
 export function onCardClick(recepies) {
@@ -61,8 +61,8 @@ function setFavorite(heart, parseInfo) {
   updateHearts();
 }
 
-updateHearts();
-updateFilterBar();
+// updateHearts();
+// updateFilterBar();
 
 //   --------------------Copied-------------
 export function updateHearts() {
@@ -80,7 +80,7 @@ export function updateHearts() {
 }
 
 //   --------------------Copied-------------
-function updateFilterBar() {
+export function updateFilterBar() {
   if (!liked || !liked.length) {
     filterBar.innerHTML = '';
   } else {
