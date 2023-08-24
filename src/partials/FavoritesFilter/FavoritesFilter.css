@@ -12,7 +12,7 @@
   background-color: transparent;
   white-space: nowrap;
 
-  color: rgba(5, 5, 5, 0.3);
+  color: var(--popular-list-color);
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -22,7 +22,8 @@
   user-select: none;
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filters-btn:hover,
@@ -30,4 +31,5 @@
 .active {
   color: #f8f8f8;
   background: #9bb537;
+  border-color: #9bb537;
 }
