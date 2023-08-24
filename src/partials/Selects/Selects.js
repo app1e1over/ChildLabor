@@ -10,7 +10,7 @@ const ingredients = document.getElementById('selectIng');
 const area = document.getElementById('selectCountry');
 const time = document.getElementById('selectTime');
 const input = document.querySelector('.search');
-const clearInputSvg = document.querySelector('.clear-input');
+const clearInputSvg = document.querySelector('.for-svg');
 
 let ingredientsId;
 
@@ -140,13 +140,12 @@ ingredients.addEventListener("change", takeIng)
 time.addEventListener("change", takeIng)
 area.addEventListener("change", takeIng)
 input.addEventListener("input",debounce(inputsSearching, 300))
-clearInputSvg.addEventListener("click",  clearInput);
+clearInputSvg.addEventListener("mousedown",  clearInput);
 }
 function clearInput() {
-
-
-    input.value = ''; 
   
+    input.value = ''; // Очищаем значение input
+    
 };
 
 
@@ -159,7 +158,7 @@ function inputsSearching(e){
 keyWord = e.target.value.trim(); 
 //console.log(keyWord)
 // фетчим рецепты
-Update({}, keyword)
+Update({}, keyWord)
  
 
 }

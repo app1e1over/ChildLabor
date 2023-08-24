@@ -29,6 +29,7 @@ input.search.search-input:focus-visible {
 }
 .input-container:focus-within .search-icon {
   display: none;
+  
 }
 
 .input-container:focus-within .search-icon-active {
@@ -37,6 +38,8 @@ input.search.search-input:focus-visible {
 
 .input-container .search-icon {
   display: block;
+  stroke: var(--popular-color);
+  fill: var(--popular-color);
 }
 
 .input-container .search-icon-active {
@@ -75,7 +78,7 @@ width: 18px;
   height: 18px;
   background-size: cover; 
   background-position: center;
-fill: #050505;
+  stroke: var( --main-rgb-color);
   position: absolute;
   top: 14px;
   right: 18px;
