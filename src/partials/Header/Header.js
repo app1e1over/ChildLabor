@@ -27,15 +27,12 @@ function startHeader() {
   burgerMenuButton.addEventListener('click', handlerOnBurgerButtonClick);
   closeMenuButton.addEventListener('click', handlerOnCloseMenuButton);
   navListElement.addEventListener('click', onNavMenuLinkClick);
-
   inputs.forEach(input => input.addEventListener('click', changeTheme));
 
   let savedTheme = localStorage.getItem('theme') ?? 'light';
-  inputs.forEach(input =>
-    input.forEach(
-      input =>
-        (input.checked = JSON.parse(localStorage.getItem('checkbox')) ?? false)
-    )
+  inputs.forEach(
+    input =>
+      (input.checked = JSON.parse(localStorage.getItem('checkbox')) ?? false)
   );
   if (savedTheme === 'dark') {
     body.classList.add('dark');
