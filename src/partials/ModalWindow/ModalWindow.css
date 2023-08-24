@@ -21,7 +21,7 @@ li {
 
 .backdrop {
     overflow: auto;
-    z-index: 2;
+    z-index: 1000000000;
     width: 100%;
     height: 100%; /* Змінив на 100vh */
     position: fixed;
@@ -41,9 +41,10 @@ li {
     display: none;
 }
 .modal-recipe {
-    max-height: 100%;
-    background-color: #ffffff;
-    position: absolute;
+    display: flex;
+    max-width: 70%;
+    min-height: 70%;
+    background-color: var(--plain-white);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
@@ -51,6 +52,7 @@ li {
     padding: 30px 5px;
     overflow-y: auto;
     border-radius: 15px;
+    position: relative;
 }
 .modal-close-btn-recipe {
     width: 20px;
@@ -76,12 +78,13 @@ li {
 }
 .selected-recipe-name {
     font-family: 'Inter', sans-serif;
-    font-style: bold;
+    font-style: normal;
     font-weight: 600;
     font-size: 18px;
-    line-height: 1.33;
+    line-height: 22px;
     letter-spacing: 0;
-    color: #050505;
+    text-transform: uppercase;
+    color: var(--arrow-number-color);
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -100,7 +103,7 @@ li {
     font-size: 14px;
     line-height: 1.28;
     letter-spacing: 0;
-    color: rgba(5, 5, 5, 0.5);
+    color: var(--popular-color);
 }
 .stars {
     display: flex;
@@ -117,7 +120,7 @@ li {
     font-size: 14px;
     line-height: 1.28;
     letter-spacing: 0;
-    color: rgba(5, 5, 5, 0.5);
+    color: var(--popular-color);
 }
 
 .ingredients {
@@ -133,7 +136,7 @@ li {
     font-size: 14px;
     line-height: 1.28;
     letter-spacing: 0;
-    color: #050505;
+    color: var(--arrow-number-color);
 }
 .ingredient-amount {
     font-family: 'Inter', sans-serif;
@@ -142,7 +145,7 @@ li {
     font-size: 14px;
     line-height: 1.28;
     letter-spacing: 0;
-    color: rgba(5, 5, 5, 0.5);
+    color: var(--popular-color);
 }
 .tags-2 {
     display: flex;
@@ -159,12 +162,13 @@ li {
     font-size: 12px;
     line-height: 1.16;
     letter-spacing: 0;
-    color: #050505;
+    color: var(--arrow-number-color);
     cursor: pointer;
-    background-color: #f8f8f8;
+    background-color: var(--secondary-color);
     padding: 8px 16px;
     border-radius: 35px;
     border: 1px solid transparent; /* Transparent border */
+    border-color: var(--secondary-rgb-color);
     box-shadow: inset 0 0 0 1px rgba(5, 5, 5, 0.2);
 }
 .recipe-instruction {
@@ -175,11 +179,17 @@ li {
     font-size: 14px;
     line-height: 1.28;
     letter-spacing: 0;
-    color: #050505;
+    color: var(--text-color);
 }
+.modal-close-btn-recipe {
+    stroke: var(--main-color);
+  }
 .button-wrap {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
+    margin-top: 40px;
 }
 .btn-favorite {
     font-family: 'Inter', sans-serif;
@@ -195,6 +205,9 @@ li {
     height: 41px;
     border-radius: 15px;
     border: 0px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 40px;
 }
 .btn-favorite:hover,
 .btn-favorite:focus {
@@ -226,7 +239,7 @@ li {
     position: absolute;
     width: 100%;
     height: 1px;
-    background-color: rgba(5, 5, 5, 0.1);
+    background-color: var(--after-el-color);
     border-radius: 2px;
     bottom: -8px;
     left: 0;
@@ -238,7 +251,7 @@ ul.ingredients li:last-child {
     margin-bottom: 0;
 }
 
-@media screen and (min-width: 375px) {
+@media (min-width: 374px) and (max-width: 767px) {
     .modal-recipe {
         padding: 40px 20px;
     }
@@ -267,7 +280,7 @@ ul.ingredients li:last-child {
         height: 295px;
     }
 }
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1279px) {
     .modal-recipe {
         padding: 32px;
     }
@@ -393,6 +406,8 @@ ul.ingredients li:last-child {
 
     .ingredients {
         margin-bottom: 40px;
+        max-height: 150px;
+        overflow-y: auto;
     }
     ul.ingredients li {
         margin-bottom: 16px;
@@ -401,6 +416,8 @@ ul.ingredients li:last-child {
     .recipe-instruction {
         height: 162px;
         margin-bottom: 32px;
+        max-height: 100px;
+        overflow-y: auto;
     }
     .button-wrap {
         display: flex;

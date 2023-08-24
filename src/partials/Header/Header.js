@@ -22,12 +22,10 @@ function handlerOnCloseMenuButton() {
     burgerMenuButton.addEventListener('click', handlerOnBurgerButtonClick);
   }
 }
-
 function startHeader() {
   burgerMenuButton.addEventListener('click', handlerOnBurgerButtonClick);
   closeMenuButton.addEventListener('click', handlerOnCloseMenuButton);
   navListElement.addEventListener('click', onNavMenuLinkClick);
-
   inputs.forEach(input => input.addEventListener('click', changeTheme));
 
   let savedTheme = localStorage.getItem('theme') ?? 'light';

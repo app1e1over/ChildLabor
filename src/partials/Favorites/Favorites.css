@@ -8,24 +8,38 @@ img {
     width: 100%;
 }
 
+/* загальний контейнер з обраними, картинкою, фільтрами */
+.favorites-container {
+    padding-top: 24px;
+}
+
 /* секція */
 .section-favorites {
     margin: 0 auto;
     padding-top: 24px;
 }
 
-/* .favorites-container {
-margin: 0 auto;
-} */
+/* обгортка для обраних карток */
+.favorites-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
 
+/* ШИРИНИ ОБРАНИХ КАРТОК І КАРТОК НА ГОЛОВНІЙ */
+.recipe-card-container {
+    max-width: 335px;
+}
+
+/* картинка основна */
 .favorites-container .recipe-card-container img {
     max-width: 335px;
     margin: 0 auto;
 }
 
-/* картинка основна */
 .fav-picture-thumb {
 margin-bottom: 40px;
+max-width: 335px;
 }
 
 img.fav-image {
@@ -77,12 +91,27 @@ margin-bottom: 50%;
     margin: 0 auto;
     }
 
+   /* обгортка для обраних карток */
+   .favorites-list {
+       display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+       gap: 16px;
+   }
+
+   /* ШИРИНИ ОБРАНИХ КАРТОК */
+   .favorites-list>.recipe-card-container {
+        width: calc((100% - 32px) / 3);
+   }
+
+
     img.fav-image {
     max-width: 704px;
     }
 
     .fav-picture-thumb {
         margin-bottom: 64px;
+        max-width: 704px;
     }
 
      .fav-plug-text {  
@@ -97,19 +126,40 @@ margin-bottom: 50%;
         background-size: 97px 83px;
     }
 
-        .favorites-plug {
-            margin-top: unset;
-            margin-bottom: unset;
-        }
+    .favorites-plug {
+        margin-top: unset;
+        margin-bottom: unset;
+    }
+
+    .favorites-container {
+         padding-top: 32px;
+     }
 }
 
 @media screen and (min-width: 1280px) {
     .section-favorites {
         padding-top: 0;
+        width: 1080px;
     }
+
+   /* обгортка для обраних карток */
+   .favorites-list {
+       gap: 32px 16px;
+   }
+
+   /* ШИРИНИ ОБРАНИХ КАРТОК */
+   .favorites-list>.recipe-card-container {
+       width: calc((100% - 48px) / 4);
+   }
+
+    /* ШИРИНИ КАРТОК НА ГОЛОВНІЙ */
 
     img.fav-image {
         width: unset;
-         max-width: 1080px;
+        max-width: 1080px;
+    }
+
+    .fav-picture-thumb {
+        max-width: 1080px;
     }
 }

@@ -47,17 +47,19 @@
    --mini-slider-color:rgba(5,5,5,0.18);
 
   --firts-font: 'Inter Medium';
-  --color-scheme:"light";
+  color-scheme:"light";
+
+  --after-el-color: rgba(5,5,5,0.1);
 }
 .dark{
-
+  --after-el-color:rgba(255, 255, 255, 0.10);
   --page-color:#161616;
   --main-color:#f8f8f8;
   --main-rgb-color:rgb(248, 248, 248);
   --secondary-color:#050505;
   --secondary-rgb-color: --main-rgb-color: rgb(5, 5, 5);
   --active-color: #9bb537;
-  --color-sheme:"dark";
+  color-scheme:"dark";
   --new-el-color:#050505;
 --link-el-color:#fff;
 --circul-el-color:#fff;
