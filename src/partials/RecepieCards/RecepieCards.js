@@ -95,8 +95,9 @@ Like(like, recipe);
   }
   lowerContainer.appendChild(rating);
 
-  let seeRecep = document.createElement('div');
+  let seeRecep = document.createElement('button');
   seeRecep.classList.add('recipe-card-see-recipe');
+  seeRecep.classList.add('button');
   seeRecep.innerText = 'See recipe';
   seeRecep.dataset.action = 'open-modal';
   lowerContainer.appendChild(seeRecep);
