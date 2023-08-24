@@ -1,7 +1,7 @@
 <script src="https://unpkg.com/slim-select@latest/dist/slimselect.min.js"></script>
 <link href="https://unpkg.com/slim-select@latest/dist/slimselect.css" rel="stylesheet"></link>
-
-<div class="form container">
+<div> 
+<div class="form">
     <form class="search-form-food" id="search-form-food">
       <div class="input-container">
       <label for="searchInput" >Search</label>
@@ -30,7 +30,14 @@
     <div class="ing-container">
       <label for="ingredient">Ingredients</label>
       <select name="ingredients" class="selectIngredients" id="selectIng" class="ing"></select>
-    </div>
-  
+    </div></div>
+    <div class="btn-reset-container">
+      <svg class="svg-icon-close-btn">
+    <use xlink:href="./image/sprite.svg#icon-close-input-default" class="close-icon-select-btn" ></use>
+  </svg>
+  <button class="reset-filter"type="reset">
+    Reset the filter
+  </button>
+</div>
   </form>
 

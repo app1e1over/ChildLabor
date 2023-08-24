@@ -11,6 +11,7 @@ const area = document.getElementById('selectCountry');
 const time = document.getElementById('selectTime');
 const input = document.querySelector('.search');
 const clearInputSvg = document.querySelector('.for-svg');
+const resetBtn = document.querySelector(".btn-reset-container")
 
 let ingredientsId;
 
@@ -141,6 +142,13 @@ time.addEventListener("change", takeIng)
 area.addEventListener("change", takeIng)
 input.addEventListener("input",debounce(inputsSearching, 300))
 clearInputSvg.addEventListener("mousedown",  clearInput);
+resetBtn.addEventListener("click", resetFltr)
+}
+function resetFltr(){
+  time.value = "",
+  area.value = "",
+  ingredients.value = "",
+  Update({time:"", area:"", ingredient:""})
 }
 function clearInput() {
   
