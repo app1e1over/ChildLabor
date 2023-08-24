@@ -2,6 +2,10 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+
+    margin-top: 40px;
+    margin-bottom: 80px;
 }
 
 .pagination ul li {
@@ -9,11 +13,12 @@
     justify-content: center;
     align-items: center;
 
-    color: #050505;
+    color: var(--arrow-number-color);
     list-style: none;
     line-height: 122%;
     text-align: center;
 
+    font-family: 'Inter';
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
@@ -31,7 +36,7 @@
     margin: 0 8px;
 
     border-radius: 50%;
-    border: 1px solid rgba(5, 5, 5, 0.30);
+    border: 1px solid var(--popular-list-color);
 }
 
 .pagination ul li.list-item.first {
@@ -51,19 +56,29 @@
 .pagination ul li.list-item:hover,
 .pagination ul li:first-child:hover,
 .pagination ul li:last-child:hover {
-    background: #9BB537;
-    border: 1px solid #9BB537;
+    background: var(--active-color);
+    border: 1px solid var(--active-color);
 }
 
 .unicode-icon {
     font-size: 30px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .unicode-icon.prev-icon {
-    margin-right: 3px;
+    margin-right: 2px;
+    color: var(--arrow-color-left);
 }
 
 .unicode-icon.next-icon {
-    margin-left: 3px;
+    margin-left: 2px;
+    color: var(--arrowcolor-right);
+}
+
+/* MEDIA */
+@media screen and (min-width: 768px) {
+    .pagination ul {
+        margin-top: 64px;
+        margin-bottom: 100px;
+        }
 }

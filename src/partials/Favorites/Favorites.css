@@ -1,15 +1,26 @@
 .is-hidden {
-    display: none;
+  display: none;
 }
 
 img {
+
     display: block;
     width: 100%;
 }
 
 /* секція */
 .section-favorites {
+    margin: 0 auto;
     padding-top: 24px;
+}
+
+/* .favorites-container {
+margin: 0 auto;
+} */
+
+.favorites-container .recipe-card-container img {
+    max-width: 335px;
+    margin: 0 auto;
 }
 
 /* картинка основна */
@@ -18,7 +29,6 @@ margin-bottom: 40px;
 }
 
 img.fav-image {
-    width: unset;
     max-width: 335px;
     border-radius: 15px;
     margin: 0 auto;
@@ -63,6 +73,8 @@ margin-bottom: 50%;
 @media screen and (min-width: 768px) {
     .section-favorites {
     padding-top: 25px;
+    width: 704px;
+    margin: 0 auto;
     }
 
     img.fav-image {

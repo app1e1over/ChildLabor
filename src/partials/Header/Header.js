@@ -28,63 +28,57 @@ function startHeader() {
   closeMenuButton.addEventListener('click', handlerOnCloseMenuButton);
   navListElement.addEventListener('click', onNavMenuLinkClick);
 
-  input.addEventListener('click', changeTheme);
+  inputs.forEach(input => input.addEventListener('click', changeTheme));
 
-  let savedTheme = localStorage.getItem('theme') || 'light';
-  if (savedTheme && savedTheme === 'dark') {
-    input.checked = true;
+  let savedTheme = localStorage.getItem('theme') ?? 'light';
+  inputs.forEach(
+    input =>
+      (input.checked = JSON.parse(localStorage.getItem('checkbox')) ?? false)
+  );
+  if (savedTheme === 'dark') {
     body.classList.add('dark');
   } else {
-    body.classList.toggle('dark');
-    input.checked = false;
+    if (body.classList.contains('dark')) {
+      body.classList.remove('dark');
+    }
     localStorage.setItem('theme', 'light');
+    localStorage.setItem('checkbox', JSON.stringify(false));
   }
 }
 
-// Зміна теми,якщо перемикач іконки
-// const toggleElement = document.querySelector('.js-toggle');
-// const body = document.querySelector('body');
-// const iconLightTheme = document.querySelector('.toggle-icon-light-theme');
-// const iconDarkTheme = document.querySelector('.toggle-icon-dark-theme');
-
-// function handlerChangeTheme(event) {
-//   if (body.classList.contains('dark')) {
-//     body.classList.toggle('dark');
-//     localStorage.setItem('theme', 'light');
-//     iconLightTheme.classList.remove('visually-hidden');
-//     iconDarkTheme.classList.add('visually-hidden');
-//   } else {
-//     body.classList.add('dark');
-//     localStorage.setItem('theme', 'dark');
-//     iconLightTheme.classList.add('visually-hidden');
-//     iconDarkTheme.classList.remove('visually-hidden');
-//   }
-// }
 //Зміна теми з чекбоксом
+
 const inputs = document.querySelectorAll('.checkbox-input');
 const body = document.querySelector('body');
 
 inputs.forEach(input => input.addEventListener('click', changeTheme));
 
-let savedTheme = localStorage.getItem('theme') || 'light';
-if (savedTheme && savedTheme === 'dark') {
-  inputs.checked = true;
+let savedTheme = localStorage.getItem('theme') ?? 'light';
+inputs.forEach(
+  input =>
+    (input.checked = JSON.parse(localStorage.getItem('checkbox')) ?? false)
+);
+if (savedTheme === 'dark') {
   body.classList.add('dark');
 } else {
-  body.classList.toggle('dark');
-  inputs.checked = false;
+  if (body.classList.contains('dark')) {
+    body.classList.remove('dark');
+  }
   localStorage.setItem('theme', 'light');
+  localStorage.setItem('checkbox', JSON.stringify(false));
 }
 
 function changeTheme() {
   if (body.classList.contains('dark')) {
-    body.classList.toggle('dark');
+    body.classList.remove('dark');
+    inputs.forEach(input => (input.checked = false));
     localStorage.setItem('theme', 'light');
-    input.checked = false;
+    localStorage.setItem('checkbox', JSON.stringify(false));
   } else {
     body.classList.add('dark');
+    inputs.forEach(input => (input.checked = true));
     localStorage.setItem('theme', 'dark');
-    input.checked = true;
+    localStorage.setItem('checkbox', JSON.stringify(true));
   }
 }
 
