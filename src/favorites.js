@@ -5,5 +5,9 @@ import { updateHearts } from "./partials/FavoritesFilter/FavoritesFilter.js";
 
 StartScrollUp();
 startHeader();
-StartFavorites();
+try{
+StartFavorites();}
+catch{
+    
+}
 updateHearts();
