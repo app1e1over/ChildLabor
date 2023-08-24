@@ -85,7 +85,7 @@ function onEscKeyPress(event) {
 const refs = {
   openModalBtns: document.querySelectorAll('[data-modal-open]'),
   modal: document.querySelector('[data-modal-recipe]'),
-  closeModalBtn: document.querySelector('[data-action="close-modal]'),
+  closeModalBtn: document.querySelector('[data-action="close-modal"]'),
   backdrop: document.querySelector('.recipe-backdrop'),
   nameElement: document.querySelector('.selected-recipe-name'),
   instructionElement: document.querySelector('.recipe-instruction'),
@@ -107,7 +107,9 @@ function renderIng(ingredients) {
   // а тут лежит функция, которая создает список ингредиентов
   ingredients.forEach(ingredient => {
     const li = document.createElement('li');
+    li.className = 'ingredient-item';
     const span = document.createElement('span');
+    span.className = 'ingredient-amount';
     li.textContent = ingredient.name;
     span.textContent = ingredient.measure;
     li.appendChild(span);
