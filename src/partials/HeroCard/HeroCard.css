@@ -104,7 +104,6 @@
    }
   
    .event-card-cook{
-    border-radius: 15px;
     object-fit: cover;
     height: 100%;
    }
@@ -116,19 +115,22 @@
     min-width: 0;
     overflow: hidden;
     height: 280px;
+    border: 1px solid #9bb5374d;
+    border-radius: 15px;
   }
 
    .event-card-bigimg-url{ 
     width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 15px;
   background-color: var(--arrow-right-color);
  
    }
    .event-card-bigimg{
     width: 185px;
    overflow: hidden;
+   border: 1px solid #9bb5374d;
+  border-radius: 15px;
    }
    
 
