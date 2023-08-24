@@ -114,6 +114,7 @@
   margin-right: 0;
   resize: none;
   background-color: var(--plain-white);
+  color: var(--main-color);
   /* border-color: 1px solid var(--input-border-color); */
 }
 
