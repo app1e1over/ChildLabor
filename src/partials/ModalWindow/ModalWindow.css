@@ -21,7 +21,7 @@ li {
 
 .backdrop {
     overflow: auto;
-    z-index: 2;
+    z-index: 1000000000;
     width: 100%;
     height: 100%; /* Змінив на 100vh */
     position: fixed;
@@ -42,8 +42,8 @@ li {
 }
 .modal-recipe {
     display: flex;
-    max-width: 90%;
-    min-height: 90%;
+    max-width: 70%;
+    min-height: 70%;
     background-color: var(--plain-white);
     top: 50%;
     left: 50%;
@@ -406,6 +406,8 @@ ul.ingredients li:last-child {
 
     .ingredients {
         margin-bottom: 40px;
+        max-height: 150px;
+        overflow-y: auto;
     }
     ul.ingredients li {
         margin-bottom: 16px;
@@ -414,6 +416,8 @@ ul.ingredients li:last-child {
     .recipe-instruction {
         height: 162px;
         margin-bottom: 32px;
+        max-height: 100px;
+        overflow-y: auto;
     }
     .button-wrap {
         display: flex;

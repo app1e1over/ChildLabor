@@ -1,3 +1,14 @@
+import axios from 'axios';
+
+function addDashes(input) {
+  const value = input.value.replace(/\D/g, '');
+  const formattedValue = value.replace(
+    /(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})/,
+    '$1-$2-$3-$4-$5'
+  );
+  input.value = formattedValue;
+}
+
 export const PopupStart = () => {
   const refs = {
     openPopupBtns: document.querySelectorAll('[data-popup-open]'),
@@ -5,6 +16,7 @@ export const PopupStart = () => {
     popup: document.querySelector('.popup-body'),
     'popup-backdrop': document.querySelector('.popup-backdrop'),
     form: document.querySelector('.popup-form'),
+    phoneNumberInput: document.querySelector('.popup-input[name="phone"]'), // Замініть на ваш селектор для поля номеру телефону
   };
 
   refs.openPopupBtns.forEach(btn => {
@@ -29,6 +41,10 @@ export const PopupStart = () => {
     sendOrderToBackend(orderData);
   });
 
+  refs.phoneNumberInput.addEventListener('input', function () {
+    addDashes(this);
+  });
+
   function openModal() {
     refs.popup.classList.remove('is-hidden');
     refs['popup-backdrop'].classList.remove('is-hidden');
@@ -44,16 +60,18 @@ export const PopupStart = () => {
   }
 
   function sendOrderToBackend(orderData) {
-    fetch('https://tasty-treats-backend.p.goit.global/api/orders', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(orderData),
-    })
-      .then(response => response.json())
-      .then(responseData => {
-        console.log('Відповідь від бекенду:', responseData);
+    axios
+      .post(
+        'https://tasty-treats-backend.p.goit.global/api/orders',
+        orderData,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+      .then(response => {
+        console.log('Відповідь від бекенду:', response.data);
       })
       .catch(error => {
         console.error('Помилка:', error);

@@ -67,10 +67,14 @@ function onOpenModal(e, dataId) {
   refs.modal.classList.toggle('is-hidden');
   refs.closeModalBtn.addEventListener('click', onCloseModal);
   window.addEventListener('keydown', onEscKeyPress);
+  document.body.classList.add('js-popup-open');
+  document.body.style.overflow = 'hidden';
 }
 function onCloseModal() {
   refs.modal.classList.toggle('is-hidden');
   window.removeEventListener('keydown', onEscKeyPress);
+  document.body.classList.remove('js-popup-open');
+  document.body.style.overflow = '';
 }
 function onBackdropClick(event) {
   if (event.currentTarget === event.target) {
