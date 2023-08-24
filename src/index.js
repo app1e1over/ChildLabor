@@ -7,7 +7,7 @@ import { StartScrollUp } from "./partials/ScrollUp/ScrollUp.js";
 import { selects } from "./partials/Selects/Selects.js";
 import fetchPopularRecipes from "./partials/PopularRecipes/PopularRecipe.js"
 import { PopupStart } from "./partials/CreateOrderModal/CreateOrderModal.js";
-import 'normalize.css';
+//import 'normalize.css';
 
 try {
 UpdateFavorites();    
