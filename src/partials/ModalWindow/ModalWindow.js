@@ -89,6 +89,7 @@ export const ModalStart = () => {
 
 };
 function renderIng(ingredients) {
+  refs.ul.innerHTML="";
   // а тут лежит функция, которая создает список ингредиентов
   ingredients.forEach(ingredient => {
     const li = document.createElement('li');
