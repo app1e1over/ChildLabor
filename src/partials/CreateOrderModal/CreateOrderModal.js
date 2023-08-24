@@ -41,6 +41,14 @@ export const PopupStart = () => {
     sendOrderToBackend(orderData);
   });
 
+  //
+  const submitButton = refs.form.querySelector('.popup-btn');
+  submitButton.addEventListener('click', function () {
+    const phoneNumberInput = refs.phoneNumberInput;
+    addDashes(phoneNumberInput);
+  });
+
+  //
   refs.phoneNumberInput.addEventListener('input', function () {
     addDashes(this);
   });
