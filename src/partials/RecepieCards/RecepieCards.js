@@ -21,12 +21,11 @@ const inactiveHeart = `<svg class="heart"><path fill="none" opacity="1" stroke="
 
 const filterObj = {};
 export function Update(obj) {
+  
   for (let key in obj) {
     filterObj[key] = obj[key];
-    console.log(filterObj[key]);
   }
   let req = MakeRequestString();
-  console.log(req);
   let cont = document.querySelector('.recipe-container');
   cont.innerHTML = '';
   axios
@@ -37,6 +36,7 @@ export function Update(obj) {
     })
     .then(recepies => {
       showPreloader();
+      cont.innerHTML = "";
       for (let recipe of recepies) {
         cont.append(DrawCard(recipe));
       }
@@ -118,20 +118,15 @@ Like(like, recipe);
 }
 
 function MakeRequestString() {
-  let first = true;
   let obj = filterObj;
-  let str = 'https://tasty-treats-backend.p.goit.global/api/recipes';
+  let str = 'https://tasty-treats-backend.p.goit.global/api/recipes?limit=9';
   for (let key in obj) {
     if (obj[key] != undefined && obj[key] != null) {
       let val = obj[key];
 
       if (typeof val=="number" || val.trim() != '') {
-        if (!first) {
           str += '&';
-        } else {
-          str += '?';
-          first = false;
-        }
+     
         str += key + '=' + val;
       }
     }
