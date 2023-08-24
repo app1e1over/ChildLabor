@@ -29,7 +29,7 @@
   text-transform: uppercase;
 }
 .recipe-card-text {
-  color: var(--secondary-color);
+  color: #f8f8f8;
   max-width: inherit;
 }
 .recipe-card-description {
