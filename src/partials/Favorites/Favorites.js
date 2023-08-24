@@ -65,7 +65,7 @@ export function UpdateFavorites({ page }) {
         return;
     }
     
-    let start = (page * cardsPerPage - cardsPerPage) + 1;
+    let start = (page * cardsPerPage - cardsPerPage);
     let end = page * cardsPerPage;
 
     renderFavorites(favoritesArr, start, end);
@@ -86,7 +86,10 @@ export function showByCategory(category) {
         recipe => recipe.category === selectedCategory
     );
     // console.log(filteredFavorites);
-    renderFavorites(filteredFavorites);
+    let start = (page * cardsPerPage - cardsPerPage);
+    let end = page * cardsPerPage;
+        
+    renderFavorites(filteredFavorites, start, end);
     }
 }
 
