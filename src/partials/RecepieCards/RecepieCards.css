@@ -76,7 +76,7 @@
   bottom: 45px;
   gap: 17px;
   height: 31px;
-  color: var(--text-color);
+  color: white;
   align-items: center;
 }
 .recipe-card-see-recipe {
