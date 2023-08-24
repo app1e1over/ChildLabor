@@ -155,7 +155,6 @@
   padding: 15px 162px;
   margin-left: auto;
   margin-right: auto;
-  transition: border var(--transition-time-cubic);
 }
 .popup-btn:hover,
 .popup-btn:focus {
