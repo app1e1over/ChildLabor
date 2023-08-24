@@ -61,7 +61,7 @@ export function Update(obj) {
     })
     .finally(() => {
       hidePreloader();
-      ModalStart();
+      //ModalStart();
     });
 }
 const liked = JSON.parse(localStorage.getItem('Favorites'));
