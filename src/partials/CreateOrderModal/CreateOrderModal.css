@@ -19,7 +19,6 @@
   display: flex;
   max-width: 90%;
   min-height: 90%;
-
   /* width: 335px;
   height: 582px; */
   align-items: center;
@@ -70,7 +69,6 @@
 .popup-form {
   display: flex;
   flex-direction: column;
-  /* gap: 40px; */
 }
 .popup-field {
   margin-right: 0;
@@ -86,6 +84,7 @@
   background-color: var(--plain-white);
   /* border-color: 1px solid var(--input-border-color); */
   border: 1px solid var(--popular-list-color);
+  color: var(--main-color);
 }
 
 .popup-input:not(:last-child) {
@@ -141,7 +140,7 @@
 .popup-btn {
   width: 360px;
   height: 48px;
-  background: var(--active-color);
+  background-color: var(--plain-white);
   border-radius: 15px;
   font-family: Inter;
   font-weight: 500;
@@ -149,8 +148,8 @@
   font-style: normal;
   line-height: normal;
   text-align: center;
-  color: var(--card-title);
-  border: none;
+  color: var(--main-color);
+  border: 1px solid var(--active-color);
   cursor: pointer;
   padding: 15px 162px;
   margin-left: auto;
@@ -159,8 +158,11 @@
 .popup-btn:hover,
 .popup-btn:focus {
   border: none;
-  color: var(--main-color);
+  color: var(--secondary-color);
   border-radius: 16px;
+  border: none;
+  background-color: var(--active-color);
+  /* background-color: var(--new-el-color);*/
 }
 
 @media (min-width: 374px) and (max-width: 767px) {
