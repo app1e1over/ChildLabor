@@ -3,6 +3,7 @@ import { sprite } from '../../image/sprite.svg';
   import { ModalStart, addModal } from '../ModalWindow/ModalWindow';
 import { createPagination } from '../Pagination/Pagination.js';
 import { showPreloader, hidePreloader } from '../Preloader/Preloader';
+import { UpdateFavorites } from '../Favorites/Favorites';
 
 function padEndRating(subj) {
   subj = subj.toString();
@@ -15,28 +16,9 @@ function padEndRating(subj) {
   }
   return subj;
 }
+const activeHeart = `<svg class="heart"><path fill="#f8f8f8" opacity="1" stroke="#f8f8f8" style="stroke: var(--color1, #f8f8f8)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9091" d="M15.99 6.848c-2.665-3.117-7.111-3.956-10.451-1.101-3.34 2.854-3.811 7.625-1.187 11.001 2.182 2.806 8.781 8.724 10.944 10.64 0.241 0.214 0.364 0.321 0.503 0.364 0.057 0.017 0.123 0.028 0.191 0.028s0.133-0.010 0.195-0.029l-0.005 0.001c0.143-0.042 0.262-0.15 0.505-0.364 2.163-1.916 8.764-7.834 10.944-10.64 2.623-3.375 2.211-8.177-1.187-11.001-3.398-2.825-7.786-2.016-10.452 1.101z"></path></svg>`;
+const inactiveHeart = `<svg class="heart"><path fill="none" opacity="1" stroke="#f8f8f8" style="stroke: var(--color1, #f8f8f8)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9091" d="M15.99 6.848c-2.665-3.117-7.111-3.956-10.451-1.101-3.34 2.854-3.811 7.625-1.187 11.001 2.182 2.806 8.781 8.724 10.944 10.64 0.241 0.214 0.364 0.321 0.503 0.364 0.057 0.017 0.123 0.028 0.191 0.028s0.133-0.010 0.195-0.029l-0.005 0.001c0.143-0.042 0.262-0.15 0.505-0.364 2.163-1.916 8.764-7.834 10.944-10.64 2.623-3.375 2.211-8.177-1.187-11.001-3.398-2.825-7.786-2.016-10.452 1.101z"></path></svg>`;
 
-function makeStar(active) {
-  let res = document.createElement('svg');
-  if (active) {
-    res = makeSvg(`${sprite}#icon-star-active`, 'recepie-card-star');
-    //res.innerHTML = `<path fill="#eea10c" d="M13.826 3.262c.686-2.105 3.664-2.105 4.347 0l1.931 5.943a2.292 2.292 0 0 0 2.174 1.582h6.251c2.215 0 3.134 2.834 1.344 4.135l-5.058 3.673a2.287 2.287 0 0 0-.825 2.572l-.005-.016 1.931 5.945c.686 2.105-1.726 3.858-3.518 2.555l-5.056-3.673c-.372-.273-.839-.437-1.344-.437s-.972.164-1.35.441l.006-.004-5.056 3.673c-1.792 1.303-4.201-.45-3.518-2.555l1.931-5.943a2.282 2.282 0 0 0-.823-2.553l-.006-.004-5.058-3.673c-1.79-1.303-.869-4.137 1.344-4.137h6.251a2.287 2.287 0 0 0 2.167-1.561l.005-.016 1.934-5.943z" style="fill:var(--color5, #eea10c)"/><>`;
-  } else {
-    res = makeSvg(`${sprite}/icon-unactive-star`, 'recepie-card-star');
-    //res.innerHTML = `<use> <path fill="#f8f8f8" d="M13.826 3.262c.686-2.105 3.664-2.105 4.347 0l1.931 5.943a2.292 2.292 0 0 0 2.174 1.582h6.251c2.215 0 3.134 2.834 1.344 4.135l-5.058 3.673a2.287 2.287 0 0 0-.825 2.572l-.005-.016 1.931 5.945c.686 2.105-1.726 3.858-3.518 2.555l-5.056-3.673c-.372-.273-.839-.437-1.344-.437s-.972.164-1.35.441l.006-.004-5.056 3.673c-1.792 1.303-4.201-.45-3.518-2.555l1.931-5.943a2.282 2.282 0 0 0-.823-2.553l-.006-.004-5.058-3.673c-1.79-1.303-.869-4.137 1.344-4.137h6.251a2.287 2.287 0 0 0 2.167-1.561l.005-.016 1.934-5.943z" opacity=".1" style="fill:var(--color1, #f8f8f8)"/></use>`;
-  }
-  res.setAttribute('width', '18');
-  res.setAttribute('height', '18');
-  return res;
-}
-
-function makeSvg(src, clas) {
-  let svg = document.createElement('svg');
-
-  svg.className = clas;
-  svg.innerHTML = `<use href="${src}"></use>`;
-  return svg;
-}
 const filterObj = {};
 export function Update(obj) {
   for (let key in obj) {
@@ -64,7 +46,7 @@ export function Update(obj) {
       //ModalStart();
     });
 }
-const liked = JSON.parse(localStorage.getItem('Favorites'));
+const liked = JSON.parse(localStorage.getItem('Favorites')) || [];
 export function DrawCard(recipe) {
   let cont = document.createElement('div');
   cont.classList.add('recipe-card-container');
@@ -91,9 +73,9 @@ export function DrawCard(recipe) {
   like.classList.add('recipe-card-like-btn');
 
   if (liked!=null && !liked.filter(l => l._id == recipe._id).length > 0)
-    like.innerHTML = `<svg class="heart"><path fill="none" opacity="0.5" stroke="#f8f8f8" style="stroke: var(--color1, #f8f8f8)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9091" d="M15.99 6.848c-2.665-3.117-7.111-3.956-10.451-1.101-3.34 2.854-3.811 7.625-1.187 11.001 2.182 2.806 8.781 8.724 10.944 10.64 0.241 0.214 0.364 0.321 0.503 0.364 0.057 0.017 0.123 0.028 0.191 0.028s0.133-0.010 0.195-0.029l-0.005 0.001c0.143-0.042 0.262-0.15 0.505-0.364 2.163-1.916 8.764-7.834 10.944-10.64 2.623-3.375 2.211-8.177-1.187-11.001-3.398-2.825-7.786-2.016-10.452 1.101z"></path></svg>`;
+    like.innerHTML = inactiveHeart;
   else
-    like.innerHTML = `<svg class="heart"><path fill="#f8f8f8" opacity="1" stroke="#f8f8f8" style="stroke: var(--color1, #f8f8f8)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9091" d="M15.99 6.848c-2.665-3.117-7.111-3.956-10.451-1.101-3.34 2.854-3.811 7.625-1.187 11.001 2.182 2.806 8.781 8.724 10.944 10.64 0.241 0.214 0.364 0.321 0.503 0.364 0.057 0.017 0.123 0.028 0.191 0.028s0.133-0.010 0.195-0.029l-0.005 0.001c0.143-0.042 0.262-0.15 0.505-0.364 2.163-1.916 8.764-7.834 10.944-10.64 2.623-3.375 2.211-8.177-1.187-11.001-3.398-2.825-7.786-2.016-10.452 1.101z"></path></svg>`;
+    like.innerHTML = activeHeart;
   
 Like(like, recipe);
 
@@ -159,14 +141,18 @@ function MakeRequestString() {
 
 export function Like(el, recep){
   el.addEventListener('click',()=>{
-    console.log("hi");
-    let id = recipe._id;
-    let liked = JSON.parse(localStorage.getItem('favorites')) || [];
-    if(liked.filter(f=>f._id===id)){
+    let id = recep._id;
+    let liked = JSON.parse(localStorage.getItem('Favorites')) || [];
+    if(liked.filter(f=>f._id===id).length > 0){
       liked = liked.filter(f=>f._id!=id);
+      el.innerHTML = inactiveHeart;
+
     }else{
       liked.push(recep)
+      el.innerHTML = activeHeart;
+
     }
-    localStorage.setItem("favorites", JSON.stringify(liked))
+    localStorage.setItem("Favorites", JSON.stringify(liked));
+
   });
 }
