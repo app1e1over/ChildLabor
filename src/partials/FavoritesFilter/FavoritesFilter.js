@@ -16,18 +16,18 @@ export function onCardClick(recepies) {
 }
 
 //   --------------------Copied-------------
-onClickFav(liked);
-function onClickFav(recepies) {
-  favoritesList.addEventListener('click', event => {
-    if (event.target.nodeName != 'svg' && event.target.nodeName != 'path')
-      return;
-    setFavorite(event.target, recepies);
-    updateFilterBar();
-    if (!liked || !liked.length) {
-      favoritesList.innerHTML = '';
-    }
-  });
-}
+// onClickFav(liked);
+// function onClickFav(recepies) {
+//   favoritesList.addEventListener('click', event => {
+//     if (event.target.nodeName != 'svg' && event.target.nodeName != 'path')
+//       return;
+//     setFavorite(event.target, recepies);
+//     updateFilterBar();
+//     if (!liked || !liked.length) {
+//       favoritesList.innerHTML = '';
+//     }
+//   });
+// }
 
 //   --------------------Copied-------------
 function setFavorite(heart, parseInfo) {
@@ -81,6 +81,7 @@ export function updateHearts() {
 
 //   --------------------Copied-------------
 export function updateFilterBar() {
+  console.log(liked);
   if (!liked || !liked.length) {
     filterBar.innerHTML = '';
   } else {

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { DrawCard } from "../RecepieCards/RecepieCards.js"
 import { createPagination } from "../Pagination/Pagination.js"
-
+import { updateFilterBar } from "../FavoritesFilter/FavoritesFilter.js";
 
 const FAV_KEY = 'Favorites';
 const favoritesList = document.querySelector('.favorites-list');
@@ -67,6 +67,7 @@ export function UpdateFavorites({ page }) {
     
     let start = (page * cardsPerPage - cardsPerPage);
     let end = page * cardsPerPage;
+    updateFilterBar();
 
     renderFavorites(favoritesArr, start, end);
 }
@@ -74,6 +75,7 @@ export function UpdateFavorites({ page }) {
 
 // ця не викликається при старті, її імпортне собі Віталій
 export function showByCategory(category) {
+    let favoritesArr = JSON.parse(localStorage.getItem(FAV_KEY));
     favoritesList.innerHTML = '';
     const selectedCategory = category;
     // const selectedCategory = document.querySelector('.active').dataset.id;
@@ -83,9 +85,10 @@ export function showByCategory(category) {
         renderFavorites(favoritesArr, start, end);
     } else {
     const filteredFavorites = favoritesArr.filter(
-        recipe => recipe.category === selectedCategory
+        recipe => recipe.category.trim().toLowerCase() === selectedCategory.dataset.id.trim().toLowerCase() || selectedCategory.dataset.id == "All"
     );
     // console.log(filteredFavorites);
+    let page = 1;
     let start = (page * cardsPerPage - cardsPerPage);
     let end = page * cardsPerPage;
         
@@ -99,7 +102,7 @@ export function showByCategory(category) {
 // let end = pageIndex * cardsPerPage;
 
 export function renderFavorites(data, start, end) {
-    for (let i = start; i <= end; i += 1 ){
+    for (let i = start; i <= end && i < data.length; i += 1 ){
         favoritesList.append(DrawCard(data[i]));
     }
 }

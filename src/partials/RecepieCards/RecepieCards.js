@@ -3,7 +3,6 @@ import { sprite } from '../../image/sprite.svg';
   import { ModalStart, addModal } from '../ModalWindow/ModalWindow';
 import { createPagination } from '../Pagination/Pagination.js';
 import { showPreloader, hidePreloader } from '../Preloader/Preloader';
-import { UpdateFavorites } from '../Favorites/Favorites';
 
 export function padEndRating(subj) {
   subj = subj.toString();
