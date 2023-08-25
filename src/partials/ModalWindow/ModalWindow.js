@@ -9,6 +9,21 @@ function getVideoIdFromLink(link) {
 }
 
 function onOpenModal(e, dataId) {
+  const refs = {
+    openModalBtns: document.querySelectorAll('[data-modal-open]'),
+    modal: document.querySelector('[data-modal-recipe]'),
+    closeModalBtn: document.querySelector('[data-action="close-modal"]'),
+    backdrop: document.querySelector('.recipe-backdrop'),
+    nameElement: document.querySelector('.selected-recipe-name'),
+    instructionElement: document.querySelector('.recipe-instruction'),
+    videoElement: document.querySelector('.recipe-video-wrap'),
+    ul: document.querySelector('.ingredients'),
+    timeSpan: document.querySelector('.cooking-time'),
+    tags: document.querySelector('.tags-1'),
+    ratingNum: document.querySelector(".rating-number-recipe"),
+    stars: document.querySelector(".stars"),
+    favBut: document.querySelector(".btn-favorite")
+  };
   const id = e.target.closest(`[data-${dataId}]`).dataset[dataId];
   document.createElement('div');
   axios
