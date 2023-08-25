@@ -121,12 +121,11 @@ Like(like, recipe);
 function MakeRequestString() {
   let obj = filterObj;
   let lim=4;
-  if(screen.width>=1280){
+  if(screen.width>=768){
+    lim=8;
+  }
+  if(screen.width>=1279){
     lim=9;
-  }else{
-    if(screen.width>=768){
-      lim=8;
-    }
   }
   let str = 'https://tasty-treats-backend.p.goit.global/api/recipes?limit='+lim;
   for (let key in obj) {
