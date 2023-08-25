@@ -52,7 +52,7 @@ export function UpdateFavorites({ page }) {
     const cardsPerPage = 12;
     const favoritesList = document.querySelector('.favorites-list');
 
-    favoritesList.innerHTML = '';
+    //favoritesList.innerHTML = '';
     favoritesPlug.classList.add('is-hidden');
     favImgElem.classList.remove('is-hidden');
 
@@ -110,7 +110,9 @@ export function showByCategory(category) {
 // let end = pageIndex * cardsPerPage;
 
 export function renderFavorites(data, start, end) {
+    
     const favoritesList = document.querySelector('.favorites-list');
+    favoritesList.innerHTML = '';
 
     for (let i = start; i <= end && i < data.length; i += 1 ){
         favoritesList.append(DrawCard(data[i]));
