@@ -52,6 +52,7 @@
    }
    .hero-section {
        padding-top:64px;
+       max-width: 1080px;
    }
    
    .btn-ordernow{
