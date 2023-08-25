@@ -16,7 +16,7 @@ export const PopupStart = () => {
     popup: document.querySelector('.popup-body'),
     'popup-backdrop': document.querySelector('.popup-backdrop'),
     form: document.querySelector('.popup-form'),
-    phoneNumberInput: document.querySelector('.popup-input[name="phone"]'), // Замініть на ваш селектор для поля номеру телефону
+    phoneNumberInput: document.querySelector('.popup-input[name="phone"]'),
   };
 
   refs.openPopupBtns.forEach(btn => {
@@ -41,14 +41,13 @@ export const PopupStart = () => {
     sendOrderToBackend(orderData);
   });
 
-  //
+
   const submitButton = refs.form.querySelector('.popup-btn');
   submitButton.addEventListener('click', function () {
     const phoneNumberInput = refs.phoneNumberInput;
     addDashes(phoneNumberInput);
   });
 
-  //
   refs.phoneNumberInput.addEventListener('input', function () {
     addDashes(this);
   });
@@ -66,23 +65,26 @@ export const PopupStart = () => {
     document.body.classList.remove('js-popup-open');
     document.body.style.overflow = '';
   }
-
+  // бекенд
   function sendOrderToBackend(orderData) {
-    axios
-      .post(
-        'https://tasty-treats-backend.p.goit.global/api/orders',
-        orderData,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      )
-      .then(response => {
-        console.log('Відповідь від бекенду:', response.data);
-      })
-      .catch(error => {
-        console.error('Помилка:', error);
-      });
+    try {
+      axios
+        .post(
+          'https://tasty-treats-backend.p.goit.global/api/orders',
+          orderData,
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        )
+        .then(response => {
+          console.log('Відповідь від бекенду:', response.data);
+        })
+        .catch(error => {
+          console.error('Помилка при відправці запиту:', error);
+        });
+    } catch (error) {
+      console.error('Помилка:', error);
+    }
   }
-};
