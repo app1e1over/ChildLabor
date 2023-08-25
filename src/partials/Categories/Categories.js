@@ -1,4 +1,4 @@
-import {Update} from "./RecepieCards"
+import { Update } from '../RecepieCards/RecepieCards.js';
 
 const categoriesContainer = document.getElementById('categories');
     

@@ -1,7 +1,7 @@
-import { StartFavorites } from './js/Favorites.js';
-import { startHeader } from './js/Header.js';
-import { StartScrollUp } from './js/ScrollUp.js';
-import { updateHearts } from './js/FavoritesFilter.js';
+import { StartFavorites } from './partials/Favorites/Favorites.js';
+import { startHeader } from './partials/Header/Header.js';
+import { StartScrollUp } from './partials/ScrollUp/ScrollUp.js';
+import { updateHearts } from './partials/FavoritesFilter/FavoritesFilter.js';
 //import 'normalize.css';
 
 

@@ -1,4 +1,4 @@
-import { showByCategory } from './Favorites.js';
+import { showByCategory } from '../Favorites/Favorites.js';
 
 const cont = document.querySelector('.recipe-container');
 const filterBar = document.querySelector('.filters-list');
