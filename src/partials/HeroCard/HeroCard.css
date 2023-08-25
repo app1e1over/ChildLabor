@@ -66,8 +66,14 @@
     word-wrap: break-word;
     margin-top: 28px;
     cursor: pointer;
+    transition: background-color var(--transition-duration) var(--transition-time-function);
    }
    
+
+
+.btn-ordernow:is(:hover, :focus) {
+background-color: var(--active-color);
+}
    
    .event-card-preview{
     /* width: 200px;
@@ -278,6 +284,7 @@
     .hero-container{
         display: flex;
         align-items: center;
+        max-width: 1080px,
     }
     
    }
