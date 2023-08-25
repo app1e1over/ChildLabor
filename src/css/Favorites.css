@@ -74,7 +74,7 @@ margin-bottom: 50%;
     margin: 0 auto 24px;
     width: 68px;
     height: 58px;
-    background-image: url('./Favorites-img/fav-plug-png-1x.png');
+    background-image: url('../image/Favorites-img/fav-plug-png-1x.png');
     background-size: 68px 58px;
 }
 
@@ -83,7 +83,7 @@ margin-bottom: 50%;
 (min-resolution: 192dpi),
 (min-resolution: 2dppx) {
     .fav-plug-img {
-        background-image: url('./Favorites-img/fav-plug-png-2x.png');
+        background-image: url('../image/Favorites-img/fav-plug-png-2x.png');
     }
 }
 

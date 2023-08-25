@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { padEndRating } from '../RecepieCards/RecepieCards';
+import { padEndRating } from './RecepieCards';
 
 function getVideoIdFromLink(link) {
   const regex =

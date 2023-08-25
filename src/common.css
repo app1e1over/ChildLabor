@@ -1,17 +1,17 @@
-@import url("./partials/Header/Header.css");
-@import url("./partials/Categories/Categories.css");
-@import url("./partials/Favorites/Favorites.css");
-@import url("./partials/FavoritesFilter/FavoritesFilter.css");
-@import url("./partials/HeroCard/HeroCard.css");
-@import url("./partials/ModalWindow/ModalWindow.css");
-@import url("./partials/Pagination/Pagination.css");
-@import url("./partials/PopularRecipes/PopularRecipe.css");
-@import url("./partials/RecepieCards/RecepieCards.css");
-@import url("./partials/Selects/Selects.css");
+@import url("./css/Header.css");
+@import url("./css/Categories.css");
+@import url("./css/Favorites.css");
+@import url("./css/FavoritesFilter.css");
+@import url("./css/HeroCard.css");
+@import url("./css/ModalWindow.css");
+@import url("./css/Pagination.css");
+@import url("./css/PopularRecipe.css");
+@import url("./css/RecepieCards.css");
+@import url("./css/Selects.css");
 
-@import url("./partials/CreateOrderModal/CreateOrderModal.css");
-@import url("./partials/ScrollUp/ScrollUp.css");
-@import url("./partials/Preloader/Preloader.css");
+@import url("./css/CreateOrderModal.css");
+@import url("./css/ScrollUp.css");
+@import url("./css/Preloader.css");
 :root {
   --main-color: #050505;
   --main-rgb-color: rgb(5, 5, 5);

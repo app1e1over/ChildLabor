@@ -1,8 +1,7 @@
 import axios from 'axios';
-import { sprite } from '../../image/sprite.svg';
-  import { ModalStart, addModal } from '../ModalWindow/ModalWindow';
-import { createPagination } from '../Pagination/Pagination.js';
-import { showPreloader, hidePreloader } from '../Preloader/Preloader';
+  import { addModal } from './ModalWindow.js';
+import { createPagination } from './Pagination.js';
+import { showPreloader, hidePreloader } from './Preloader.js';
 
 export function padEndRating(subj) {
   subj = subj.toString();

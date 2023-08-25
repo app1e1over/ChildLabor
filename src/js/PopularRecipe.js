@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ModalStart, addModal } from '../ModalWindow/ModalWindow';
+import { ModalStart, addModal } from './ModalWindow';
 
 const popularRecipesList = document.querySelector('.popular-recipes-container');
 const popularRecipesApiUrl = 'https://tasty-treats-backend.p.goit.global/api/recipes/popular';

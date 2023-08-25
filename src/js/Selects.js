@@ -2,8 +2,8 @@ import debounce from 'lodash/debounce';
 import axios from 'axios'; 
 import SlimSelect from 'slim-select'
  
-import {showPreloader, hidePreloader} from "../Preloader/Preloader"
-import {Update} from "../RecepieCards/RecepieCards"
+import {showPreloader, hidePreloader} from "./Preloader"
+import {Update} from "./RecepieCards"
 
 const form = document.querySelector(".search-form-food")
 const ingredients = document.getElementById('selectIng');

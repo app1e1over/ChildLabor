@@ -1,4 +1,3 @@
-import { Update } from '../RecepieCards/RecepieCards';
 import Pagination from './Helper-pagination';
 
 // PAGINATION

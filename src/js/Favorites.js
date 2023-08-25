@@ -1,7 +1,7 @@
 import axios from "axios";
-import { DrawCard } from "../RecepieCards/RecepieCards.js"
-import { createPagination } from "../Pagination/Pagination.js"
-import { updateFilterBar } from "../FavoritesFilter/FavoritesFilter.js";
+import { DrawCard } from "./RecepieCards.js"
+import { createPagination } from "./Pagination.js"
+import { updateFilterBar } from "./FavoritesFilter.js";
 
 const FAV_KEY = 'Favorites';
 const favoritesList = document.querySelector('.favorites-list');
