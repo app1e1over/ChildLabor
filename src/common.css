@@ -161,8 +161,9 @@ ul {
   @media screen and (min-width:768px) {
     /* tablet */
     .container{
-        padding-left: 32px;
-        padding-right: 32px;
+      max-width: 760px;
+      padding-left: calc(50vw - 384px);
+      padding-right: calc(50vw - 384px);
     }
     .index-recepie-container{
       flex-direction: row;
@@ -176,8 +177,8 @@ ul {
         /* padding-left: 100px;
         padding-right: 100px; */
       max-width: 1080px;
-        padding-left: calc(50vw - 616px);
-        padding-right: calc(50vw - 616px);
+        padding-left: calc(50vw - 640px);
+        padding-right: calc(50vw - 640px);
     }
 
 
