@@ -2,7 +2,7 @@
   display: flex;
   list-style: none;
   gap: 15px;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 .filters-btn {
   box-sizing: border-box;
