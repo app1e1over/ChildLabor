@@ -143,6 +143,9 @@ function MakeRequestString() {
 }
 
 export function Like(el, recep, change){
+  if(el==null || el==undefined){
+    return;
+  }
   el.addEventListener('click',()=>{
     let id = recep._id;
     let liked = JSON.parse(localStorage.getItem('Favorites')) || [];

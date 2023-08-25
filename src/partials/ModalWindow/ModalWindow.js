@@ -100,7 +100,7 @@ const refs = {
   tags: document.querySelector('.tags-1'),
   ratingNum: document.querySelector(".rating-number-recipe"),
   stars: document.querySelector(".stars"),
-  favBut:document.querySelector(".btn-favorite")
+  favBut: document.querySelector(".btn-favorite")
 };
 export const ModalStart = () => {
   // refs.openModalBtns.forEach(btn => {
