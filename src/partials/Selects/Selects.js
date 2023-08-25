@@ -70,28 +70,41 @@ createAreaList(areas);
 
 
 // делаем список ингридиентов
-function createIngList(ingredientsData) {
-  const selectElementIng = ingredients;
+
+
+
+// function createIngList(ingredientsData) {
+ // const selectElementIng = ingredients;
 
   
+  // ingredientsData.forEach(ingridient => {
+  //  const optionElement = document.createElement('option');
+  //  optionElement.value = ingridient.name;
+   // ingredientsId = ingridient._id;
+  //  optionElement.textContent = ingridient.name;
+  //  selectElementIng.appendChild(optionElement);
+  // });
+
+ function createIngList(ingredientsData) {
+  const selectElementIng = ingredients;
+
   ingredientsData.forEach(ingridient => {
     const optionElement = document.createElement('option');
     optionElement.value = ingridient.name;
-    ingredientsId = ingridient._id;
+    optionElement.dataset.ingredientId = ingridient._id; //  data-ingredient-id
     optionElement.textContent = ingridient.name;
     selectElementIng.appendChild(optionElement);
   });
+  // Создаем SlimSelect
   new SlimSelect({
     select: '#selectIng',
     settings: {
       showSearch: false,
       searchHighlight: true,
       openPosition: 'down'
-    
     }
-  })
+  });
 }
-
 // делаем список стран
 function createAreaList(areas) {
   const selectElementArea = area;
@@ -167,7 +180,6 @@ keyWord = e.target.value.trim();
 //console.log(keyWord)
 // фетчим рецепты
 Update({}, keyWord)
- 
 
 }
 
@@ -186,16 +198,28 @@ recipes.results.forEach(recipe => {
 
 // функция на слушателя
 
-  function takeIng(e) {
-    try {
-      const updatedData = {}; 
-      updatedData[e.target.name] = e.target.value; 
-      Update(updatedData); 
-    } catch (error) {
-      console.error('Ошибка:', error);
-    }
-  }
+// function takeIng(e) {
+ // try {
+ //   const updatedData = {}; 
+ //   updatedData[e.target.name] = e.target.value; 
+ //   Update(updatedData); 
+ // } catch (error) {
+ //   console.error('Ошибка:', error);
+ // }
+//  }
   
+ function takeIng(e) {
+  try {
+    const selectedOption = e.target.options[e.target.selectedIndex];
+    const selectedIngredientId = selectedOption.dataset.ingredientId; // Получаем айди ингредиента
+    const updatedData = {};
+    updatedData['ingredientId'] = selectedIngredientId; // Передаем айди в объект
+    Update(updatedData);
+  } catch (error) {
+    console.error('Ошибка:', error);
+  }
+}
+
 function selects(){
   addListeners();
 fetchIng ();
