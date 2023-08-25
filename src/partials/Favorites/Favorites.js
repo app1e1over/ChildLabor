@@ -114,7 +114,7 @@ export function renderFavorites(data, start, end) {
     const favoritesList = document.querySelector('.favorites-list');
     favoritesList.innerHTML = '';
 
-    for (let i = start; i <= end && i < data.length; i += 1 ){
+    for (let i = start; i < end && i < data.length; i += 1 ){
         favoritesList.append(DrawCard(data[i]));
     }
 }
