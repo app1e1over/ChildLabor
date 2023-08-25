@@ -32,6 +32,11 @@ function onOpenModal(e, dataId) {
     .then(data => {
       console.log(data);
       Like(refs.favBut, data, "no");
+      if(JSON.parse(localStorage.getItem("Favorites")).includes(data)){
+        refs.favBut.innerHTML = "Remove from favorites"
+      }else{
+        refs.favBut.innerHTML = "Add to favorites"
+      }
       refs.nameElement.textContent = data.title; // Оновлюємо назву
       refs.instructionElement.innerHTML = data.instructions;
       let ingredients = data.ingredients;
