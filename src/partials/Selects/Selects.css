@@ -1,26 +1,31 @@
+
 .btn-reset-container{
   width: 365px;
 }
 div.ss-content{
   background-color:var(--plain-white) }
+
 .search-input {
 width: 100%;
 padding: 8px;
-border: 1px solid var(--input-border-color);
-border-radius: 4px;
-}
-.search-container .search-input {
-width: 100%;
-padding: 8px;
-border: 1px solid var(--input-border-color);
+border: 1px solid var(--ss-border-color);
 border-radius: 4px;
 
+  
+  border-radius: 15px; 
+  width: 335px;
+  height: 46px;
+  padding: 0;
+  color: var( --text-color);
+  background-color: var(--page-color);
+  padding-left: 48px;
 }
-input.search.search-input:focus-visible {
+
+.search-input:focus-visible {
  
   outline: none;
   padding-left: 48px;
-  
+ 
 }
 .input-container:focus-within .search-icon {
   display: none;
@@ -49,7 +54,7 @@ display: block;
 }
 
 .search-input:focus-visible::placeholder{
-  color: var(--secondary-color);
+  color: var(--page-color);
 }
 
 .for-svg{
@@ -90,23 +95,9 @@ width: 18px;
 
 
 
-/* пробуем стилизовать инпут   */
-.slim-select-input {
-border: none;   /* Убираем рамку слим селект  */
-box-shadow: none;  /* Убираем тень  */
-
-}
 
 
-input.search.search-input {
-border-color: var(--input-border-color);
-border-radius: 15px; 
-width: 335px;
-height: 46px;
-padding: 0;
-background-color: var(--secondary-color);
 
-}
 .search-input::placeholder{
 font-family: Inter;
 font-size: 12px;
@@ -114,7 +105,8 @@ font-style: normal;
 font-weight: 500;  /* шрифт в инпуте */
 line-height: 1.3;  
 color: var(--popular-color);
-padding-left: 48px;
+
+
 }
 /* контейнер для всех селектов */
 .selects {
@@ -194,14 +186,14 @@ background-color: var( --plain-white);   /* тут цвет текста и фо
 div.ss-main.time,
 div.ss-main.country,
 div.ss-main.selectIngredients {
-background-color: var(--secondary-color);
+background-color: var(--page-color);
 width: 160px;
 height: 46px;   /*  тут сами селекты в неразвернутом виде  */
 border-top-right-radius: 15px;
 border-top-left-radius: 15px;
 border-bottom-left-radius: 15px;
 border-bottom-right-radius: 15px;
-border-color: var(--input-border-color);
+border-color: var(--ss-border-color);
 
 }
 div.ss-main.ing{
@@ -290,11 +282,15 @@ color: var(--popular-list-color);
     gap: 16px;
 
 }
+.btn-reset-container{
+ 
+  margin-bottom: 14px;
 
-input.search.search-input {
+}
+.search-input {
     width: 278px;
     height: 48px;
-    padding: 0;
+   padding-left: 48px;
    box-sizing: border-box;
   }
   div.ss-main{
@@ -331,12 +327,6 @@ input.search.search-input {
   
   }
  
-  input.search.search-input {
-      width: 278px;
-      height: 48px;
-      padding: 0;
-     box-sizing: border-box;
-    }
     div.ss-main{
        height: 48px;  
     }
@@ -364,10 +354,9 @@ input.search.search-input {
     width: 780px;
   }
   .search-form-food{
-  
-  width: 780px;
-   
+  width: 780px; 
 
 }
+
 
 }
