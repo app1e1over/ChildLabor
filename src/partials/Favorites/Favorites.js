@@ -35,9 +35,11 @@ export function hadleAllFavoritesDeleted() {
 // 3. innerHTML = renderedCards
 
 // let pageIndex = 1;
-const cardsPerPage = 12;
-export function StartFavorites(){
-    let favoritesArr = JSON.parse(localStorage.getItem(FAV_KEY));
+//const cardsPerPage = 12;
+export function StartFavorites() {
+    const cardsPerPage = 12;
+
+    let favoritesArr = JSON.parse(localStorage.getItem('Favorites'));
     let pageCount = Math.ceil(favoritesArr.length / cardsPerPage);
     UpdateFavorites({page: 1})
     
@@ -47,11 +49,14 @@ export function StartFavorites(){
 }
 // ВИКЛИКАЄТЬСЯ ПРИ СТАРТІ
 export function UpdateFavorites({ page }) {
+    const cardsPerPage = 12;
+    const favoritesList = document.querySelector('.favorites-list');
+
     favoritesList.innerHTML = '';
     favoritesPlug.classList.add('is-hidden');
     favImgElem.classList.remove('is-hidden');
 
-    let favoritesArr = JSON.parse(localStorage.getItem(FAV_KEY));
+    let favoritesArr = JSON.parse(localStorage.getItem('Favorites'));
     //console.log(favoritesArr);
     //console.log(favoritesArr.length);
 
@@ -75,7 +80,10 @@ export function UpdateFavorites({ page }) {
 
 // ця не викликається при старті, її імпортне собі Віталій
 export function showByCategory(category) {
-    let favoritesArr = JSON.parse(localStorage.getItem(FAV_KEY));
+    const cardsPerPage = 12;
+    const favoritesList = document.querySelector('.favorites-list');
+
+    let favoritesArr = JSON.parse(localStorage.getItem('Favorites'));
     favoritesList.innerHTML = '';
     const selectedCategory = category;
     // const selectedCategory = document.querySelector('.active').dataset.id;
@@ -102,6 +110,8 @@ export function showByCategory(category) {
 // let end = pageIndex * cardsPerPage;
 
 export function renderFavorites(data, start, end) {
+    const favoritesList = document.querySelector('.favorites-list');
+
     for (let i = start; i <= end && i < data.length; i += 1 ){
         favoritesList.append(DrawCard(data[i]));
     }
