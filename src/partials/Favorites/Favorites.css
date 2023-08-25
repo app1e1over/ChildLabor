@@ -24,6 +24,8 @@ img {
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    padding-top: 24px;
 }
 
 /* ШИРИНИ ОБРАНИХ КАРТОК І КАРТОК НА ГОЛОВНІЙ */
@@ -100,6 +102,8 @@ margin-bottom: 50%;
        flex-direction: row;
        flex-wrap: wrap;
        gap: 16px;
+
+       padding-top: 32px;
    }
 
    /* ШИРИНИ ОБРАНИХ КАРТОК */
@@ -168,3 +172,27 @@ margin-bottom: 50%;
         max-width: 1080px;
     }
 }
+
+/* ДОД СТИЛІ */
+/* .btn-ordernow {
+    transition: background-color var(--transition-duration) var(--transition-time-function);
+}
+
+.btn-ordernow:is(:hover, :focus) {
+background-color: var(--active-color);
+} */
+
+/* ПЛАВНІСТЬ В ХЕДЕРІ */
+/* .nav-link::after {
+    content: '';
+    width: 100%;
+    opacity: 0;
+    height: 1px;
+    display: block;
+    background: var(--text-color);
+    transition: opacity var(--transition-duration) var(--transition-time-function);
+}
+
+.nav-link:hover::after {
+    opacity: 1;
+} */
