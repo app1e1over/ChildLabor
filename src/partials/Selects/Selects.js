@@ -213,7 +213,7 @@ recipes.results.forEach(recipe => {
     const selectedOption = e.target.options[e.target.selectedIndex];
     const selectedIngredientId = selectedOption.dataset.ingredientId; // Получаем айди ингредиента
     const updatedData = {};
-    updatedData['ingredientId'] = selectedIngredientId; // Передаем айди в объект
+    updatedData['ingredient'] = selectedIngredientId; // Передаем айди в объект
     Update(updatedData);
   } catch (error) {
     console.error('Ошибка:', error);
