@@ -88,3 +88,4 @@ export const PopupStart = () => {
       console.error('Помилка:', error);
     }
   }
+}
