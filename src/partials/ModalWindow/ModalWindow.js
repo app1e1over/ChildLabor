@@ -121,7 +121,7 @@ export const ModalStart = () => {
   // refs.openModalBtns.forEach(btn => {
   //   btn.addEventListener('click', onOpenModal);
   // });
-  refs.backdrop.addEventListener('click', onBackdropClick);
+  try{refs.backdrop.addEventListener('click', onBackdropClick);}catch{}
 };
 function renderIng(ingredients) {
   refs.ul.innerHTML = '';

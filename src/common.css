@@ -158,7 +158,7 @@ ul {
       padding-right: calc(50vw - 616px); */
     }
   
-  @media screen and (min-width:700px) {
+  @media screen and (min-width:550px) {
     /* tablet */
     .container{
       max-width: 760px;
