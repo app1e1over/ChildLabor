@@ -142,16 +142,18 @@ function MakeRequestString() {
   return str;
 }
 
-export function Like(el, recep){
+export function Like(el, recep, change){
   el.addEventListener('click',()=>{
     let id = recep._id;
     let liked = JSON.parse(localStorage.getItem('Favorites')) || [];
     if(liked.filter(f=>f._id===id).length > 0){
       liked = liked.filter(f=>f._id!=id);
+      if(change==undefined)
       el.innerHTML = inactiveHeart;
 
     }else{
       liked.push(recep)
+      if(change==undefined)
       el.innerHTML = activeHeart;
 
     }

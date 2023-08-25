@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { padEndRating } from '../RecepieCards/RecepieCards';
+import { Like, padEndRating } from '../RecepieCards/RecepieCards';
 
 function getVideoIdFromLink(link) {
   const regex =
@@ -16,6 +16,7 @@ function onOpenModal(e, dataId) {
     .then(response => response.data)
     .then(data => {
       console.log(data);
+      Like(refs.favBut, data, "no");
       refs.nameElement.textContent = data.title; // Оновлюємо назву
       refs.instructionElement.innerHTML = data.instructions;
       let ingredients = data.ingredients;
@@ -98,7 +99,8 @@ const refs = {
   timeSpan: document.querySelector('.cooking-time'),
   tags: document.querySelector('.tags-1'),
   ratingNum: document.querySelector(".rating-number-recipe"),
-  stars: document.querySelector(".stars")
+  stars: document.querySelector(".stars"),
+  favBut:document.querySelector(".btn-favorite")
 };
 export const ModalStart = () => {
   // refs.openModalBtns.forEach(btn => {
